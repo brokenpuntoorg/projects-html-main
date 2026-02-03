@@ -1,0 +1,308 @@
+/* Variables CSS */
+:root {
+    --header-bg-dark: #1e389b;
+    --header-bg-light: #0099ff;
+    --link-color-dark: white;
+    --link-color-promo: #ff1e38;
+    --dropdown-bg: white;
+    --dropdown-link-color: #1e389b;
+    --hover-bg: #e6f7ff;
+    --border-color: #ddd;
+    --font-family: Arial, sans-serif;
+    --sidebar-width: 280px;
+    --header-font-size-compact: 0.75rem; 
+}
+
+/* Reset y Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    background-color: #f4f4f4;
+    overflow-y: auto; 
+}
+
+.no-scroll {
+    overflow: hidden;
+    position: fixed; 
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.nav-list, .dropdown-menu, .sidebar-nav-list, .sidebar-dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header Principal y Navegación */
+.main-header {
+    background-color: var(--header-bg-dark);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    /* *** CAMBIO AQUÍ: 1800px de ancho máximo *** */
+    max-width: 1800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px; 
+}
+
+/* Fila Superior (sin cambios) */
+.navbar-top {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0 10px;
+}
+
+.top-nav-list {
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.header-title {
+    color: white;
+    font-weight: bold;
+    align-self: center;
+    padding: 8px 0; 
+}
+
+/* Fila Inferior ÚNICA (Diseño Compacto) */
+.navbar-bottom {
+    background-color: var(--header-bg-light); 
+    padding: 0 5px; 
+}
+
+.bottom-nav-list {
+    justify-content: flex-start;
+    flex-wrap: wrap; 
+    width: 100%; 
+}
+
+.desktop-nav {
+    display: flex;
+    position: relative;
+}
+
+.nav-item {
+    position: relative;
+    margin-right: 0; 
+    flex-shrink: 0;
+    flex-basis: auto; 
+}
+
+.nav-link {
+    display: block;
+    padding: 8px 4px; 
+    text-decoration: none;
+    color: var(--link-color-dark);
+    font-weight: bold;
+    font-size: var(--header-font-size-compact);
+    transition: background-color 0.3s;
+    white-space: nowrap; 
+    text-align: center; 
+}
+
+.promo-item .nav-link {
+    color: var(--link-color-promo);
+}
+
+.navbar-bottom .dropdown-parent {
+    /* 100% / 14 items ≈ 7.14% */
+    flex: 1 1 7.14%; 
+    background-color: var(--header-bg-light);
+    border-right: 1px solid rgba(255, 255, 255, 0.1); 
+}
+/* Eliminar el borde del último elemento */
+.navbar-bottom .dropdown-parent:last-child {
+    border-right: none;
+}
+
+
+/* Dropdown de Escritorio (sin cambios) */
+.dropdown-menu {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    background-color: var(--dropdown-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 300px;
+    z-index: 1000;
+    
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-menu.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-menu li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--dropdown-link-color);
+    font-weight: 500;
+}
+
+/* Sidebar y Móvil (sin cambios) */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: var(--sidebar-width);
+    height: 100%; 
+    background-color: var(--header-bg-dark);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    padding: 20px;
+    overflow-y: auto; 
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar-menu.open {
+    transform: translateX(0);
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 2001;
+}
+
+.sidebar-nav-list {
+    padding: 40px 0 0 0;
+}
+
+.sidebar-nav-list > li {
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav-list a {
+    padding: 12px 0;
+    color: white;
+    font-weight: 500;
+}
+
+.promo-link {
+    color: var(--link-color-promo) !important;
+}
+
+.sidebar-dropdown-toggle {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-dropdown-menu {
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-dropdown-menu.open {
+    max-height: 500px;
+}
+
+.sidebar-dropdown-menu li a {
+    padding: 8px 10px 8px 25px;
+    color: #c0c0c0;
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1900;
+    display: none;
+}
+.overlay.active {
+    display: block;
+}
+
+/* Media Queries (Responsividad) */
+@media screen and (max-width: 1800px) {
+    /* En pantallas de 1800px o menos, permitimos que los elementos se envuelvan si es necesario */
+    .bottom-nav-list {
+        flex-wrap: wrap; 
+    }
+    .navbar-bottom .dropdown-parent {
+        /* Permitir que los ítems ocupen el espacio mínimo y se repartan */
+        flex: 1 1 auto; 
+    }
+}
+
+@media screen and (max-width: 992px) {
+    /* Ocultar la barra de navegación compacta en móvil */
+    .desktop-nav {
+        display: none;
+    }
+
+    .navbar-top {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .navbar-bottom { 
+        display: none;
+    }
+    
+    .hamburger-menu {
+        display: block;
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-title {
+        display: none;
+    }
+}

@@ -1,0 +1,256 @@
+.instant-delivery-page-unique {
+    padding: 20px 15px;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.delivery-results-title-unique {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content-wrapper-unique {
+    display: block; /* Diseño de una columna en móvil */
+}
+
+/* --- SIDEBAR DE FILTROS (Móvil: Oculto) --- */
+.filter-sidebar-delivery-unique {
+    display: none; /* Oculto en la estructura principal de móvil */
+}
+
+/* --- GRID DE PRODUCTOS --- */
+.product-results-grid-unique {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna en móvil */
+    gap: 20px;
+}
+
+.product-card-delivery-link-unique {
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-card-delivery-unique {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: box-shadow 0.3s;
+}
+
+.product-card-delivery-unique:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image-container-delivery-unique {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.product-img-delivery-unique {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.info-delivery-unique {
+    padding: 15px;
+    text-align: left;
+}
+
+.name-delivery-unique {
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.price-delivery-unique {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #d82b2d;
+    margin: 0 0 10px 0;
+}
+
+/* Etiqueta de disponibilidad */
+.delivery-tag-unique {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.delivery-tag-unique.immediate {
+    background-color: #008000; /* Verde para entrega inmediata */
+}
+
+.delivery-tag-unique.next-day {
+    background-color: #ff9900; /* Naranja para día siguiente */
+}
+
+.delivery-status-unique {
+    font-size: 0.85rem;
+    color: #008000; /* Énfasis en el plazo */
+    font-weight: 500;
+}
+
+/* --- BOTÓN Y MODAL DE FILTRO (Móvil) --- */
+.mobile-filter-open-unique {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    z-index: 50;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.filter-modal-unique {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+
+.filter-modal-unique.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content-unique {
+    background-color: #fff;
+    width: 90%;
+    max-width: 400px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+    overflow-y: auto;
+}
+
+.filter-modal-unique.is-visible .modal-content-unique {
+    transform: translateX(0);
+}
+
+.modal-close-unique {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Estilos de los filtros dentro del modal */
+.filter-title-delivery-unique {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.filter-group-title-delivery-unique {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.filter-list-delivery-unique {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.filter-list-delivery-unique label {
+    display: block;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+.apply-filters-delivery-unique {
+    width: 100%;
+    padding: 12px;
+    background-color: #d82b2d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    margin-top: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+    .instant-delivery-page-unique {
+        padding: 40px 50px;
+    }
+    
+    .delivery-results-title-unique {
+        font-size: 2rem;
+        text-align: left;
+        margin-bottom: 30px;
+    }
+
+    .content-wrapper-unique {
+        display: grid;
+        /* Columna de Filtro (250px) y Productos (el resto) */
+        grid-template-columns: 250px 1fr;
+        gap: 30px;
+        align-items: start;
+    }
+
+    /* Ocultamos el botón y el modal de filtro en desktop */
+    .mobile-filter-open-unique,
+    .filter-modal-unique {
+        display: none;
+    }
+
+    /* Hacemos visible el sidebar de filtro */
+    .filter-sidebar-delivery-unique {
+        display: block;
+        position: sticky;
+        top: 20px;
+        padding-right: 20px;
+        border-right: 1px solid #ddd;
+    }
+
+    .apply-filters-delivery-unique {
+        /* En desktop, el filtro se aplica automáticamente o con un botón menos visible */
+        display: none; 
+    }
+    
+    /* Adaptamos el layout de la cuadrícula */
+    .product-results-grid-unique {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    
+    .image-container-delivery-unique {
+        height: 200px;
+    }
+}    
+

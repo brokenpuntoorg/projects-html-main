@@ -1,0 +1,165 @@
+.about-us-page-unique {
+    padding-bottom: 50px;
+    font-family: Arial, sans-serif;
+    background-color: #fcfcfc;
+    color: #333;
+}
+
+.section-heading-unique {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+
+/* --- HERO SECTION --- */
+.about-hero-unique {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
+  ,url('../assets/nosotros/l4.jpg'); /* Cambia esta ruta por la de tu imagen */ 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-title-unique {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle-unique {
+    font-size: 1rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- SECCIÓN HISTORIA --- */
+.history-section-unique {
+    padding: 30px 15px;
+}
+
+.history-text-unique p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.history-image-container-unique {
+    margin-top: 20px;
+}
+
+.history-image-unique {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- SECCIÓN VALORES --- */
+.values-section-unique {
+    background-color: #eee;
+    padding: 30px 15px;
+    text-align: center;
+}
+
+.value-cards-container-unique {
+    display: flex;
+    flex-direction: column; /* Apilados en móvil */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.value-card-unique {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon-unique {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.value-card-unique h3 {
+    font-size: 1.2rem;
+    color: #d82b2d;
+    margin: 0 0 10px 0;
+}
+
+.value-card-unique p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+@media (min-width: 992px) {
+       .about-us-page-unique {
+        max-width: 1800px;
+        margin: 0 auto;
+        padding: 0 50px 50px 50px;
+    }
+
+    .hero-title-unique {
+        font-size: 3rem;
+    }
+
+    /* --- SECCIÓN HISTORIA (2 Columnas) --- */
+    .history-section-unique {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        padding: 50px 0;
+    }
+    
+    .history-text-unique {
+        flex: 1;
+        order: 1; /* El texto va primero */
+    }
+    
+    .history-image-container-unique {
+        flex: 1;
+        margin-top: 0;
+        order: 2; /* La imagen va segunda */
+    }
+    
+    .section-heading-unique {
+        text-align: left;
+        font-size: 2.2rem;
+        padding-top: 0;
+        margin-bottom: 20px;
+    }
+
+    /* --- SECCIÓN VALORES (3 Columnas) --- */
+    .values-section-unique {
+        padding: 50px 0;
+    }
+
+    .values-section-unique .section-heading-unique {
+        text-align: center;
+    }
+
+    .value-cards-container-unique {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 30px;
+        max-width: 1000px;
+        margin: 20px auto 0 auto;
+    }
+
+    .value-card-unique {
+        flex: 1;
+        padding: 30px;
+        transition: transform 0.3s;
+    }
+
+    .value-card-unique:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+}    
+

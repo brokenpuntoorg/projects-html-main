@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Productos</title>
+    <link rel="stylesheet" href="/web/2/css/css-code/new.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <section class="products-page">
+        <header class="mobile-header1">
+            <button class="filter-toggle-btn" aria-label="Abrir filtros">
+                <i class="fas fa-filter"></i>
+                <span>Filtro</span>
+            </button>
+        </header>
+
+        <aside class="sidebar" id="sidebar">
+            <h2 class="sidebar-title">
+                Filtrar por
+                <button class="close-sidebar-btn" aria-label="Cerrar filtros">&times;</button>
+            </h2>
+
+            <div class="filter-group">
+                <button class="accordion-btn" aria-expanded="true" aria-controls="category-menu">
+                    Categoría
+                    <i class="fas fa-minus"></i>
+                </button>
+                <ul class="filter-menu show" id="category-menu">
+                    <li><a href="#">Todos</a></li>
+                    <li><a href="#">Fechadores, Numeradores y Foliadores</a></li>
+                    <li><a href="#">Los más buscados</a></li>
+                    <li><a href="#">Sellos administrativos</a></li>
+                </ul>
+            </div>
+
+            <div class="filter-group">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="price-menu">
+                    Precio (370 MXN - 850 MXN)
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="filter-menu" id="price-menu">
+                    <p>Controles de rango de precio</p>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="color-menu">
+                    Color
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="filter-menu" id="color-menu">
+                    <p>Opciones de color</p>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="ink-color-menu">
+                    Color de tinta
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="filter-menu" id="ink-color-menu">
+                    <p>Opciones de color de tinta</p>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="seal-color-menu">
+                    Color del sello
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="filter-menu" id="seal-color-menu">
+                    <p>Opciones de color del sello</p>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <button class="accordion-btn" aria-expanded="false" aria-controls="size-menu">
+                    Alto y Ancho
+                    <i class="fas fa-plus"></i>
+                </button>
+                <div class="filter-menu" id="size-menu">
+                    <p>Opciones de altura y ancho</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="sort-options">
+                <button class="sort-btn">Ordenar por <i class="fas fa-sort"></i></button>
+                <ul class="sort-menu">
+                    <li>Lo más nuevo</li>
+                    <li>Precio del menor</li>
+                    <li>Precio del mayor</li>
+                    <li>Nombre A-Z</li>
+                    <li>Nombre Z-A</li>
+                </ul>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-badge red">Entrega Inmediata</div>
+                    <div class="product-image-wrapper">
+                        <a href="#" class="product-link">
+                            <img src="/web/2/css/assets/autoink/1.avif" alt="Sello autoentintable" class="product-image">
+                            <div class="overlay"></div>
+                            <span class="view-button">Ver producto</span>
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Sello autoentintable para signos vitales - uso médico y clínico</h3>
+                        <p class="product-price">Desde $410,00</p>
+                        <span class="product-tax">Impuesto excluido</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <a href="#" class="product-link">
+                            <img src="/web/2/css/assets/autoink/2.avif" alt="Sello autoentintable" class="product-image">
+                            <div class="overlay"></div>
+                            <span class="view-button">Ver producto</span>
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Sello autoentintable con línea textil negra - Personalizado</h3>
+                        <p class="product-price">Desde $400,00</p>
+                        <span class="product-tax">Impuesto excluido</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <a href="#" class="product-link">
+                            <img src="/web/2/css/assets/autoink/3.avif" alt="Sello personalizado" class="product-image">
+                            <div class="overlay"></div>
+                            <span class="view-button">Ver producto</span>
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Sello redondo personalizado autoentintable</h3>
+                        <p class="product-price">Desde $550,00</p>
+                        <span class="product-tax">Impuesto excluido</span>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <a href="#" class="product-link">
+                            <img src="/web/2/css/assets/autoink/4.avif" alt="Sello fechador automático" class="product-image">
+                            <div class="overlay"></div>
+                            <span class="view-button">Ver producto</span>
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Sello personalizado con fechador automático</h3>
+                        <p class="product-price">Desde $630,00</p>
+                        <span class="product-tax">Impuesto excluido</span>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <a href="#" class="product-link">
+                            <img src="/web/2/css/assets/autoink/5.avif" alt="Sello personalizado" class="product-image">
+                            <div class="overlay"></div>
+                            <span class="view-button">Ver producto</span>
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Sello personalizado autoentintable</h3>
+                        <p class="product-price">Desde $550,00</p>
+                        <span class="product-tax">Impuesto excluido</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <a href="#" class="product-link">
+                            <img src="/web/2/css/assets/autoink/6.avif" alt="Sello personalizado" class="product-image">
+                            <div class="overlay"></div>
+                            <span class="view-button">Ver producto</span>
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Sello personalizado autoentintable</h3>
+                        <p class="product-price">Desde $550,00</p>
+                        <span class="product-tax">Impuesto excluido</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <a href="#" class="product-link">
+                            <img src="/web/2/css/assets/autoink/7.avif" alt="Sello personalizado" class="product-image">
+                            <div class="overlay"></div>
+                            <span class="view-button">Ver producto</span>
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Sello personalizado autoentintable</h3>
+                        <p class="product-price">Desde $550,00</p>
+                        <span class="product-tax">Impuesto excluido</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <a href="#" class="product-link">
+                            <img src="/web/2/css/assets/autoink/8.avif" alt="Sello personalizado" class="product-image">
+                            <div class="overlay"></div>
+                            <span class="view-button">Ver producto</span>
+                        </a>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Sello personalizado autoentintable</h3>
+                        <p class="product-price">Desde $550,00</p>
+                        <span class="product-tax">Impuesto excluido</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+</body>
+    <div id="footer-placeholder"></div>
+    <script src="/web/2/js/header.js"></script>
+    <script src="/web/2/js/footer.js"></script>
+    <script src="/web/2/js/index2.js"></script>
+    <script src="/web/2/js/new.js"></script>
+
+
+
+</html>

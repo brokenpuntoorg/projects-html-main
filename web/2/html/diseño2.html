@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño</title>
+    <link rel="stylesheet" href="/web/2/css/css-code/diseño2.css">
+    <link rel="stylesheet" href="/web/NORMALIZE/normalize.css">
+    <link rel="shortcut icon" href="/web/2/footerlogo.png" type="image/x-icon">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+    
+    <main class="design-page-container">
+
+        <header class="design-hero">
+            <h1 class="hero-title">Diseño de Sellos: Guía para Archivos Perfectos (CorelDRAW)</h1>
+            <p class="hero-subtitle">
+                Aprende a preparar tus archivos en formato vectorial para garantizar la máxima calidad y precisión en el grabado láser de tu sello.
+            </p>
+        </header>
+
+        <section class="section-vectorial">
+            <h2 class="section-heading">¿Por Qué Diseño Vectorial?</h2>
+            <div class="vector-content-grid">
+                <div class="text-block">
+                    <p>
+                        El grabado láser, esencial para la alta definición de nuestros sellos, requiere de archivos vectoriales (como los creados en **CorelDRAW** o Adobe Illustrator). 
+                        A diferencia de las imágenes de píxeles (JPG, PNG) que pierden calidad al ampliarse, los vectores usan fórmulas matemáticas para definir líneas y curvas.
+                    </p>
+                    <ul class="vector-list">
+                        <li>**Escalabilidad Infinita:** Tu diseño se verá nítido, sin importar el tamaño final del sello.</li>
+                        <li>**Precisión del Láser:** El láser sigue trayectos vectoriales exactos para un grabado impecable.</li>
+                        <li>**Detalle Fino:** Permite reproducir logotipos complejos, textos pequeños y líneas delgadas con claridad.</li>
+                    </ul>
+                </div>
+                <div class="image-block">
+                    <img src="/web/2/css/assets/blog/diseñovecto1.jpg" alt="Ilustración de diseño vectorial vs pixelado" class="vector-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="section-corel">
+            <h2 class="section-heading">Pautas Específicas para CorelDRAW</h2>
+            
+            <div class="corel-step-grid">
+                <div class="corel-step">
+                    <span class="step-number">1</span>
+                    <h3>Convierte a Curvas</h3>
+                    <p>Todo el texto debe ser convertido a curvas antes de enviar el archivo. Esto garantiza que el diseño se vea idéntico aunque no tengamos instalada la fuente original.</p>
+                    <pre class="code-tip">Selecciona Texto > Convertir a Curvas (Ctrl+Q)</pre>
+                </div>
+                
+                <div class="corel-step">
+                    <span class="step-number">2</span>
+                    <h3>Color y Contorno</h3>
+                    <p>Trabaja siempre en **escala de grises (CMYK C:0, M:0, Y:0, K:100)** o blanco y negro puro. El grabado láser solo entiende de áreas a grabar y áreas a conservar.</p>
+                    <ul class="color-list">
+                        <li>**Área a Grabar:** 100% Negro (K).</li>
+                        <li>**Área a NO Grabar:** Blanco.</li>
+                    </ul>
+                </div>
+                
+                <div class="corel-step">
+                    <span class="step-number">3</span>
+                    <h3>Tamaño Real y Márgenes</h3>
+                    <p>Asegúrate de que el documento tenga el tamaño exacto que tendrá el sello final (ej. 4x4 cm). Deja un margen de seguridad de 2mm entre el diseño y el borde de la goma.</p>
+                    <p class="warning-tip">¡No incluyas la almohadilla o la base del sello en el archivo de diseño!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-delivery">
+            <h2 class="section-heading">Formato de Archivo Recomendado</h2>
+            <div class="delivery-info">
+                <div class="format-card cdr">
+                    <h3>Opción Preferida: CorelDRAW (.CDR)</h3>
+                    <p>Guarda el archivo en una versión de Corel que asegure la compatibilidad (ej. X7 o anterior). Esto nos da el mayor control sobre tu archivo final.</p>
+                </div>
+                <div class="format-card ai">
+                    <h3>Opción Alternativa: PDF o AI</h3>
+                    <p>Si usas Adobe Illustrator, exporta el archivo como **PDF** (compatible con vectores) o **AI** (versión CS6 o inferior), siempre con las fuentes a curvas.</p>
+                </div>
+            </div>
+        </section>
+
+        <aside class="cta-design-help">
+            <h3 class="cta-title">¿Necesitas Ayuda con tu Diseño?</h3>
+            <p>Si no usas CorelDRAW o necesitas un diseño desde cero, nuestro equipo de diseño está listo para asistirte.</p>
+            <a href="index.html" class="cta-button-design">Solicitar Asistencia de Diseño →</a>
+        </aside>
+
+    </main>
+    
+    <div id="footer-placeholder"></div>
+    <script src="/web/2/js/header.js"></script>
+    <script src="/web/2/js/footer.js"></script>
+    <script src="/web/2/js/index2.js"></script>
+
+
+</body>
+</html>

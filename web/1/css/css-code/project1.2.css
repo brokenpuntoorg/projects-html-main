@@ -1,0 +1,239 @@
+/* Estilos generales y reseteo básico */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Estilos del Header Principal (fijo en la parte superior) */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.main-header span{
+    font-size: 2.2em;
+}
+.main-header p{
+    font-weight: 100;
+    display: inline;
+}
+/* Barra superior de promociones */
+.promo-bar {
+    background-color: #e50000; /* Fondo rojo */
+    color: #fff;
+    padding: 16px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    height: 3.5em;
+}
+.promo-content {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+/* Espacio entre texto y botón */
+}
+.promo-button {
+    background-color: #fff;
+    color: #e50000;
+    padding: 6px 2em;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1.4em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-left: 2em;
+}
+
+.promo-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Sección principal del header (Logo y enlaces de utilidad) */
+.header-top-section {
+    background-color: #fff;
+    padding: 15px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.header-top-inner {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    gap: 20px; /* Espacio entre logo y nav */
+}
+.logo-area {
+    flex-shrink: 0; /* Evita que el logo se encoja */
+}
+.logo-area img {
+    height: 4.5em; /* Altura del logo */
+    width: 22em;/* Ancho automático para mantener la proporción */
+}   
+.header-logo {
+    height: 50px; /* Altura del logo */
+    width: auto; /* Ancho automático para mantener la proporción */
+}
+
+.utility-nav {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    gap: 20px; /* Espacio entre los enlaces de utilidad */
+    flex-wrap: wrap; /* Permite que los enlaces se envuelvan */
+    justify-content: flex-end; /* Alinea a la derecha en caso de envoltura */
+}
+
+.utility-link {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.utility-link:hover {
+    color: #000;
+}
+
+.utility-login-button {
+    background-color: #e50000; /* Fondo rojo para el botón de login */
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Evita que el texto del botón se rompa */
+}
+
+.utility-login-button:hover {
+    background-color: #c00000;
+}
+
+/* Barra de navegación principal */
+.main-nav-bar {
+    background-color: #f5f5f5; /* Fondo gris claro */
+    border-top: 1px solid #eee;
+    padding: 12px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+.main-nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between; /* Distribuye los enlaces */
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    overflow-x: auto; /* Permite scroll horizontal si hay muchos enlaces */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.main-nav-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.main-nav-link {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 15px;
+    white-space: nowrap; /* Evita que los enlaces se rompan */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav-link:hover {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+}
+
+.main-nav-link.search-icon {
+    padding: 8px; /* Padding ajustado para el icono de búsqueda */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor de relleno para el contenido principal */
+.content-spacer {
+    /* Calcula la altura total del header:
+       Promo Bar: ~30px (padding + font-size)
+       Header Top Section: ~80px (padding + logo height)
+       Main Nav Bar: ~45px (padding + font-size)
+       Total: ~155px. Redondeamos a 160px para seguridad. */
+    height: 160px; /* Ajusta este valor si cambias los paddings o alturas del header */
+    width: 100%;
+}
+
+/* Estilos para el main (vacío, solo para referencia) */
+main {
+    min-height: 500px; /* Solo para que la página tenga un poco de altura y puedas ver el header fijo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 900px) {
+    .header-top-inner {
+        flex-direction: column; /* Apila logo y utilidad nav */
+        align-items: center;
+        gap: 15px;
+    }
+
+    .utility-nav {
+        justify-content: center; /* Centra los enlaces de utilidad apilados */
+        gap: 10px;
+    }
+
+    .main-nav-content {
+        justify-content: center; /* Centra los enlaces de la nav principal */
+        gap: 10px;
+    }
+
+    .content-spacer {
+        /* Ajusta la altura del spacer para el modo móvil si el header se hace más alto */
+        /* Estimación para móvil: Promo Bar + Header Top Section (apilado) + Main Nav Bar */
+        height: 220px; /* Ajusta según la altura real en móvil */
+    }
+}
+
+@media (max-width: 600px) {
+    .promo-content {
+        flex-direction: column; /* Apila texto y botón en la promo bar */
+        gap: 8px;
+    }
+
+    .utility-nav {
+        flex-direction: column; /* Apila los enlaces de utilidad */
+        gap: 5px;
+    }
+
+    .main-nav-link {
+        padding: 6px 10px; /* Reduce padding en enlaces de nav principal */
+        font-size: 14px;
+    }
+
+    .content-spacer {
+        height: 260px; /* Ajusta si el header crece más en pantallas muy pequeñas */
+    }
+}

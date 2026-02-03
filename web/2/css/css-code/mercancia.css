@@ -1,0 +1,219 @@
+.pickup-hero-unique {
+    /* Fondo que simula un diseño corporativo */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/web/2/css/assets/mercancia/hero.jpg)
+    ;
+    /* Opcional: usar una imagen de fondo que muestre la fachada/tienda */
+    /* background-image: url('URL_IMAGEN_SUCURSAL.jpg'); */
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content-unique {
+    max-width: 90%;
+}
+
+.hero-title-unique {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.hero-subtitle-unique {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+.hero-cta-unique {
+    display: inline-block;
+    background-color: #d82b2d; /* Rojo de acento */
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.hero-cta-unique:hover {
+    background-color: #a82022;
+}
+
+/* --- ESTILOS GENERALES Y MÓVIL (MOBILE FIRST) --- */
+
+.pickup-page-unique {
+    padding: 30px 15px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.pickup-content-wrapper-unique {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.pickup-title-unique {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.pickup-subtitle-unique {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.pickup-details-container-unique {
+    display: flex;
+    flex-direction: column; /* Apilado en móvil */
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.details-card-unique {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.details-title-unique {
+    font-size: 1.3rem;
+    color: #d82b2d; /* Color de acento de la marca */
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Estilos de la Dirección */
+.address-line-unique {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+}
+
+.icon-unique {
+    margin-right: 5px;
+}
+
+.map-link-unique {
+    display: inline-block;
+    margin-top: 15px;
+    color: #3b82f6; /* Color de enlace */
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #3b82f6;
+    padding-bottom: 2px;
+}
+
+/* Estilos de las Instrucciones */
+.instructions-list-unique {
+    list-style: none;
+    padding: 0;
+}
+
+.instructions-list-unique li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.instructions-list-unique .icon-unique {
+    font-size: 1.1rem;
+    color: #d82b2d;
+    margin-right: 10px;
+}
+
+/* --- MAPA --- */
+.map-heading-unique {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.map-placeholder-unique {
+    width: 100%;
+    /* Altura del mapa en móvil */
+    height: 300px; 
+    background-color: #e0e0e0; /* Gris para simular el mapa */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+}
+
+@media (min-width: 992px) {
+        /* desktop */
+    .pickup-hero-unique {
+        padding: 100px 50px;
+        min-height: 400px;
+    }
+
+    .hero-content-unique {
+        max-width: 700px;
+    }
+
+    .hero-title-unique {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle-unique {
+        font-size: 1.25rem;
+        margin-bottom: 35px;
+    }
+
+    .hero-cta-unique {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+    }
+
+    /* desktop */
+    .pickup-page-unique {
+        padding: 60px 50px;
+    }
+
+    .pickup-content-wrapper-unique {
+        max-width: 1000px;
+    }
+    
+    .pickup-title-unique {
+        font-size: 2.5rem;
+    }
+
+    .pickup-details-container-unique {
+        flex-direction: row; /* Elementos lado a lado en desktop */
+        gap: 40px;
+    }
+    
+    .details-card-unique {
+        flex: 1;
+        padding: 35px;
+    }
+
+    .map-container-unique {
+        margin-top: 40px;
+    }
+
+    .map-placeholder-unique {
+        /* Altura del mapa en desktop */
+        height: 450px; 
+    }
+}    
+

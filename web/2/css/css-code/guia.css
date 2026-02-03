@@ -1,0 +1,150 @@
+.design-guide-page-unique {
+    padding: 25px 15px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.guide-header-unique {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.guide-title-unique {
+    font-size: 2rem;
+    color: #d82b2d;
+    margin-bottom: 10px;
+}
+
+.guide-subtitle-unique {
+    font-size: 1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-title-unique {
+    font-size: 1.5rem;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin: 30px 0 20px 0;
+}
+
+/* --- SECCIÓN DE FORMATOS --- */
+.file-formats-section-unique > p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.format-cards-unique {
+    display: flex;
+    flex-direction: column; /* Apilado en móvil */
+    gap: 15px;
+}
+
+.format-card-unique {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.format-card-unique.vector {
+    background-color: #e6ffe6;
+    border: 1px solid #008000;
+}
+
+.format-card-unique.high-res {
+    background-color: #fffbe6;
+    border: 1px solid #ffc107;
+}
+
+.format-card-unique.not-recommended {
+    background-color: #ffe6e6;
+    border: 1px solid #d82b2d;
+}
+
+.format-icon-unique {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.format-name-unique {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.format-desc-unique {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.guide-separator-unique {
+    border: none;
+    border-top: 3px solid #f0f0f0;
+    margin: 40px 0;
+}
+
+/* --- SECCIÓN DE MEJORES PRÁCTICAS --- */
+.best-practices-list-unique {
+    list-style: none;
+    padding: 0;
+}
+
+.best-practices-list-unique li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-left: 5px solid #d82b2d;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.best-practices-list-unique h4 {
+    font-size: 1.1rem;
+    margin: 0 0 5px 0;
+    color: #000;
+}
+
+.best-practices-list-unique p {
+    font-size: 0.95rem;
+    margin: 0;
+    color: #555;
+}
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+        .design-guide-page-unique {
+        padding: 50px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .guide-title-unique {
+        font-size: 3rem;
+    }
+
+    /* --- SECCIÓN DE FORMATOS --- */
+    .format-cards-unique {
+        flex-direction: row; /* En fila en desktop */
+        gap: 20px;
+    }
+    
+    .format-card-unique {
+        flex: 1;
+        padding: 30px;
+    }
+
+    /* --- SECCIÓN DE MEJORES PRÁCTICAS --- */
+    .best-practices-list-unique {
+        /* Usamos columnas para mejor visualización */
+        column-count: 2;
+        column-gap: 30px;
+    }
+    
+    .best-practices-list-unique li {
+        /* Propiedad para evitar que los elementos se corten entre columnas */
+        break-inside: avoid;
+    }
+}    
+

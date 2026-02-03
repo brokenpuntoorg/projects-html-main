@@ -1,0 +1,195 @@
+.blog-page-unique {
+    padding-bottom: 50px;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+.section-heading-unique {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* --- HERO SECTION --- */
+.blog-hero-unique {
+    background-color: #f7f7f7;
+    border-bottom: 5px solid #d82b2d; /* Color de acento de Sellos Vázquez */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-title-unique {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.hero-subtitle-unique {
+    font-size: 1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- SECCIÓN ARTÍCULOS (POSTS) --- */
+.posts-section-unique {
+    padding: 30px 15px;
+}
+
+.posts-grid-unique {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna en móvil */
+    gap: 30px;
+}
+
+.post-card-unique {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.post-image-unique {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.post-text-unique {
+    padding: 15px;
+}
+
+.post-category-unique {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #d82b2d;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.post-title-unique {
+    font-size: 1.3rem;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.post-excerpt-unique {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.read-more-unique {
+    color: #004d99;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.read-more-unique:hover {
+    color: #d82b2d;
+}
+
+/* PAGINACIÓN */
+.pagination-unique {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.page-link-unique {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.page-link-unique:hover,
+.page-link-unique.active {
+    background-color: #d82b2d;
+    color: #fff;
+    border-color: #d82b2d;
+}
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+    .blog-page-unique {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* --- HERO SECTION --- */
+    .blog-hero-unique {
+        padding: 80px 50px;
+    }
+    
+    .hero-title-unique {
+        font-size: 3rem;
+    }
+
+    /* --- SECCIÓN ARTÍCULOS (Cuadrícula Desktop) --- */
+    .posts-section-unique {
+        padding: 50px 30px;
+    }
+
+    .posts-grid-unique {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas estándar */
+        gap: 40px;
+    }
+
+    .post-card-unique {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .post-card-unique:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Diseño Especial para el Artículo Destacado (Featured Post) */
+    .featured-post {
+        grid-column: 1 / 3; /* Ocupa 2 columnas de ancho */
+        display: flex;
+        border: 2px solid #d82b2d;
+    }
+    
+    .featured-post .post-image-unique {
+        width: 50%;
+        height: auto;
+        max-height: 350px;
+    }
+    
+    .featured-post .post-text-unique {
+        width: 50%;
+        padding: 30px;
+    }
+
+    .featured-post .post-title-unique {
+        font-size: 2rem;
+    }
+    
+    .featured-post .post-excerpt-unique {
+        font-size: 1rem;
+    }
+
+    /* Asegurar que el resto de tarjetas se vea bien */
+    .post-card-unique:not(.featured-post) .post-title-unique {
+        height: 2.6em; /* Fija la altura del título para consistencia visual */
+        overflow: hidden;
+    }
+
+    /* PAGINACIÓN */
+    .pagination-unique {
+        margin-top: 50px;
+    }
+    
+}    
+

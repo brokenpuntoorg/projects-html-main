@@ -1,0 +1,182 @@
+:root {
+    --color-primary: #e51d38; /* Rojo de tu marca */
+    --color-secondary-dark: #1a1a1a;
+    --color-text: #555;
+    --color-background: #f8f8f8;
+    --color-card-background: #ffffff;
+    --color-link: #007bff;
+}
+
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.cert-page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 15px 40px 15px; 
+}
+
+/* --- ENCABEZADO --- */
+.cert-page-header {
+    text-align: center;
+    padding: 20px 0 40px 0;
+}
+
+.cert-title {
+    font-size: 2.2rem;
+    color: var(--color-secondary-dark);
+    margin: 0 0 10px 0;
+}
+
+.cert-subtitle {
+    font-size: 1rem;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* --- SECCIÓN DE CREDIBILIDAD / VALORES --- */
+.credibility-values {
+    display: grid;
+    grid-template-columns: 1fr; /* Apilado en móvil */
+    gap: 20px;
+    padding: 20px 0 40px 0;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.value-item {
+    padding: 15px;
+    background-color: var(--color-card-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.value-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.value-item h3 {
+    color: var(--color-primary);
+    margin: 5px 0;
+}
+
+
+/* --- SECCIONES DE CERTIFICACIONES Y AFILIACIONES --- */
+.certifications-section, .affiliations-section {
+    padding: 30px 0;
+}
+
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Apilado en móvil */
+    gap: 30px;
+}
+
+.cert-card {
+    background-color: var(--color-card-background);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.cert-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.cert-name {
+    font-size: 1.3rem;
+    color: var(--color-secondary-dark);
+    margin: 0 0 10px 0;
+}
+
+.cert-description {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-bottom: 20px;
+}
+
+.cert-link {
+    display: inline-block;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--color-primary);
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cert-link:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+ 
+    .cert-page-container {
+        padding: 40px 30px 60px 30px;
+    }
+    
+    .cert-title {
+        font-size: 3rem;
+    }
+    
+    /* Tres columnas para los valores de credibilidad */
+    .credibility-values {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 40px;
+        padding: 40px 0 60px 0;
+    }
+
+    /* Tres columnas para las certificaciones técnicas */
+    .certifications-section .cert-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+    /* Dos columnas para las afiliaciones */
+    .affiliations-section .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px; /* Centrar la sección de afiliaciones */
+        margin-left: auto;
+        margin-right: auto;
+        gap: 40px;
+    }
+
+    .section-heading {
+        font-size: 2.2rem;
+        max-width: 100%;
+    }
+    
+    .cert-card {
+        min-height: 320px; /* Asegurar altura consistente */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .cert-logo{
+      position: relative;
+      left: 5em;
+    }
+    .cert-description {
+        flex-grow: 1; /* Permite que la descripción empuje el botón hacia abajo */
+    }
+    
+}    
+

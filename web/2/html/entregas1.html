@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    <link rel="stylesheet" href="/web/2/css/css-code/entregas1.css">
+    <link rel="stylesheet" href="/web/NORMALIZE/normalize.css">
+    <link rel="shortcut icon" href="/web/2/footerlogo.png" type="image/x-icon">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+
+        <section class="delivery-search-section-unique">
+            <div class="search-background-pattern-unique"></div>
+
+            <div class="search-container-unique">
+                <h1 class="delivery-title-unique">Entrega a domicilio rápida en [Tu Ciudad]</h1>
+                
+                <form id="address-search-form-unique" class="address-form-unique">
+                    <div class="input-wrapper-unique">
+                        <input type="text" id="delivery-address-input-unique" 
+                            placeholder="Ingresa la dirección de entrega" 
+                            class="address-input-unique" 
+                            required>
+                        <button type="button" id="clear-search-unique" class="clear-button-unique" style="display: none;">Borrar</button>
+                        
+                        <div id="address-suggestions-unique" class="suggestions-dropdown-unique" style="display: none;">
+                            </div>
+                    </div>
+                    
+                    <button type="submit" class="search-button-unique">
+                        Buscar Direccion
+                    </button>
+                </form>
+            </div>
+        </section>
+
+
+
+        <section class="checkout-page-unique">
+            <div class="checkout-wrapper-unique">
+                
+                <form id="checkout-form-unique" class="checkout-form-unique">
+                    <h2 class="form-section-title-unique">Detalles del cliente</h2>
+                    
+                    <div class="form-group-unique full-width-unique">
+                        <label for="email-unique">Email *</label>
+                        <input type="email" id="email-unique" name="email" required>
+                    </div>
+
+                    <div class="form-group-unique split-width-unique">
+                        <div class="input-half-unique">
+                            <label for="nombre-unique">Nombre *</label>
+                            <input type="text" id="nombre-unique" name="nombre" required>
+                        </div>
+                        <div class="input-half-unique">
+                            <label for="apellido-unique">Apellido *</label>
+                            <input type="text" id="apellido-unique" name="apellido" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group-unique full-width-unique">
+                        <label for="telefono-unique">Teléfono *</label>
+                        <input type="tel" id="telefono-unique" name="telefono" required>
+                    </div>
+                    <div class="form-group-unique full-width-unique">
+                        <label for="empresa-unique">Nombre de la empresa</label>
+                        <input type="text" id="empresa-unique" name="empresa">
+                    </div>
+
+                    <h2 class="form-section-title-unique shipping-title-unique">Detalles de envío</h2>
+                    
+                    <div class="form-group-unique full-width-unique">
+                        <label for="pais-unique">País/región *</label>
+                        <select id="pais-unique" name="pais" required>
+                            <option value="Mexico">México</option>
+                            </select>
+                    </div>
+                    
+                    <div class="form-group-unique full-width-unique">
+                        <label for="direccion-unique">Dirección *</label>
+                        <input type="text" id="direccion-unique" name="direccion" required>
+                    </div>
+
+                    <div class="form-group-unique split-width-unique">
+                        <div class="input-half-unique">
+                            <label for="ciudad-unique">Ciudad *</label>
+                            <input type="text" id="ciudad-unique" name="ciudad" required>
+                        </div>
+                        <div class="input-half-unique">
+                            <label for="region-unique">Región *</label>
+                            <select id="region-unique" name="region" required>
+                                <option value="Mexico">México</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group-unique full-width-unique">
+                        <label for="postal-unique">Código postal *</label>
+                        <input type="text" id="postal-unique" name="postal" value="55029" required>
+                    </div>
+
+                    <button type="submit" class="continue-btn-unique">
+                        Continuar
+                    </button>
+
+                    <h2 class="form-section-title-unique">Método de envío</h2>
+                    <div class="shipping-method-placeholder-unique">
+                        <p>Seleccionar opciones de envío...</p>
+                    </div>
+
+                    <h2 class="form-section-title-unique">Pago</h2>
+                    <div class="payment-placeholder-unique">
+                        <p>Seleccionar método de pago...</p>
+                    </div>
+                </form>
+
+                <aside class="order-summary-unique">
+                    <h2 class="summary-title-unique">Resumen del pedido (1)</h2>
+                    <button class="edit-cart-btn-unique">Editar carrito</button>
+
+                    <div id="summary-items-container-unique" class="summary-items-container-unique">
+                        <div class="summary-item-unique">
+                            <img src="/web/2/css/assets/wood/1.png" alt="Sello personalizado QR" class="item-image-unique">
+                            <div class="item-details-unique">
+                                <p class="item-name-unique">Sello personalizado con código QR para Instagram (IG QR)</p>
+                                <p class="item-qty-unique">Cant.: 1</p>
+                                <button class="show-more-unique">Mostrar más</button>
+                            </div>
+                            <p class="item-price-unique">280,00 MXN</p>
+                        </div>
+                    </div>
+                    
+                    <div class="promotion-container-unique">
+                        <a href="#" class="promo-link-unique">Ingresar código de promoción</a>
+                    </div>
+
+                    <div class="price-breakdown-unique">
+                        <div class="breakdown-row-unique subtotal">
+                            <span>Subtotal</span>
+                            <span id="subtotal-unique">280,00 MXN</span>
+                        </div>
+                        <div class="breakdown-row-unique shipping">
+                            <span>Entrega/envío</span>
+                            <span id="shipping-unique">--</span>
+                        </div>
+                        <div class="breakdown-row-unique tax">
+                            <span>Impuesto</span>
+                            <span id="tax-unique">41,30 MXN</span>
+                        </div>
+                    </div>
+
+                    <div class="breakdown-row-unique total-unique">
+                        <span class="total-label-unique">Total</span>
+                        <span id="total-unique" class="total-amount-unique">321,30 MXN</span>
+                    </div>
+
+                    <p class="secure-payment-unique">
+                        <span class="lock-icon-unique">🔒</span> Pago seguro
+                    </p>
+                </aside>
+
+            </div>
+        </section>
+
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script src="/web/2/js/header.js"></script>
+    <script src="/web/2/js/footer.js"></script>
+    <script src="/web/2/js/index2.js"></script>
+    <script src="/web/2/js/entregas1.js"></script>
+
+</body>
+</html>

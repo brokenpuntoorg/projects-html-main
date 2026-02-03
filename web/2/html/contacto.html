@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contacto</title>
+    <link rel="stylesheet" href="/web/2/css/css-code/contacto..css">
+    <link rel="stylesheet" href="/web/NORMALIZE/normalize.css">
+    <link rel="shortcut icon" href="/web/2/footerlogo.png" type="image/x-icon">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+    
+    <main class="contact-page-container">
+
+        <header class="contact-header">
+            <h1 class="header-title">Contáctanos y Cotiza tu Sello</h1>
+            <p class="header-subtitle">Estamos listos para ayudarte a elegir el sello perfecto para tus necesidades. Rellena el formulario o usa nuestras vías directas.</p>
+        </header>
+
+        <div class="contact-content-grid">
+            
+            <section class="contact-info1">
+                <h2 class="info-title">Información de Contacto Directa</h2>
+                
+                <div class="info-item">
+                    <span class="info-icon">📞</span>
+                    <h3>Teléfono</h3>
+                    <p><a href="tel:+525512345678" class="info-link">+52 55 1234 5678</a></p>
+                    <p class="info-note">Lunes a Viernes, 9:00 - 18:00 (CST)</p>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-icon">📧</span>
+                    <h3>Correo Electrónico</h3>
+                    <p><a href="mailto:ventas@lacasadelsello.com" class="info-link">ventas@lacasadelsello.com</a></p>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-icon">📍</span>
+                    <h3>Ubicación Central</h3>
+                    <address>
+                        Av. de la Impresión #45,<br>
+                        Col. Industrial, C.P. 54760,<br>
+                        Estado de México, México
+                    </address>
+                    <p><a href="URL_GOOGLE_MAPS" target="_blank" class="info-link map-link">Ver en Google Maps</a></p>
+                </div>
+
+            </section>
+
+            <section class="contact-form-section">
+                <h2 class="form-title">Formulario de Cotización Rápida</h2>
+                
+                <form id="quote-form" class="quote-form" action="TU_ENDPOINT_DE_PROCESAMIENTO" method="POST">
+                    
+                    <div class="form-group">
+                        <label for="name">Nombre Completo <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Teléfono (WhatsApp)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">Entidad Federativa <span class="required">*</span></label>
+                        <select id="state" name="state" required>
+                            <option value="AG">Aguascalientes</option>
+                            <option value="BCN">Baj California Norte</option>
+                            <option value="BCS">Baja California Sur</option>
+                            <option value="CHIS">Chiapas</option>
+                            <option value="CHI">Chiahuahua</option>
+                            <option value="CDMX">Ciudad de México</option>
+                            <option value="COA">Coahuila</option>
+                            <option value="COL">Colima</option>
+                            <option value="DUR">Durango</option>
+                            <option value="EDOMEX">Estado de México</option>
+                            <option value="GUA">Guanajuato</option>
+                            <option value="GUE">Guerrero</option>
+                            <option value="HID">Hidalgo</option>
+                            <option value="JAL">Jalisco</option>
+                            <option value="MICH">Michoacán</option>
+                            <option value="MOR">Morelos</option>
+                            <option value="NAY">Nayarit</option>
+                            <option value="OAX">Oaxaca</option>
+                            <option value="NL">Nuevo León</option>
+                            <option value="PUE">Puebla</option>
+                            <option value="QUE">Queretaro</option>
+                            <option value="SLP">San Luis Potosi</option>
+                            <option value="SIN">Sinaloa</option>
+                            <option value="SON">Sonora</option>
+                            <option value="TAB">Tabasco</option>
+                            <option value="TAM">Tamaulipas</option>
+                            <option value="TLX">Tlaxcala</option>
+                            <option value="VER">Veracruz</option>
+                            <option value="YUC">Yucatan</option>
+                            <option value="ZAC">Zacatecas</option>
+                            </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="stamp-type">Tipo de Sello a Cotizar <span class="required">*</span></label>
+                        <select id="stamp-type" name="stamp_type" required>
+                            <option value="">Selecciona el Tipo</option>
+                            <option value="GOMA_AUTOMATICO">Sello de Goma Automático (Trodat/Shiny)</option>
+                            <option value="GOMA_MADERA">Sello de Goma de Madera (Tradicional)</option>
+                            <option value="LACRE">Sello de Lacre (Cera)</option>
+                            <option value="SECO">Sello Seco o Troquel (Relieve)</option>
+                            <option value="FECHADOR">Fechadores y Foliadores</option>
+                            <option value="OTRO">Otro tipo (Especificar en mensaje)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="details">Detalles y Especificaciones (Tamaño, Cantidad, Diseño)</label>
+                        <textarea id="details" name="details" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">Enviar Solicitud de Cotización</button>
+                    </div>
+
+                    <p class="form-note required-note">Los campos marcados con <span class="required">*</span> son obligatorios.</p>
+                    <div id="form-message" class="form-message"></div>
+
+                </form>
+            </section>
+
+        </div>
+    </main>
+            
+
+  <div id="footer-placeholder"></div>
+
+    <script src="/web/2/js/header.js"></script>
+    <script src="/web/2/js/footer.js"></script>
+    <script src="/web/2/js/index2.js"></script>
+    <script src="/web/2/js/contacto.js"></script>
+
+</body>
+</html>

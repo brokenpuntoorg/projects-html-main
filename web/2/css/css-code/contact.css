@@ -1,0 +1,90 @@
+.form-section {
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.form-title {
+    color: #d11e40;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-description {
+    color: #666;
+    font-size: 1em;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.account-form {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    padding: 30px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column; /* Apila los campos en móvil */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.form-submit {
+    text-align: left;
+}
+
+.submit-btn {
+    background-color: #d11e40;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #a01530;
+}
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+      .form-row {
+        flex-direction: row; /* Coloca los campos en fila */
+}
+
+    .form-group {
+        flex: 1; /* Distribuye el espacio equitativamente */
+}
+
+    .full-width-field .form-group {
+        flex: 1;
+}
+}

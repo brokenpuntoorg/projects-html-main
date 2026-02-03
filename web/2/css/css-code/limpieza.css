@@ -1,0 +1,194 @@
+:root {
+    --color-red: #e51d38; 
+    --color-cyan: #0087cb; 
+    --color-text: #333;
+    --color-background: #f8f8f8;
+}
+
+.tutorial-page-mantenimiento {
+    font-family: Arial, sans-serif; 
+    background-color: var(--color-background);
+    color: var(--color-text);
+    padding: 20px 0;
+}
+
+.tutorial-article-mantenimiento {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* --- ENCABEZADO Y TÍTULO --- */
+.tutorial-header-mantenimiento {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.tutorial-category-mantenimiento {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--color-red);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.tutorial-title-mantenimiento {
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.tutorial-subtitle-mantenimiento {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.tutorial-image-hero-mantenimiento {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+/* --- CONTENIDO DEL TUTORIAL (PASOS) --- */
+.tutorial-content-mantenimiento p {
+    line-height: 1.6;
+    margin-bottom: 1.2em;
+    font-size: 1rem;
+}
+
+.intro-paragraph-mantenimiento {
+    font-weight: bold;
+    color: var(--color-cyan);
+    border-left: 3px solid var(--color-red);
+    padding-left: 15px;
+    font-size: 1.05rem;
+}
+
+.content-heading-mantenimiento {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.content-heading-mantenimiento.step-number {
+    color: var(--color-red);
+}
+
+.tutorial-content-mantenimiento ol, .tutorial-content-mantenimiento ul.mechanism-list {
+    margin: 15px 0 25px 0;
+    padding-left: 25px;
+}
+
+.tutorial-content-mantenimiento ol li, .tutorial-content-mantenimiento ul.mechanism-list li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Tip Box (Éxito/Consejo) */
+.tip-box-mantenimiento {
+    padding: 15px;
+    background-color: #d4edda; /* Verde suave */
+    border-left: 5px solid #28a745;
+    margin: 30px 0;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.tip-box-mantenimiento strong {
+    color: #155724;
+}
+
+/* Warning Box (Advertencia/Peligro) */
+.warning-box-mantenimiento {
+    padding: 15px;
+    background-color: #fff3cd; /* Amarillo suave para la nota de precaución */
+    border-left: 5px solid #ffc107;
+    margin: 30px 0;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.warning-box-mantenimiento strong {
+    color: #856404;
+}
+
+/* --- CTA (Llamada a la Acción) --- */
+.tutorial-cta-mantenimiento {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--color-cyan); /* Fondo Cian/Azul */
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.cta-title-mantenimiento {
+    font-size: 1.8rem;
+    margin-top: 0;
+    color: #fff;
+}
+
+.tutorial-cta-mantenimiento p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.cta-button-mantenimiento {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-red); 
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px; 
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button-mantenimiento:hover {
+    background-color: #b2162c;
+    transform: translateY(-2px);
+}
+
+@media (min-width: 992px) {
+    .tutorial-article-mantenimiento {
+          padding: 40px 80px;
+      }
+
+      .tutorial-title-mantenimiento {
+          font-size: 3rem;
+      }
+      
+      .tutorial-subtitle-mantenimiento {
+          font-size: 1.1rem;
+      }
+
+      .tutorial-image-hero-mantenimiento {
+          max-height: 400px;
+      }
+      
+      .content-heading-mantenimiento {
+          font-size: 1.7rem;
+      }
+
+      .tutorial-cta-mantenimiento {
+          padding: 40px 60px;
+      }
+}    
+

@@ -1,0 +1,106 @@
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modelo</title>
+    <link rel="stylesheet" href="/web/2/css/css-code/modelo.css">
+    <link rel="stylesheet" href="/web/NORMALIZE/normalize.css">
+    <link rel="shortcut icon" href="/web/2/footerlogo.png" type="image/x-icon">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <main class="design-page-container">
+
+        <header class="design-hero">
+            <h1 class="hero-title">Diseño de Sellos con AutoCAD: Precisión para Grabado Láser</h1>
+            <p class="hero-subtitle">
+                Aprovecha la precisión de AutoCAD para crear sellos con geometrías perfectas. Aquí te mostramos las pautas esenciales para preparar tu archivo para el grabado.
+            </p>
+        </header>
+
+        <section class="section-advantages">
+            <h2 class="section-heading">Ventajas de AutoCAD en la Fabricación de Sellos</h2>
+            <div class="advantage-grid">
+                <div class="advantage-card">
+                    <span class="advantage-icon">📏</span>
+                    <h3>Precisión Milimétrica</h3>
+                    <p>Las coordenadas y las líneas de AutoCAD garantizan que el diseño se grabe con la máxima exactitud, ideal para sellos técnicos o de ingeniería.</p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-icon">📐</span>
+                    <h3>Geometría Vectorial</h3>
+                    <p>El formato nativo de AutoCAD (DWG/DXF) es vectorial, lo que asegura una escalabilidad sin pérdida de calidad y trazos limpios para el láser.</p>
+                </div>
+                <div class="advantage-card">
+                    <span class="advantage-icon">⚙️</span>
+                    <h3>Optimización de Flujo</h3>
+                    <p>Facilita la conversión rápida de planos, logos o detalles técnicos directamente en el diseño final del sello, optimizando el tiempo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-preparation">
+            <h2 class="section-heading">Prepara tu Archivo DWG/DXF en 5 Pasos</h2>
+            
+            <div class="step-list">
+                <article class="prep-step">
+                    <span class="step-icon">1</span>
+                    <h3>Unidades y Escala 1:1</h3>
+                    <p>Dibuja el sello a su **tamaño real** (escala 1:1) en milímetros (mm). Si el sello final será de 50x30mm, tu espacio modelo debe reflejar esas dimensiones.</p>
+                </article>
+                
+                <article class="prep-step">
+                    <span class="step-icon">2</span>
+                    <h3>Simplifica con OVERKILL y PURGE</h3>
+                    <p>Usa el comando **OVERKILL** para eliminar líneas duplicadas y superpuestas (que harían que el láser pase dos veces y queme el material). Luego usa **PURGE (LIMPIA)** para eliminar bloques, capas y estilos no utilizados.</p>
+                </article>
+                
+                <article class="prep-step">
+                    <span class="step-icon">3</span>
+                    <h3>Convierte Todo a LÍNEAS y POLILÍNEAS</h3>
+                    <p>**Explota (EXPLODE)** bloques, referencias y atributos. El láser necesita trazos simples. Evita las **SPLINES** o simplifícalas al máximo, ya que ralentizan el grabado y pueden afectar la precisión.</p>
+                </article>
+
+                <article class="prep-step">
+                    <span class="step-icon">4</span>
+                    <h3>Tipografía: Evita Textos Complejos</h3>
+                    <p>Utiliza fuentes **SHX** o textos muy simples (TXT de CAD) y explótalos a polilíneas si es posible. Las tipografías TrueType (TTF) pueden causar errores al ser interpretadas por el software láser.</p>
+                </article>
+                
+                <article class="prep-step">
+                    <span class="step-icon">5</span>
+                    <h3>Formato de Entrega Final: DXF o DWG</h3>
+                    <p>Guarda el archivo en el formato **DXF** (Drawing Exchange Format) o **DWG**, en una versión antigua (ej. AutoCAD 2013 o 2010) para asegurar la máxima compatibilidad con nuestro software de grabado láser.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-color-layer">
+            <h2 class="section-heading">Uso de Capas para Grabado y Corte</h2>
+            
+            <div class="color-tip-grid">
+                <div class="color-tip">
+                    <span class="tip-label" style="background-color: black;">GRABADO</span>
+                    <p>Las áreas que quieres que la goma grabe (que dejen tinta en el papel) deben ser definidas con **relleno SÓLIDO (Hatch)**. Usa el **color Negro (R0, G0, B0)** o el color 250 (negro total) de AutoCAD para el trazado y el relleno.</p>
+                </div>
+                <div class="color-tip">
+                    <span class="tip-label" style="background-color: red;">CORTE</span>
+                    <p>El contorno final del sello (la línea donde la pieza de goma debe ser cortada) debe ser una **polilínea cerrada** con un grosor de línea de **0.00 mm** y color **Rojo (R255, G0, B0)**.</p>
+                </div>
+            </div>
+            <div class="warning-box">
+                <p><strong>⚠️ Importante:</strong> El grabado es un proceso inverso. Lo que se ve negro en tu pantalla es lo que *quitaremos* para que la tinta no lo toque. **Asegúrate de espejear tu diseño horizontalmente (comando MIRROR)** antes de enviarlo, de lo contrario, tu sello imprimirá al revés.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="/web/2/js/header.js"></script>
+    <script src="/web/2/js/footer.js"></script>
+    <script src="/web/2/js/index2.js"></script>
+    <script src="/web/2/js/tutorial.js"></script>
+
+</body>
+</html>

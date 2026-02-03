@@ -1,0 +1,193 @@
+/* --- Variables CSS --- */
+:root {
+    --max-width: 1400px;
+    --card-bg: white;
+    --border-color-card: #e9ecef;
+    --header-bg-color: #0056b3;
+    --header-text-color: white;
+    --table-header-bg: #f2f2f2;
+    --table-border-color: #ddd;
+    --text-color: #333;
+    --light-gray-bg: #f8f8f8; 
+    --overlay-color: rgba(0, 0, 0, 0.1); 
+    --transition-speed: 0.3s;
+}
+
+/* --- Estilos Base Globales --- */
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    background-color: #f4f4f4; 
+    color: #333;
+}
+.main-container {
+    max-width: var(--max-width); 
+    margin: 40px auto;
+    padding: 0 20px;
+}
+h1 {
+    text-align: center;
+    color: var(--header-bg-color);
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+/* --- Contenedor de la Lista de Productos --- */
+.product-list-container {
+    display: grid;
+    gap: 40px; 
+    padding: 0;
+    margin: 0 auto;
+}
+
+/* --- Estilo de Cada Tarjeta de Producto (Base) --- */
+.product-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color-card);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow: hidden; 
+    color: var(--text-color);
+    transition: box-shadow var(--transition-speed);
+    position: relative; 
+}
+
+/* --- Estilo de Tarjeta SIMPLIFICADA (Para el Layout de 6 Productos) --- */
+.simplified-product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+.simplified-product-card .product-image-section {
+    flex: none;
+    width: 150px; 
+    height: 150px;
+    margin-bottom: 15px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+.simplified-product-card .product-image {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+.simplified-product-card .product-model-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--header-bg-color);
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* --- SECCIÓN DE IMAGEN (Zoom y Overlay) --- */
+.product-image-section {
+    /* Base para el overlay y el recorte del zoom */
+    position: relative; 
+    overflow: hidden; 
+    display: flex; /* Asegura que la imagen esté centrada si no es la tarjeta simplificada */
+    justify-content: center;
+    align-items: center;
+    /* Los estilos de tamaño son sobrescritos por .simplified-product-card o .product-main-info */
+}
+.product-image {
+    transition: transform var(--transition-speed) ease-in-out; 
+}
+
+/* CLAVE: Pseudo-elemento para el Overlay */
+.product-image-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color);
+    opacity: 0; 
+    transition: opacity var(--transition-speed);
+    pointer-events: none; 
+}
+
+/* ------------------------------------------------------------------ */
+/* --- EFECTOS DE HOVER --- */
+/* ------------------------------------------------------------------ */
+
+.product-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+}
+
+.product-card:hover .product-image-section::after {
+    opacity: 1; 
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.1); 
+}
+
+
+/* --- SECCIÓN DE DETALLES (Si se usan) --- */
+.product-main-info {
+    display: flex; 
+    flex-wrap: wrap; 
+    padding: 20px;
+    gap: 20px;
+    align-items: flex-start; 
+}
+/* ... Estilos para tablas, headers, etc. (mantienen las reglas anteriores) ... */
+.product-details-section {
+    flex: 1; 
+    min-width: 280px; 
+}
+.product-header {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+/*... (otras reglas de tablas, specs, etc.) ...*/
+
+/* ------------------------------------------------------------------ */
+/* --- MEDIA QUERIES (Layout de Columnas) --- */
+/* ------------------------------------------------------------------ */
+
+/* Desktop (>= 992px): 3 Columnas */
+@media screen and (min-width: 992px) {
+    .product-list-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+/* Tablet (601px a 991px): 2 Columnas */
+@media screen and (min-width: 601px) and (max-width: 991px) {
+    .product-list-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+/* Mobile (<= 600px): 1 Columna */
+@media screen and (max-width: 600px) {
+    .product-list-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .main-container {
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+    .simplified-product-card .product-image-section {
+        width: 120px; /* Reducir en móvil */
+        height: 120px;
+    }
+}

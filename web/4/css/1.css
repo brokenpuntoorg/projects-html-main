@@ -1,0 +1,379 @@
+/* ========================================================== */
+/* ESTILOS MÓVIL Y TABLET (Mobile First/Default - hasta 1024px) */
+/* ========================================================== */
+
+/* --- Estilos del Header Principal (Fondo, sombra) --- */
+.main-header-auto {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Ajustes a la fila principal en móvil --- */
+.navbar-primary-auto {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.logo-auto img {
+    max-width: 120px;
+    height: auto;
+}
+
+/* Ocultar elementos de desktop en la vista móvil */
+.top-bar-auto,
+.main-nav-top-auto,
+.secondary-nav-auto,
+.cta-call-auto {
+    display: none !important;
+}
+
+/* Mostrar el botón de menú móvil */
+.menu-toggle-auto {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: #333333;
+}
+
+/* Acciones de Navegación (Búsqueda, Carrito, Menú) */
+.nav-actions-auto {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-btn-auto,
+.cart-btn-auto {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: #333333;
+    transition: color 0.2s;
+}
+
+.cart-auto {
+    position: relative;
+}
+
+.cart-count-auto {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #cc0000;
+    color: white;
+    border-radius: 50%;
+    padding: 1px 5px;
+    font-size: 10px;
+    line-height: 1;
+}
+
+/* --- Estilos del Menú Off-Canvas (Lateral) --- */
+.off-canvas-menu-auto {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Inicialmente fuera de la pantalla */
+    width: 300px; /* Ancho del menú */
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    overflow-y: auto;
+    transition: right 0.3s ease-in-out;
+}
+
+/* Clase que JS agrega para mostrar el menú */
+.off-canvas-menu-auto.open {
+    right: 0;
+}
+
+.close-menu-auto {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+.mobile-top-actions {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    text-align: right;
+}
+
+.ingresar-btn-auto {
+    color: #333333;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav-list > li {
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+}
+
+.mobile-nav-list > li > a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333333;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* Botón de expansión de submenú móvil */
+.submenu-toggle-auto {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.submenu-toggle-auto::after {
+    content: '+';
+    font-size: 20px;
+    color: #333;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.submenu-toggle-auto[aria-expanded="true"]::after {
+    content: '-';
+}
+
+/* Submenú colapsable */
+.submenu-auto {
+    list-style: none;
+    padding: 0 0 0 15px;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    background-color: #f9f9f9;
+}
+
+.submenu-auto li a {
+    display: block;
+    padding: 10px 15px;
+    font-size: 13px;
+    font-weight: normal;
+    color: #555;
+    text-transform: none;
+}
+
+/* Elemento Call to Action final en el menú móvil */
+.cta-item-auto a {
+    color: #cc0000;
+    font-weight: bold;
+}
+
+/* --- Overlay de la página --- */
+.page-overlay-auto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.page-overlay-auto.visible {
+    display: block;
+    opacity: 1;
+}
+/* ========================================================== */
+/* ESTILOS DESKTOP (> 1024px)                                 */
+/* ========================================================== */
+
+@media (min-width: 1025px) {
+    
+    /* Mostrar elementos de Desktop */
+    .top-bar-auto,
+    .main-nav-top-auto,
+    .secondary-nav-auto,
+    .cta-call-auto {
+        display: flex !important;
+    }
+
+    /* Ocultar elementos de móvil */
+    .menu-toggle-auto,
+    .off-canvas-menu-auto,
+    .page-overlay-auto {
+        display: none !important;
+    }
+
+    /* --- 1. Top Bar (Ingresar) --- */
+    .top-bar-auto {
+        background-color: #f7f7f7;
+        justify-content: flex-end; /* Alinea el botón a la derecha */
+        padding: 5px 20px;
+        font-size: 12px;
+    }
+    
+    /* --- 2. Fila Principal (Logo, Links Superiores, Acciones) --- */
+    .navbar-primary-auto {
+        padding: 10px 20px;
+    }
+
+    .logo-auto img {
+        max-width: 150px;
+    }
+
+    /* Enlaces superiores (BLOG, CONTACTO) */
+    .main-nav-top-auto {
+        flex-grow: 1; 
+        text-align: center;
+    }
+
+    .nav-list-top-auto {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .nav-list-top-auto a {
+        text-decoration: none;
+        color: #333333;
+        font-weight: 600;
+        font-size: 14px;
+    }
+    
+    /* Call to Action (Llamar) */
+    .cta-call-auto {
+        align-items: center;
+        text-decoration: none;
+        color: #cc0000;
+        font-weight: bold;
+        font-size: 13px;
+        padding: 5px 10px;
+        border: 1px solid #cc0000;
+        border-radius: 5px;
+    }
+
+    .cta-call-auto svg {
+        margin-right: 5px;
+        color: #cc0000;
+    }
+    
+    /* --- 3. Fila de Categorías (El menú de 15 submenús) --- */
+    .secondary-nav-auto {
+        background-color: #1a1a1a; 
+        padding: 0 20px;
+        display: flex; /* Asegura que la nav sea flexible para centrar/alinear */
+    }
+
+    .nav-list-secondary-auto {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap; /* CLAVE para la doble fila */
+        justify-content: flex-start; 
+        width: 100%;
+    }
+
+    .nav-list-secondary-auto > li {
+        position: relative;
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-right: 15px; 
+    }
+
+    .nav-list-secondary-auto > li > a {
+        display: block;
+        padding: 10px 5px; 
+        color: #ffffff;
+        text-decoration: none;
+        white-space: nowrap; 
+    }
+
+    .nav-list-secondary-auto > li:hover > a,
+    .nav-list-secondary-auto > li.active > a {
+        background-color: #cc0000;
+    }
+
+    /* Submenús Dropdown (Hover) */
+    .submenu-desktop {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        list-style: none;
+        padding: 10px 0;
+        margin: 0;
+        min-width: 250px;
+        z-index: 1010;
+    }
+
+    .nav-list-secondary-auto > li:hover .submenu-desktop {
+        display: block; 
+    }
+
+    .submenu-desktop li a {
+        display: block;
+        padding: 8px 15px;
+        text-decoration: none;
+        color: #333333;
+        font-size: 13px;
+    }
+
+    .submenu-desktop li a:hover {
+        background-color: #f5f5f5;
+        color: #cc0000;
+    }
+
+    /* Efectos Hover (Se recomienda agregarlos) */
+    .search-btn-auto:hover,
+    .cart-btn-auto:hover,
+    .nav-list-top-auto a:hover {
+        color: #cc0000;
+    }
+
+    .cta-call-auto:hover {
+        background-color: #cc0000;
+        color: #ffffff;
+    }
+
+    .cta-call-auto:hover svg {
+        color: #ffffff;
+    }
+}

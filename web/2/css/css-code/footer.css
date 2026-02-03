@@ -1,0 +1,161 @@
+
+.main-footer {
+    background-color: #000; /* Color de fondo oscuro */
+    color: #b5b5b5; /* Color del texto secundario */
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-main {
+    border-bottom: 1px solid #444; /* Línea divisoria */
+    padding-bottom: 20px;
+}
+
+.footer-column {
+    margin-bottom: 30px;
+}
+.logo-container .icon-image{
+    width: 24px;
+    height: 24px;
+}
+/* Esta clase es la clave: oculta los elementos en móvil por defecto */
+.hidden-on-mobile {
+    display: none;
+}
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+.contact-info p {
+    margin: 5px 0;
+    font-size: 15px;
+    text-align: center;
+}
+.footer-column h4 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-column li {
+    margin-bottom: 10px;
+}
+.footer-column a {
+    color: #b5b5b5;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+.footer-column a:hover {
+    color: #fff;
+}
+/* Sección de derechos de autor y enlaces adicionales */
+.footer-bottom {
+    padding-top: 20px;
+}
+.copyright-section p,
+.copyright-section a {
+    font-size: 12px;
+    color: #b5b5b5;
+    text-decoration: none;
+    margin: 5px 0;
+    display: block;
+}
+.also-of-interest {
+    margin-top: 20px;
+}
+.also-of-interest h4 {
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.also-of-interest a {
+    font-size: 12px;
+    color: #b5b5b5;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+    .main-footer {
+        text-align: left;
+    }
+    
+    .footer-main {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-bottom: 40px;
+    }
+
+    .footer-column {
+        margin-bottom: 0;
+    }
+    
+    /* Muestra las columnas ocultas en escritorio */
+    .hidden-on-mobile {
+        display: block;
+    }
+
+    .contact-info {
+        max-width: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+ 
+    }
+
+    .social-links {
+        justify-content: flex-start;
+    }
+
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 30px;
+        border-top: 1px solid #444; /* Línea divisoria en la parte inferior */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .copyright-section a {
+        display: inline;
+        margin-right: 15px;
+    }
+
+    .also-of-interest {
+        margin-top: 15px;
+    }
+    
+    .also-of-interest h4,
+    .also-of-interest a {
+        display: inline;
+    }
+
+    .also-of-interest a {
+        margin-left: 10px;
+    }
+    .footer-bottom{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+    }
+    .footer-bottom a:hover{
+      color: #d11e40;
+    }
+
+}    
+

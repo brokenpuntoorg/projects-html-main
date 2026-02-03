@@ -1,0 +1,1369 @@
+.product-focus-hero {
+    position: relative;
+    width: 100%;
+    min-height: 500px; 
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+
+    /* 1. Imagen de Fondo y Gradiente Oscuro (Overlay) */
+    background-image: 
+        /* Overlay oscuro y morado para visibilidad del texto */
+        linear-gradient(90deg, rgba(133, 99, 161, 0.9) 0%, rgba(33, 8, 59, 0.7) 100%), 
+        /* Tu imagen de fondo. ¡Asegúrate de que la URL aquí sea la correcta! */
+        url('/web/2/css/assets/tienda/hero.png'); 
+        
+    background-size: cover;
+    background-position: center center;
+}
+
+.product-focus-hero .hero-content-container {
+    z-index: 2;
+    max-width: 500px;
+    width: 100%;
+}
+
+.product-focus-hero .hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.product-focus-hero .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+/* El botón CTA sigue siendo el mismo diseño */
+.product-focus-hero .cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-focus-hero .cta-button:hover {
+    background-color: #a31835;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Estilos Generales y Mobile First */
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.products-carousel-section {
+    padding: 20px 0;
+    max-width: 1800px;
+    margin: 0 auto;
+    overflow: hidden; /* Oculta los elementos que se salen del contenedor */
+}
+
+.carousel-title {
+    font-size: 1.9rem;
+    font-weight: bold;
+    color: #a31835;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Oculta los elementos que se salen del track */
+}
+
+.carousel-track-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.product-card {
+    flex-shrink: 0;
+    width: 100%; /* Un solo contenedor por vista en móvil */
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #E63946;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+}
+
+.product-badge-basic {
+    background-color: #f1c40f;
+}
+
+.product-badge-new {
+    background-color: #2ecc71;
+}
+
+.product-image {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 15px;
+    background-color: red;
+}
+
+.product-details {
+    padding: 10px;
+}
+
+.product-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    margin: 0 0 5px 0;
+    height: 3rem; /* Altura fija para evitar saltos de layout */
+    overflow: hidden;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+}
+
+.product-tax {
+    font-size: 0.8rem;
+    color: #888;
+    margin: 0 0 10px 0;
+}
+
+/* Enlace "Agregar al carrito" */
+.add-to-cart-link {
+    display: none; /* Oculto por defecto en móvil y escritorio */
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.product-card:hover .add-to-cart-link {
+    opacity: 1;
+}
+
+/* Botones de navegación */
+.carousel-button {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: red;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+
+/* Estilos Generales y Mobile First */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.personalized-stamp-section {
+    position: relative;
+    background-color: #f8f8f8; /* Color de fondo base */
+    background-image: linear-gradient(rgba(243, 242, 248, 0.8), rgba(9, 23, 87, 0.8))
+    ,url('/web/2/css/assets/autoink/hero.png'); /* Reemplaza con la URL de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centrar todo el contenido para móvil */
+    height: 80vh;
+}
+
+.stamp-content {
+    background-color: transparent;
+    max-width: 500px;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #a31835; /* Color rojo del título */
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 0;
+}
+
+.question {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.help-text {
+    font-size: 0.9rem;
+    color: #fff;
+    line-height: 1.4;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+}
+
+.store-button {
+    display: inline-block;
+    padding: 10px 30px;
+    border: 2px solid #E63946; /* Borde rojo */
+    color: #fff; /* Texto rojo */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.store-button:hover {
+    background-color: #E63946;
+    color: white;
+}
+
+
+/* --- Estilos Generales y Mobile First --- */
+
+
+.products-carousel-unique-section {
+    padding: 2rem 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.products-carousel-unique-section .carousel-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.products-carousel-unique-section .carousel-container-unique {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.products-carousel-unique-section .carousel-track-container-unique {
+    overflow: hidden;
+    position: relative;
+}
+
+.products-carousel-unique-section .carousel-track-unique {
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* --- Ajuste para Mostrar Botones en Móvil --- */
+.products-carousel-unique-section .carousel-button-unique {
+    /* Hacemos que los botones sean visibles */
+    display: flex; 
+    
+    /* Posicionamiento y Estilo Básico para Móvil */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    
+    background-color: rgba(0, 0, 0, 0.4); /* Un poco más transparente */
+    color: #fff;
+    border: none;
+    font-size: 1.5rem; /* Reducimos el tamaño en móvil */
+    padding: 5px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+}
+
+.products-carousel-unique-section .prev-button-unique {
+    left: 5px; /* Más cerca del borde */
+}
+
+.products-carousel-unique-section .next-button-unique {
+    right: 5px; /* Más cerca del borde */
+}
+
+/* Estilos de las tarjetas de producto */
+.products-carousel-unique-section .product-card-link-unique {
+    text-decoration: none;
+    color: inherit;
+    flex-shrink: 0; 
+    width: calc(100% / 1.5);
+}
+
+.products-carousel-unique-section .product-card-unique {
+    margin: 0 10px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+    overflow: hidden; 
+}
+
+/* Efectos de Zoom y Overlay */
+.products-carousel-unique-section .product-image-container-unique {
+    position: relative;
+    overflow: hidden;
+}
+
+.products-carousel-unique-section .product-image-unique {
+    width: 100%;
+    height: 18em;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.products-carousel-unique-section .image-overlay-unique {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 18em;
+    background-color: rgba(0, 0, 0, 0.2); 
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.products-carousel-unique-section .product-card-link-unique:hover .product-image-unique {
+    transform: scale(1.1);
+}
+
+.products-carousel-unique-section .product-card-link-unique:hover .image-overlay-unique {
+    opacity: 1;
+}
+
+
+
+.products-carousel-unique-section .product-name-unique {
+    font-size: 1rem;
+    margin: 0 0 5px;
+    color: #333;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    height: 2.4em;
+}
+
+.products-carousel-unique-section .product-price-unique {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #d82b2d;
+    margin: 0;
+}
+
+
+/* Bloque Mobile First */
+/* ... (otros estilos) ... */
+
+/* Asegura el ancho del enlace de la tarjeta */
+.products-carousel-unique-section .product-card-link-unique {
+    text-decoration: none;
+    color: inherit;
+    flex-shrink: 0; 
+    /* Lo mantenemos así, pero el JS lo ajustará para centrar */
+    width: calc(100% / 1.5); 
+}
+
+.products-carousel-unique-section .product-card-unique {
+    margin: 0 10px; /* Margen de 10px a cada lado */
+    /* ... (otros estilos) ... */
+}
+
+
+
+
+/* Estilos generales y Mobile-First */
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center; /* Centrar todo el contenido en móvil */
+}
+
+.hero-content {
+    background-image: url('/web/2/css/assets/section/hero5.avif'); /* Reemplaza con la URL de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px 250px;
+    color: white;
+    position: relative;
+}
+
+.hero-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay oscuro para mejor legibilidad */
+    z-index: 1;
+}
+
+.main-heading {
+    position: relative;
+    z-index: 2;
+    font-size: 2rem;
+    font-weight: bold;
+
+}
+
+.description {
+    position: relative;
+    z-index: 2;
+    font-size: 1.2rem;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.bottom-cta {
+    background-color: #274D82; /* Color azul */
+    color: white;
+    padding: 40px 20px;
+}
+
+.cta-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos Generales y Mobile First */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.stamps-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #cccccc79; /* Color de fondo gris claro */
+    text-align: center; /* Centrar todo el contenido para móvil */
+}
+
+.stamps-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #E63946; /* Color rojo del título */
+    margin-bottom: 10px;
+}
+
+.stamps-description {
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto 20px;
+    line-height: 1.5;
+}
+
+.stamps-image-container {
+    width: 100%;
+}
+
+.stamps-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Estilos Generales y Mobile First */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.pocket-stamps-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #cccccc79; /* Color de fondo gris claro */
+    text-align: center; /* Centrar todo el contenido para móvil */
+}
+
+.pocket-stamps-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #E63946; /* Color rojo del título */
+    margin-bottom: 10px;
+}
+
+.pocket-stamps-description {
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto 20px;
+    line-height: 1.5;
+}
+
+.pocket-stamps-image-container {
+    width: 100%;
+}
+
+.pocket-stamps-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+/* Estilos generales y Mobile-First */
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('URL_IMAGEN_FONDO_SUPERIOR_MOVIL.jpg'); /* Reemplaza con la URL de tu imagen de fondo para móvil */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay oscuro para mejor legibilidad */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.main-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.description {
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.scroll-button-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.scroll-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    color: #274D82;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.scroll-button:hover {
+    transform: translateY(-5px);
+}
+
+.chat-bubble {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #E63946;
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Estilos Generales y Mobile First */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.inks-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #cccccc79; /* Color de fondo gris claro */
+    text-align: center; /* Centrar todo el contenido para móvil */
+}
+
+.inks-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #E63946; /* Color rojo del título */
+    margin-bottom: 10px;
+}
+
+.inks-description {
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto 20px;
+    line-height: 1.5;
+    color: #000;
+}
+
+.inks-image-container {
+    width: 100%;
+    order: 1; /* Por defecto, la imagen va después del texto en móvil */
+}
+
+.inks-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Estilos Generales y Mobile First */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.wood-stamps-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #cccccc79; /* Color de fondo gris claro */
+    text-align: center; /* Centrar todo el contenido para móvil */
+}
+
+.wood-stamps-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #E63946; /* Color rojo del título */
+    margin-bottom: 10px;
+}
+
+.wood-stamps-description {
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto 20px;
+    line-height: 1.5;
+    color: #000;
+}
+
+.wood-stamps-image-container {
+    width: 100%;
+}
+
+.wood-stamps-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Estilos Generales y Mobile First */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: white; /* Color de texto blanco para contraste con el fondo oscuro */
+}
+
+.history-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #A32A2A; /* Color de fondo rojizo */
+    background-image: linear-gradient(rgba(163, 42, 42, 0.8), rgba(163, 42, 42, 0.8))
+    ,url('/web/2/css/assets/herro.jpg'); /* Reemplaza con la URL de tu imagen de fondo si tiene textura */
+    background-size: cover;
+    background-position: center;
+    text-align: center; /* Centrar todo el contenido para móvil */
+    cursor: pointer;
+}
+
+.history-content {
+    max-width: 800px; /* Ancho máximo para el contenido de texto */
+    width: 100%;
+}
+
+.history-main-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.history-date {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.history-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+
+/* Estilos generales y Mobile-First */
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.brands-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.brands-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.brand-logo {
+    max-width: 150px;
+    height: auto;
+    /* Agrega una transición para un efecto suave */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto de zoom al pasar el cursor */
+.brand-logo:hover {
+    transform: scale(1.5); /* Aumenta el tamaño en un 10% */
+}
+
+/* Media Query para Escritorio */
+@media (min-width: 768px) {
+    .brands-container {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .brand-logo {
+        max-width: 200px;
+    }
+}
+
+/* Estilos generales y mobile-first */
+.form-section {
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.form-title {
+    color: #d11e40;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 15px;
+}
+
+.form-description {
+    color: #666;
+    font-size: 1em;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.account-form {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    padding: 30px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column; /* Apila los campos en móvil */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #f0f0f0;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.form-submit {
+    text-align: left;
+}
+
+.submit-btn {
+    background-color: #d11e40;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #a01530;
+}
+
+
+
+/* --- Estilos Generales para Móvil (Mobile-First) --- */
+
+
+.submit-btn {
+    background-color: #d11e40;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #a01530;
+}
+@media (min-width: 992px) {
+   .product-focus-hero {
+        min-height: 650px;
+        /* Ajuste de Fondo para Desktop: Imagen a la derecha y oscuridad a la izquierda */
+        background-position: right center;
+        background-image: 
+            linear-gradient(90deg, rgba(31, 12, 47, 0.9) 0%, rgba(31, 12, 47, 0.3) 60%, rgba(80, 33, 121, 0.05) 100%),
+            url('/web/2/css/assets/tienda/her.webp');
+
+        /* Alineación del contenido (texto) a la izquierda */
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .product-focus-hero .hero-title {
+        font-size: 4rem;
+        padding-left: 1em;
+    }
+    .product-focus-hero .hero-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        padding-left: 4em;
+    }
+    .cta-button {
+        position: relative;
+        left: 5em;
+    }
+    /* Media Query para Escritorio */
+
+    .carousel-title {
+        text-align: center;
+    }
+
+    .products-carousel-section {
+        padding: 4rem 0;
+    }
+
+    .carousel-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .carousel-track-container {
+        padding: 0 50px;
+    }
+
+    .product-card {
+        width: 250px;
+        margin: 0 15px;
+    }
+    
+    .carousel-button {
+        display: block; /* Muestra los botones de navegación */
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        font-size: 2rem;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+    }
+
+    .carousel-button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .prev-button {
+        left: 0;
+    }
+
+    .next-button {
+        right: 0;
+    }
+
+
+    /* ------------------- Media Query para Escritorio ------------------- */
+    .stamp-content {
+        text-align: center; /* Mantener la alineación central */
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.8rem;
+    }
+
+    .question {
+        font-size: 1.3rem;
+    }
+
+    .help-text {
+        font-size: 1rem;
+    }
+
+
+    /* Media Query para Escritorio */
+    /* Media Query para Escritorio */
+    .products-carousel-unique-section {
+        padding: 4rem 0;
+    }
+
+    .products-carousel-unique-section .carousel-container-unique {
+        max-width: 1200px;
+        padding: 0 50px;
+    }
+    
+    .products-carousel-unique-section .product-card-link-unique {
+        width: calc(100% / 4);
+        margin: 0 10px;
+    }
+
+    /* Muestra los botones de navegación */
+    .products-carousel-unique-section .carousel-button-unique {
+        display: flex; 
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        font-size: 2rem;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 10;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+    }
+
+    .products-carousel-unique-section .carousel-button-unique:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .products-carousel-unique-section .prev-button-unique {
+        left: 0;
+    }
+
+    .products-carousel-unique-section .next-button-unique {
+        right: 0;
+    }
+
+
+    /* Media Query para Escritorio */
+    .hero-section {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        background-image: url('/web/2/css/assets/section/hero3.avif'); /* Asegúrate de que esta URL sea la misma */
+        background-size: cover;
+        background-position: center right; /* Ajusta la posición para mostrar la imagen correctamente */
+        padding: 150px 0;
+        text-align: left;
+    }
+
+    .hero-content .main-heading,
+    .hero-content .description {
+        margin-left: 10%; /* Alinea el texto a la izquierda */
+        text-align: left;
+    }
+
+    .bottom-cta {
+        text-align: center; /* Mantener la alineación central en la parte inferior */
+        padding: 15em 0em;
+    }
+
+    .cta-heading {
+        font-size: 3rem;
+        width: 75%;
+        margin-left: auto;margin-right: auto;
+    }
+    .cta-button {
+        font-size: 1.5rem;
+        margin-right: 8em;
+    }
+
+    /* Media Query para Escritorio */
+    .stamps-section {
+        flex-direction: row; /* Cambiar a fila para desktop */
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+    }
+
+    .stamps-image-container {
+        flex: 1; /* La imagen ocupa el 50% del espacio */
+        max-width: 50%;
+        padding-right: 20px;
+    }
+
+    .stamps-content {
+        flex: 1; /* El texto ocupa el 50% del espacio */
+        max-width: 50%;
+        text-align: left; /* Alinear el texto a la izquierda */
+        padding-left: 20px;
+    }
+
+    .stamps-heading {
+        font-size: 2rem;
+    }
+
+    .stamps-description {
+        font-size: 1.1rem;
+        max-width: 400px;
+    }
+
+    /* Media Query para Escritorio */
+    .pocket-stamps-section {
+        flex-direction: row-reverse; /* Cambiar a fila y invertir el orden para desktop */
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+    }
+
+    .pocket-stamps-image-container {
+        flex: 1; /* La imagen ocupa el 50% del espacio */
+        max-width: 50%;
+        padding-left: 20px;
+    }
+
+    .pocket-stamps-content {
+        flex: 1; /* El texto ocupa el 50% del espacio */
+        max-width: 50%;
+        text-align: left; /* Alinear el texto a la izquierda */
+        padding-right: 20px;
+    }
+
+    .pocket-stamps-heading {
+        font-size: 2rem;
+    }
+
+    .pocket-stamps-description {
+        font-size: 1.1rem;
+        max-width: 400px;
+    }
+
+    /* Media Query para Escritorio */
+    .hero-section {
+        flex-direction: row;
+        background-image: url('URL_IMAGEN_FONDO_SUPERIOR_ESCRITORIO.jpg'); /* Reemplaza con la URL de tu imagen de fondo para escritorio */
+        background-position: center right;
+        min-height: 70vh; /* Ajuste para desktop */
+    }
+
+    .hero-content {
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        padding-left: 10%;
+        width: 50%;
+    }
+
+    .main-heading {
+        font-size: 3.5rem;
+    }
+
+    .description {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0;
+    }
+    
+    /* Media Query para Escritorio */
+    .wood-stamps-section {
+        flex-direction: row; /* Cambiar a fila para desktop */
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+    }
+
+    .wood-stamps-image-container {
+        flex: 1; /* La imagen ocupa el 50% del espacio */
+        max-width: 50%;
+        padding-right: 20px;
+    }
+
+    .wood-stamps-content {
+        flex: 1; /* El texto ocupa el 50% del espacio */
+        max-width: 80%;
+        text-align: left; /* Alinear el texto a la izquierda */
+        padding-left: 20px;
+    }
+
+    .wood-stamps-heading {
+        font-size: 2rem;
+    }
+
+    .wood-stamps-description {
+        font-size: 1.1rem;
+        max-width: 400px;
+        color: #000;
+    }
+
+    /* Media Query para Escritorio */
+     .inks-section {
+        flex-direction: row; /* Cambiar a fila para desktop (texto a la izquierda, imagen a la derecha) */
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+    }
+
+    .inks-image-container {
+        flex: 1; /* La imagen ocupa el 50% del espacio */
+        max-width: 50%;
+        padding-left: 20px; /* Espacio a la izquierda de la imagen */
+        order: 2; /* Asegura que la imagen vaya a la derecha en desktop */
+    }
+
+    .inks-content {
+        flex: 1; /* El texto ocupa el 50% del espacio */
+        max-width: 50%;
+        text-align: left; /* Alinear el texto a la izquierda */
+        padding-right: 20px; /* Espacio a la derecha del texto */
+        order: 1; /* Asegura que el texto vaya a la izquierda en desktop */
+    }
+
+    .inks-heading {
+        font-size: 2rem;
+    }
+
+    .inks-description {
+        font-size: 1.1rem;
+        max-width: 400px;
+        color: #000;
+    }
+    
+    /* Media Query para Escritorio */
+    .history-section {
+        padding: 100px 50px; /* Más padding en escritorio */
+    }
+
+    .history-main-heading {
+        font-size: 3rem; /* Título más grande en escritorio */
+    }
+
+    .history-date {
+        font-size: 1.1rem;
+    }
+
+    .history-description {
+        font-size: 1rem; /* Descripción un poco más grande en escritorio */
+        max-width: 700px; /* Ajustar el ancho máximo para el texto */
+        margin: 0 auto 15px; /* Centrar los párrafos */
+    }
+
+    /* Media Query para Escritorio */
+    .brands-container {
+        flex-direction: row; /* Coloca los logos en fila */
+        justify-content: space-around; /* Distribuye el espacio entre los logos */
+        gap: 0; /* Elimina el gap de la versión móvil */
+    }
+
+    .brand-logo {
+        max-width: 200px; /* Ajusta el tamaño de los logos para escritorio */
+    }
+
+
+    
+   
+    .full-width-field .form-group {
+        flex: 1;
+    }
+    .form-row {
+        flex-direction: row; /* Coloca los campos en fila */
+    }
+    .form-group {
+        flex: 1; /* Distribuye el espacio equitativamente */
+    }
+    .full-width-field .form-group {
+        flex: 1;
+    }
+    .form-section h1{
+        text-align: center;
+    }
+    .form-section{
+        background-color:  #f0f0f0;
+        width: 100%;
+    }
+}
+

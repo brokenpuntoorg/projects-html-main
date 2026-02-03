@@ -1,0 +1,288 @@
+:root {
+    --color-primary-red: #e51d38; /* Rojo principal */
+    --color-secondary-dark: #1a1a1a;
+    --color-text-light: #f4f4f4;
+    --color-background-grey: #f8f8f8;
+    --color-cta-blue: #00aaff; /* Azul para CTAs de producto (basado en image_410bae.png) */
+    --color-text-main: #333;
+}
+
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-background-grey);
+    color: var(--color-text-main);
+    line-height: 1.6;
+}
+
+.home-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px; 
+}
+
+/* --- 1. SECCIÓN HERO (MOBILE) --- */
+.hero-section {
+    background-color: var(--color-secondary-dark);
+    color: var(--color-text-light);
+    text-align: center;
+    padding: 60px 20px;
+    margin: 0 -15px; /* Extender al borde en móvil */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.hero-cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--color-primary-red);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero-cta-button:hover {
+    background-color: #c01027;
+}
+
+/* --- 2. SECCIÓN DE VALORES (MOBILE) --- */
+.values-section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.section-heading {
+    font-size: 1.8rem;
+    color: var(--color-secondary-dark);
+    margin-bottom: 30px;
+}
+
+.values-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr; /* Apilado en móvil */
+}
+
+.value-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.value-icon {
+    width: 100px; /* Tamaño de icono de ejemplo, reemplazar con imágenes reales */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.value-title {
+    font-size: 1.2rem;
+    color: var(--color-primary-red);
+    margin: 10px 0;
+}
+
+.value-description {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.durability-title {
+    /* Estilo basado en image_ebf6c3.png */
+    color: var(--color-primary-red);
+}
+
+/* --- 3. SECCIÓN DE PRODUCTOS DESTACADOS (MOBILE) --- */
+.products-section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr; /* Apilado en móvil */
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.product-name {
+    font-size: 1.1rem;
+    color: var(--color-secondary-dark);
+    padding: 10px 15px 5px 15px;
+    margin: 0;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-primary-red);
+    padding: 0 15px 10px 15px;
+    margin: 0;
+}
+
+.product-cta {
+    display: block;
+    padding: 10px;
+    background-color: var(--color-cta-blue); 
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.product-cta:hover {
+    background-color: #007bbd;
+}
+
+/* --- 4. SECCIÓN CTA: Guías y Blog (MOBILE) --- */
+.cta-blog-section {
+    background-color: var(--color-primary-red); 
+    color: var(--color-text-light);
+    padding: 40px 20px;
+    text-align: center;
+    margin: 40px -15px 0 -15px; /* Extender al borde en móvil */
+}
+
+.cta-title {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.cta-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cta-button-primary {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--color-secondary-dark);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+.cta-button-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+.cta-button-primary:hover {
+    background-color: #000;
+}
+
+.cta-button-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+   
+    .home-page-container {
+        padding: 0 30px;
+    }
+    
+    /* --- 1. SECCIÓN HERO (DESKTOP) --- */
+    .hero-section {
+        padding: 100px 50px;
+        margin: 0; /* No extiende en desktop */
+    }
+
+    .hero-title {
+        font-size: 3.2rem;
+        max-width: 800px;
+        margin: 0 auto 15px auto;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+        max-width: 650px;
+    }
+    
+    /* --- 2. SECCIÓN DE VALORES (DESKTOP) --- */
+    .values-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en desktop */
+    }
+    
+    .value-card {
+        padding: 30px;
+    }
+
+    /* --- 3. SECCIÓN DE PRODUCTOS DESTACADOS (DESKTOP) --- */
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en desktop */
+        gap: 30px;
+    }
+    
+    /* --- 4. SECCIÓN CTA: Guías y Blog (DESKTOP) --- */
+    .cta-blog-section {
+        padding: 50px 80px;
+        margin: 40px 0 0 0; /* No extiende en desktop */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+    
+    .cta-content {
+        max-width: 60%;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+        margin-bottom: 5px;
+    }
+
+    .cta-subtitle {
+        margin-bottom: 0;
+    }
+    
+    .cta-buttons {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+}    
+

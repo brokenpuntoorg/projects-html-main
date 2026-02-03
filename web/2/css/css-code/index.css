@@ -1,0 +1,364 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.hero-section {
+    background-image: linear-gradient(rgba(100, 0, 0, 0.6), rgba(100, 0, 0, 0.6)), url('/web/2/css/assets/hero.webp'); /* Fondo con gradiente y la imagen de móvil */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh; /* Opcional: para que ocupe toda la altura de la pantalla en móvil */
+
+}.hero-section1 {
+    background-image: linear-gradient(rgba(100, 0, 0, 0.6), rgba(100, 0, 0, 0.6)), url('/web/2/css/assets/section/hero2.png'); /* Fondo con gradiente y la imagen de móvil */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh; /* Opcional: para que ocupe toda la altura de la pantalla en móvil */
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.logo-circle {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-circle .fa-e {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    display: flex;
+    gap: 4px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* --- Estilos Generales y Mobile-First --- */
+.products-section1{
+    display: flex;
+    flex-direction: column; /* Columna por defecto en móvil */
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.product-card1 {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden; /* Esto es clave para que la imagen no se desborde */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+}
+
+.product-image-container1 {
+    width: 100%;
+    overflow: hidden;
+}
+
+.product-image1 {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease; /* Transición para el efecto de zoom */
+}
+
+/* Efecto de zoom al pasar el cursor (hover) */
+.product-card1:hover .product-image1 {
+    transform: scale(1.1);
+}
+
+
+.product-info1 {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-title1 {
+    font-size: 1em;
+    color: #333;
+    min-height: 4em; /* Mantiene el mismo alto para evitar que los elementos inferiores salten */
+}
+
+.product-price1 {
+    font-size: 1.2em;
+    color: #d11e40;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+.old-price1 {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+
+.tax-info1 {
+    font-size: 0.8em;
+    color: #888;
+}
+/* --- Estilos Generales y Mobile-First --- */
+.products-section {
+    display: flex;
+    flex-direction: column; /* Columna por defecto en móvil */
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+}
+
+.product-image-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Truco para mantener una relación de aspecto 1:1 */
+    overflow: hidden;
+}
+
+.product-image-default,
+.product-image-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    transition: opacity 0.3s ease;
+}
+
+.product-image-hover {
+    opacity: 0; /* Por defecto, la imagen de hover está oculta */
+}
+
+/* Efecto al pasar el cursor: oculta la imagen por defecto y muestra la de hover */
+.product-card:hover .product-image-default {
+    opacity: 0;
+}
+.product-card:hover .product-image-hover {
+    opacity: 1;
+}
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-title {
+    font-size: 1em;
+    color: #333;
+    min-height: 4em;
+}
+
+.product-price {
+    font-size: 1.2em;
+    color: #d11e40;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+
+.tax-info {
+    font-size: 0.8em;
+    color: #888;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    padding: 1em;
+    cursor: pointer;
+}
+.title h2{
+    margin: 0;
+    color: #d11e40;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.title h2:hover{
+    color: #000; /* Cambia el color al pasar el cursor */
+    text-decoration: underline; /* Añade un subrayado al pasar el cursor */
+}
+
+/* Estilos Generales y Mobile-First */
+.stamps-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.section-title {
+    color: #d11e40;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+.stamps-grid {
+    display: flex;
+    flex-direction: column; /* Diseño de una columna por defecto en móvil */
+    gap: 30px;
+    align-items: center;
+}
+
+.stamp-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #d11e40;
+    transition: transform 0.3s ease;
+}
+
+.stamp-icon {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.stamp-text {
+    margin-top: 10px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+/* Efecto de zoom al pasar el cursor en la imagen */
+.stamp-link:hover .stamp-icon {
+    transform: scale(1.1);
+}
+
+@media (min-width: 992px) {
+    .hero-section {
+        background-image: linear-gradient(rgba(100, 0, 0, 0.7), rgba(100, 0, 0, 0.2)), url('/web/2/css/assets/hero.webp'); /* Fondo con la imagen de escritorio */
+        background-position: bottom;
+        background-color: cover;
+        background-repeat: no-repeat;
+        padding: 100px 50px;
+        height: auto;
+}
+    .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+}
+    .hero-content h1 {
+        font-size: 3em;
+        letter-spacing: 4px;
+}
+    
+    .hero-content p {
+        font-size: 1.2em;
+}
+
+/* --- Media Query para Desktop --- */
+    .products-section1 {
+        flex-direction: row; /* Diseño en fila para desktop */
+        justify-content: center;
+        flex-wrap: wrap; /* Permite que los contenedores se envuelvan */
+}
+    
+    .product-card1 {
+        flex: 1 1 22%; /* 4 contenedores en una fila con espacio entre ellos */
+        max-width: 25%;
+        margin: 0 10px;
+}
+
+/* --- Media Query para Desktop --- */
+    .products-section {
+        flex-direction: row; /* Diseño en fila para desktop */
+        justify-content: center;
+        flex-wrap: wrap; /* Permite que los contenedores se envuelvan */
+}
+    
+    .product-card {
+        flex: 1 1 22%; /* 4 contenedores en una fila con espacio entre ellos */
+        max-width: 25%;
+        margin: 0 10px;
+}
+
+    .stamps-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Cuadrícula de 4 columnas */
+        grid-template-rows: repeat(2, auto); /* 2 filas */
+        gap: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+}
+    .stamps-grid .stamp-link {
+        flex-direction: column;
+        }
+    .hero-title{
+        font-size: 3em;
+    }
+
+}

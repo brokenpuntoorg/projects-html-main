@@ -1,0 +1,144 @@
+/* Estilos generales y reseteo básico */
+body {
+    font-family: 'Arial', sans-serif; /* Fuente estándar para compatibilidad */
+    margin: 0; /* Elimina el margen predeterminado del body */
+    background-color: #f0f0f0; /* Color de fondo suave para la página */
+}
+
+/* Estilos para el header fijo */
+.fixed-header {
+    position: fixed; /* Fija el header en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ancho completo */
+    z-index: 1; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    background-color: #000; /* Fondo negro */
+    padding: 15px 0; /* Espaciado vertical para el header completo */
+}
+
+/* Contenedor interno del header para organizar logo y enlaces */
+.header-inner-container {
+    max-width: 1800px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 0 20px; /* Espaciado lateral */
+    display: flex; /* Habilita Flexbox para disposición horizontal */
+    align-items: center; /* Alinea los ítems verticalmente al centro */
+    justify-content: space-between; /* Distribuye el espacio entre el logo y los enlaces */
+    height: 80px; /* Altura fija para el contenedor principal del header */
+}
+
+/* Sección del Logotipo (25% del ancho) */
+.logo-section {
+    width: 25%; /* Ocupa el 25% del ancho disponible */
+    display: flex; /* Habilita Flexbox para centrar el logo */
+    justify-content: center; /* Centra el logo horizontalmente */
+    align-items: center; /* Centra el logo verticalmente */
+    flex-shrink: 0; /* Evita que el logo se encoja en pantallas pequeñas */
+}
+
+.header-logo {
+    height: 4em; /* Altura del logo */
+    width: auto; /* Ancho automático para mantener la proporción */
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    filter: invert(1); /* Invierte los colores del logo para que se vea blanco sobre fondo negro */
+}
+
+/* Sección de los Enlaces (75% del ancho) */
+.links-section {
+    width: 75%; /* Ocupa el 75% restante del ancho */
+    display: flex; /* Habilita Flexbox para colocar las columnas de enlaces en fila */
+    flex-direction: row; /* Las columnas de enlaces una al lado de la otra */
+    justify-content: center; /* Alinea las columnas de enlaces a la derecha */
+    align-items: center; /* Alinea las columnas de enlaces verticalmente */
+    gap: .5em;
+}
+
+/* Estilos para cada columna de enlaces */
+.links-column {
+    display: flex; /* Habilita Flexbox para apilar los enlaces verticalmente */
+    flex-direction: row; /* Los enlaces dentro de cada columna se apilan verticalmente */
+    align-items:first baseline; /* Alinea los enlaces a la derecha dentro de su columna */
+    gap: 8px; /* Espacio entre los enlaces individuales */
+}
+
+/* Estilos para los enlaces individuales */
+.link-item {
+    color: #fff; /* Color del texto blanco */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-size: 14px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    padding: 5px 0; /* Pequeño padding para hacerlos más clicables */
+    transition: color 0.6s ease; /* Transición suave para el hover */
+    white-space: nowrap; /* Evita que los enlaces se rompan en varias líneas */
+    margin-left: 2em;
+}
+
+.link-item:hover {
+    color: #ca0b0b; /* Color al pasar el ratón */
+    font-size: 15px;
+}
+
+/* Contenedor de relleno para el contenido principal */
+.content-spacer {
+    /* La altura de este spacer debe coincidir con la altura total del header */
+    /* fixed-header (padding 15px top/bottom) + header-inner-container (height 80px) = 15 + 80 + 15 = 110px */
+    height: 110px; /* Ajusta este valor si cambias los paddings o alturas del header */
+    width: 100%;
+}
+
+/* Estilos para el main (vacío, solo para referencia) */
+main {
+    min-height: 500px; /* Solo para que la página tenga un poco de altura y puedas ver el header fijo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 20px;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 500px) {
+    .fixed-header {
+        padding: 10px 10    px; /* Reduce el padding del header en móvil */
+    }
+
+    .header-inner-container {
+        flex-direction: column; /* Apila el logo y las secciones de enlaces en móvil */
+        height: auto; /* Altura automática para el contenedor interno */
+    }
+    .logo-section,
+    .links-section {
+        justify-content: center; /* Centra el contenido horizontalmente */
+        align-items: center; /* Centra los ítems apilados */
+        text-align: center;
+    }
+    .logo-section img{
+        width: 15em;
+        height: 4em;
+        margin-bottom: 1.5em;
+    }
+    .links-section {
+        flex-direction: column; /* Vuelve a apilar las "columnas" de enlaces en móvil */
+        gap: 15px; /* Espacio entre las columnas de enlaces apiladas */
+    }
+
+    .links-column {
+        flex-direction: row; /* Los enlaces dentro de cada columna se colocan en fila en móvil */
+        flex-wrap: wrap; /* Permite que los enlaces se envuelvan a la siguiente línea */
+        justify-content: center; /* Centra los enlaces envueltos */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        gap: 1px; /* Espacio entre enlaces individuales */
+    }
+    .content-spacer {
+        /* Ajusta la altura del spacer para el modo móvil si el header se hace más alto */
+        height: 180px; /* Estimación, ajusta según la altura real de tu header móvil */
+    }
+}
+
+@media (max-width: 480px) {
+    .link-item {
+        font-size: 12px; /* Reduce el tamaño de fuente de los enlaces en pantallas muy pequeñas */
+        padding: 3px 5px;
+    }
+}

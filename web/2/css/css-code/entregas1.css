@@ -1,0 +1,408 @@
+.delivery-search-section-unique {
+    position: relative;
+    /* Altura en móvil para que se vea prominente */
+    min-height: 250px; 
+    padding: 100px 15px;
+    background-color: #f7d24a; /* Fondo amarillo/dorado */
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* El patrón de fondo geométrico (simulación del diseño) */
+.search-background-pattern-unique {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3; /* Hacemos el patrón sutil */
+    z-index: 0;
+    /* Puedes usar una imagen de fondo o CSS complejo aquí para el patrón */
+}
+
+.search-container-unique {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.delivery-title-unique {
+    font-size: 1.5rem;
+    color: #333; /* Color oscuro para contraste con el amarillo */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.address-form-unique {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+.input-wrapper-unique {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.address-input-unique {
+    width: 80%;
+    padding: 12px 40px 12px 15px; /* Padding a la derecha para el botón "Borrar" */
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.clear-button-unique {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Dropdown de Sugerencias de Dirección (simulación) */
+.suggestions-dropdown-unique {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    padding: 0;
+    margin-top: -5px; /* Se superpone ligeramente con la caja de input */
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestion-item-unique {
+    padding: 10px 15px;
+    text-align: left;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.suggestion-item-unique:hover {
+    background-color: #f0f0f0;
+}
+
+.search-button-unique {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button-unique:hover {
+    background-color: #333;
+}
+
+/* --- ESTILOS GENERALES Y MÓVIL (MOBILE FIRST) --- */
+
+.checkout-page-unique {
+    padding: 20px 15px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.checkout-wrapper-unique {
+    max-width: 100%;
+}
+
+/* --- ESTILOS DEL FORMULARIO --- */
+.checkout-form-unique {
+    margin-bottom: 30px; /* Espacio antes del resumen en móvil */
+}
+
+.form-section-title-unique {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 20px 0 15px 0;
+    color: #333;
+    padding-bottom: 5px;
+}
+
+.form-group-unique {
+    margin-bottom: 15px;
+}
+
+.form-group-unique label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group-unique input[type="email"],
+.form-group-unique input[type="text"],
+.form-group-unique input[type="tel"],
+.form-group-unique select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Campos divididos (Nombre/Apellido, Ciudad/Región) */
+.split-width-unique {
+    display: flex;
+    gap: 15px;
+}
+
+.input-half-unique {
+    width: 50%;
+}
+
+.continue-btn-unique {
+    width: 100%;
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.continue-btn-unique:hover {
+    background-color: #333;
+}
+
+/* --- ESTILOS DEL RESUMEN DEL PEDIDO --- */
+.order-summary-unique {
+    background-color: #f7f7ff; /* Fondo ligeramente gris/claro */
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.summary-title-unique {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.edit-cart-btn-unique {
+    background: none;
+    border: none;
+    color: #3b82f6; /* Color de enlace azul */
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.summary-items-container-unique {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.summary-item-unique {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.item-image-unique {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+.item-details-unique {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.item-name-unique {
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+    color: #333;
+}
+
+.item-qty-unique {
+    font-size: 0.8rem;
+    color: #777;
+    margin: 2px 0;
+}
+
+.show-more-unique {
+    background: none;
+    border: none;
+    color: #3b82f6;
+    font-size: 0.8rem;
+    padding: 0;
+    cursor: pointer;
+}
+
+.item-price-unique {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    white-space: nowrap;
+}
+
+.promotion-container-unique {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.promo-link-unique {
+    font-size: 0.9rem;
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+/* Desglose de Precios y Total */
+.price-breakdown-unique {
+    margin-bottom: 15px;
+}
+
+.breakdown-row-unique {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.total-unique {
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.secure-payment-unique {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 15px;
+}
+
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+    .delivery-services-section-unique {
+          padding: 60px 50px;
+      }
+      
+      .services-main-title-unique {
+          font-size: 2.5rem;
+          margin-bottom: 40px;
+      }
+
+      .services-grid-unique {
+          /* Cambia a 3 columnas iguales */
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 40px;
+      }
+
+      .service-card-unique {
+          padding: 35px 25px;
+      }
+      
+      .service-icon-unique {
+          font-size: 3.5rem;
+      }
+      
+      .service-title-unique {
+          font-size: 1.5rem;
+      }
+
+      .delivery-search-section-unique {
+        min-height: 350px;
+        padding: 40px 50px;
+    }
+    
+    .delivery-title-unique {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+
+    .address-form-unique {
+        flex-direction: row; /* Elementos en línea */
+        max-width: 700px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+        border-radius: 8px;
+        margin-bottom: 50px;
+    }
+    
+    .input-wrapper-unique {
+        margin-bottom: 0;
+        flex-grow: 1;
+    }
+
+    .address-input-unique {
+        border-radius: 8px 0 0 8px; /* Redondear solo a la izquierda */
+        padding: 15px 40px 15px 20px;
+    }
+    
+    .suggestions-dropdown-unique {
+        width: calc(100% - 150px); /* Ajustar el ancho para que no pase sobre el botón */
+        border-radius: 0 0 0 8px;
+    }
+
+    .search-button-unique {
+        width: 450px; /* Ancho fijo para el botón */
+        border-radius: 0 8px 8px 0; /* Redondear solo a la derecha */
+        padding: 15px 20px;
+    }
+    .checkout-page-unique {
+        padding: 50px;
+    }
+
+    .checkout-wrapper-unique {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        /* Columna de Formulario (60%) y Columna de Resumen (40%) */
+        grid-template-columns: 3fr 2fr; 
+        gap: 50px;
+        align-items: start;
+    }
+
+    /* --- FORMULARIO --- */
+    .checkout-form-unique {
+        order: 1; /* Coloca el formulario a la izquierda */
+        margin-bottom: 0;
+        padding-right: 30px; /* Separación visual de la columna */
+        border-right: 1px solid #eee;
+    }
+
+    /* --- RESUMEN DEL PEDIDO --- */
+    .order-summary-unique {
+        order: 2; /* Coloca el resumen a la derecha */
+        position: sticky; /* Fijo al hacer scroll */
+        top: 20px;
+    }
+}    
+

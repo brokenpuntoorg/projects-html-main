@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/web/2/css/css-code/merd.css">
+    <title>Sellos Autoentintables - Carrito Multi-Producto con Detalles</title>
+    
+    <style id="full-css-styles">
+        /* EL CSS CORREGIDO ESTÁ AQUÍ */
+    </style>
+</head>
+<body>
+
+    <main>
+        <section class="ink-hero-section">
+            <div class="ink-hero-content">
+                <h2 class="ink-hero-title">Sellos Autoentintables</h2>
+                <p class="ink-hero-description">
+                    Los sellos autoentintables son los más utilizados. Elige el tuyo y personaliza tu compra.
+                </p>
+            </div>
+        </section>
+
+        <section class="sello-products-page">
+            
+            <main class="sello-main-content" id="product-main-content">
+                <div class="sello-sort-options">
+                    <button class="sello-sort-btn">Ordenar por <i class="fas fa-sort"></i></button>
+                    <ul class="sello-sort-menu">
+                        <li>Lo más nuevo</li>
+                        <li>Precio del menor</li>
+                        <li>Precio del mayor</li>
+                    </ul>
+                </div>
+                
+                <div class="sello-product-grid">
+    
+                    <div class="sello-product-card">
+                        <a href="product-detail-medico.html" class="sello-product-link">
+                            <div class="sello-product-image-wrapper">
+                                <img src="https://via.placeholder.com/300x200?text=Sello+Medico" alt="Sello autoentintable médico" class="sello-product-image">
+                                <div class="image-overlay">
+                                    <span class="overlay-text">Ver Detalles</span>
+                                </div>
+                            </div>
+                            <div class="sello-product-info">
+                                <h3 class="sello-product-name">Sello autoentintable para signos vitales - uso médico</h3>
+                                <p class="sello-product-price">Desde $410.00</p>
+                            </div>
+                        </a>
+                        <button 
+                            class="add-to-cart-btn"
+                            data-id="410" 
+                            data-name="Sello Médico (410)"
+                            data-price="410.00"
+                            data-image="https://via.placeholder.com/300x200?text=Sello+Medico"
+                            data-url="product-detail-medico.html"
+                            data-attrs="Tipo: Médico"
+                        >
+                            Agregar a Carrito
+                        </button>
+                    </div>
+
+                    <div class="sello-product-card">
+                        <a href="product-detail-textil.html" class="sello-product-link">
+                            <div class="sello-product-image-wrapper">
+                                <img src="https://via.placeholder.com/300x200?text=Sello+Textil" alt="Sello línea textil" class="sello-product-image">
+                                <div class="image-overlay">
+                                    <span class="overlay-text">Ver Detalles</span>
+                                </div>
+                            </div>
+                            <div class="sello-product-info">
+                                <h3 class="sello-product-name">Sello autoentintable con línea textil negra</h3>
+                                <p class="sello-product-price">Desde $400.00</p>
+                            </div>
+                        </a>
+                        <button 
+                            class="add-to-cart-btn"
+                            data-id="400" 
+                            data-name="Sello Textil (400)"
+                            data-price="400.00"
+                            data-image="https://via.placeholder.com/300x200?text=Sello+Textil" 
+                            data-url="product-detail-textil.html"
+                            data-attrs="Tipo: Textil"
+                        >
+                            Agregar a Carrito
+                        </button>
+                    </div>
+
+                    <div class="sello-product-card">
+                        <a href="product-detail-redondo.html" class="sello-product-link">
+                            <div class="sello-product-image-wrapper">
+                                <img src="https://via.placeholder.com/300x200?text=Sello+Redondo" alt="Sello redondo autoentintable" class="sello-product-image">
+                                <div class="image-overlay">
+                                    <span class="overlay-text">Ver Detalles</span>
+                                </div>
+                            </div>
+                            <div class="sello-product-info">
+                                <h3 class="sello-product-name">Sello redondo personalizado autoentintable</h3>
+                                <p class="sello-product-price">Desde $550.00</p>
+                            </div>
+                        </a>
+                        <button 
+                            class="add-to-cart-btn"
+                            data-id="550" 
+                            data-name="Sello Redondo (550)"
+                            data-price="550.00"
+                            data-image="https://via.placeholder.com/300x200?text=Sello+Redondo" 
+                            data-url="product-detail-redondo.html"
+                            data-attrs="Forma: Redondo"
+                        >
+                            Agregar a Carrito
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </section>
+    </main>
+
+    <div id="cart-sidebar" class="shopping-cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito (<span id="cart-count">0</span> ítems)</h3>
+            
+            <button id="clear-cart-btn" class="clear-cart-btn" aria-label="Vaciar Carrito" disabled>
+                Vaciar <i class="fas fa-trash-alt"></i>
+            </button>
+            
+            <button class="close-cart-btn" aria-label="Cerrar carrito">&times;</button>
+        </div>
+        
+        <ul id="cart-list" class="cart-items-list">
+            </ul>
+        
+        <div class="discount-section">
+            <label for="discount-code">¿Tienes un código de descuento?</label>
+            <div class="discount-input-group">
+                <input type="text" id="discount-code" placeholder="CÓDIGO" aria-label="Código de descuento">
+                <button class="apply-discount-btn">Aplicar</button>
+            </div>
+            <p class="discount-message"></p>
+        </div>
+        
+        <div class="cart-summary">
+            <div class="summary-line">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="summary-line tax">
+                <span>Impuestos (IVA):</span>
+                <span id="cart-tax">$0.00</span>
+            </div>
+            <div class="summary-line total">
+                <span>Total:</span>
+                <span class="total-price" id="cart-total">$0.00</span>
+            </div>
+        </div>
+        
+        <a href="https://tupaginaweb.com/checkout/secure-payment" class="checkout-link">
+            <button class="checkout-btn" disabled>
+                Finalizar Compra
+            </button>
+        </a>
+    </div>
+    <div class="cart-overlay"></div>
+
+<script src="/web/2/js/carr.js"></script>
+</body>
+</html>
