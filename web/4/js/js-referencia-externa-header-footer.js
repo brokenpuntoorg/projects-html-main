@@ -1,5 +1,4 @@
-// Cargar header
-        fetch("header.html")
+fetch("/web/header.html")
           .then(response => {
             if (!response.ok) throw new Error("No se pudo cargar header");
             return response.text();
@@ -10,7 +9,7 @@
           .catch(error => console.error(error));
 
         // Cargar footer
-        fetch("footer.html")
+        fetch("/web/footer.html")
           .then(response => {
             if (!response.ok) throw new Error("No se pudo cargar footer");
             return response.text();
