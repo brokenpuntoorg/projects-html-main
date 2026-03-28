@@ -82,29 +82,6 @@
     <!-- Aquí se insertará el footer externo -->
     <div id="footer-placeholder"></div>
 
-    <!-- Script para cargar header y footer -->
-    <script>
-        // Cargar header
-        fetch("header.html")
-          .then(response => {
-            if (!response.ok) throw new Error("No se pudo cargar header");
-            return response.text();
-          })
-          .then(data => {
-            document.getElementById("header-placeholder").innerHTML = data;
-          })
-          .catch(error => console.error(error));
-
-        // Cargar footer
-        fetch("footer.html")
-          .then(response => {
-            if (!response.ok) throw new Error("No se pudo cargar footer");
-            return response.text();
-          })
-          .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-          })
-          .catch(error => console.error(error));
-    </script>
+    <script src="/web/4/js/js-referencia-externa-header-footer.js"></script>
 </body>
 </html>
