@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bobina de Ignición - BOUF422 Saab</title>
-    <link rel="stylesheet" href="/web/4/css/modulos/crhysler-1.css/">
+    <link rel="stylesheet" href="/web/4/css/modulos/crhysler-1.css">
 </head>
 <body>
-    <!-- Header externo -->
-    <div id="header-placeholder"></div>
 
-    <!-- Contenido principal -->
     <div class="main-container">
         <h1>SISTEMA DE ENCENDIDO - LÍNEA SAAB PERFORMANCE</h1>
         
@@ -22,7 +19,7 @@
 
             <div class="product-main-info">
                 <div class="product-image-section">
-                    <img src="/web/css/assets/product/bobina-de-ignicion/gm/37.png" alt="Bobina de Ignición BOUF422" class="product-image">
+                    <img src="/web/4/css/assets/product/bobina-de-ignicion/gm/37.png" alt="Bobina de Ignición BOUF422" class="product-image">
                 </div>
                 
                 <div class="product-details-section">
@@ -30,16 +27,13 @@
                         <h3 class="specs-title">Especificaciones del Producto</h3>
                         <div class="performance-specs">
                             <p><strong>Tipo:</strong> Cassette de Ignición Directa (Regleta)</p>
-                            <p><strong>Conector:</strong> 10 Pines Planos</p> 
-                            <p><strong>Color:</strong> Rojo (High Performance)</p>
+                            <p><strong>Conector:</strong> 10 Pines Planos</p> <p><strong>Color:</strong> Rojo (High Performance)</p>
                         </div>
                     </div>
                     <div class="cross-references">
                         <h3 class="specs-title">Compatibilidad de Motor</h3>
                         <ul>
-                            <li><strong>Configuración:</strong> L4 (4 Cilindros)</li> 
-                            <li><strong>Desplazamiento:</strong> 2.0L / 2.3L</li> 
-                        </ul>
+                            <li><strong>Configuración:</strong> L4 (4 Cilindros)</li> <li><strong>Desplazamiento:</strong> 2.0L / 2.3L</li> </ul>
                     </div>
                 </div>
             </div>
@@ -80,32 +74,5 @@
         </div>
     </div>
     
-    <!-- Footer externo -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Script para cargar header y footer -->
-    <script>
-        // Cargar header
-        fetch("/web/header.html")
-          .then(response => {
-            if (!response.ok) throw new Error("No se pudo cargar header");
-            return response.text();
-          })
-          .then(data => {
-            document.getElementById("header-placeholder").innerHTML = data;
-          })
-          .catch(error => console.error(error));
-
-        // Cargar footer
-        fetch("/web/footer.html")
-          .then(response => {
-            if (!response.ok) throw new Error("No se pudo cargar footer");
-            return response.text();
-          })
-          .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-          })
-          .catch(error => console.error(error));
-    </script>
 </body>
 </html>
