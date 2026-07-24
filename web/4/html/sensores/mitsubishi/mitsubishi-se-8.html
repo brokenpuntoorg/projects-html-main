@@ -1,104 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sensor de Oxígeno (OS) - SD11892 Mitsubishi</title>
-    <link rel="stylesheet" href="/web/4/css/modulos/crhysler-1.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha Técnica - SD11933</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      margin: 20px;
+      padding: 0;
+    }
+    .card-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #dcdcdc;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .card-header {
+      background-color: #0d233a;
+      color: #ffffff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-header h2 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 0.5px;
+    }
+    .card-header .brand {
+      font-size: 18px;
+      font-weight: bold;
+      color: #00a8ff;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .info-box {
+      background-color: #f8f9fa;
+      border-left: 4px solid #00a8ff;
+      padding: 10px 15px;
+      border-radius: 4px;
+    }
+    .info-box span.label {
+      display: block;
+      font-size: 12px;
+      color: #6c757d;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .info-box span.value {
+      font-size: 16px;
+      color: #212529;
+      font-weight: 600;
+    }
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid #e0e0e0;
+      padding: 10px 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #1e3a5f;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background-color: #f9fbfd;
+    }
+    tr:hover {
+      background-color: #f1f5f9;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <h1>SISTEMA DE GESTIÓN ELECTRÓNICA DE MOTOR - LÍNEA SENSORES DE OXÍGENO</h1>
-        
-        <div class="product-card">
-            <header class="product-header">
-                <span class="product-model">SD11892</span>
-                <span class="product-brand">Mitsubishi (Plataformas Endeavor, Eclipse, Outlander, Galant & Mirage)</span>
-            </header>
+<div class="card-container">
+  <!-- Encabezado con Código y Marca -->
+  <div class="card-header">
+    <h2>SD11933</h2>
+    <span class="brand">Mitsubishi</span>
+  </div>
 
-            <div class="product-main-info">
-                <div class="product-image-section">
-                    <img src="/web/4/css/assets/product/sensores/mitsubishi/7.png" alt="Sensor de Oxígeno SD11892" class="product-image">
-                </div>
-                
-                <div class="product-details-section">
-                    <div class="technical-specs">
-                        <h3 class="specs-title">Referencias Técnicas</h3>
-                        <div class="performance-specs">
-                            <p><strong>Tipo:</strong> Sensor de Oxígeno / Lambda (OS - Oxygen Sensor)</p>
-                            <p><strong>OEM:</strong> 250-24236</p>
-                            <p><strong>Especificación del Cableado:</strong> Configuración de 4 cables con funda de protección térmica reforzada y arnés de 80 cm A.C.C. (Apto para posición Antes del Catalizador - Conexión Directa).</p>
-                            <p><strong>Conector de Acoplamiento:</strong> Conector sellado de 4 terminales (pines) con traba de fijación de seguridad para acoplamiento Plug & Play en el arnés original.</p>
-                            <p><strong>Diseño Mecánico y Calefactor:</strong> Cuerpo roscado en acero inoxidable de alta resistencia contra la corrosión y severas vibraciones térmicas de la tubería de escape. Equipado con elemento calefactor interno (pre-calentador) de rápida respuesta y cabeza de prueba con aberturas ranuradas para un muestreo preciso de la mezcla de gases.</p>
-                        </div>
-                    </div>
-                    <div class="observations-box">
-                        <h3 class="specs-title">Observaciones</h3>
-                        <p>El sensor de oxígeno SD11892 mide en tiempo real la concentración de oxígeno en los gases de escape antes del convertidor catalítico (Sensor 1 / Upstream). Esta información es enviada a la unidad de control del motor (ECU/PCM) para ajustar de manera continua la relación aire-combustible en bucle cerrado (*Closed Loop*). Es compatible con los modelos Mitsubishi Endeavor 3.8L V6 (2010-2011), Eclipse 3.8L V6 (2006-2012), Outlander 3.0L V6 (2007-2011), Galant 3.8L V6 (2004-2009) y Mirage 1.8L L4 (2001-2008). La degradación del sensor o una falla en su resistencia calefactora provoca un incremento excesivo en el consumo de gasolina, emisión de humo oscuro por el escape, pérdida de potencia, aceleración titubeante e iluminación de la luz *Check Engine* con códigos OBD-II como P0130, P0133, P0135 o P0155.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="application-table">
-                <h3 class="applications-title">Tabla de Compatibilidad (Plataformas Mitsubishi)</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Línea</th>
-                            <th>Marca</th>
-                            <th>Modelo / Aplicación</th>
-                            <th>Años</th>
-                            <th>Desplazamiento</th>
-                            <th>Cilindros</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>OS</td>
-                            <td>Mitsubishi</td>
-                            <td>Endeavor</td>
-                            <td>10-11</td>
-                            <td>3.8L</td>
-                            <td>V6</td>
-                        </tr>
-                        <tr>
-                            <td>OS</td>
-                            <td>Mitsubishi</td>
-                            <td>Eclipse</td>
-                            <td>06-12</td>
-                            <td>3.8L</td>
-                            <td>V6</td>
-                        </tr>
-                        <tr>
-                            <td>OS</td>
-                            <td>Mitsubishi</td>
-                            <td>Outlander</td>
-                            <td>07-11</td>
-                            <td>3.0L</td>
-                            <td>V6</td>
-                        </tr>
-                        <tr>
-                            <td>OS</td>
-                            <td>Mitsubishi</td>
-                            <td>Galant</td>
-                            <td>04-09</td>
-                            <td>3.8L</td>
-                            <td>V6</td>
-                        </tr>
-                        <tr>
-                            <td>OS</td>
-                            <td>Mitsubishi</td>
-                            <td>Mirage</td>
-                            <td>01-08</td>
-                            <td>1.8L</td>
-                            <td>L4</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+  <div class="card-body">
+    <!-- Información General y OEM -->
+    <div class="info-grid">
+      <div class="info-box">
+        <span class="label">Número OEM</span>
+        <span class="value">250-24020</span>
+      </div>
+      <div class="info-box">
+        <span class="label">Observaciones</span>
+        <span class="value">4 Cables 33 cm A.C.C.</span>
+      </div>
     </div>
-    
+
+    <!-- Tabla de Aplicaciones -->
+    <h3>Tabla de Aplicaciones</h3>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Línea</th>
+            <th>Marca</th>
+            <th>Aplicación</th>
+            <th>Años</th>
+            <th>Desplazamiento</th>
+            <th>Cilindros</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OS</td>
+            <td>Mitsubishi</td>
+            <td>Galant</td>
+            <td>94-98</td>
+            <td>2.4L</td>
+            <td>L4</td>
+          </tr>
+          <tr>
+            <td>OS</td>
+            <td>Mitsubishi</td>
+            <td>Mirage</td>
+            <td>93-96</td>
+            <td>1.5L</td>
+            <td>L4</td>
+          </tr>
+          <tr>
+            <td>OS</td>
+            <td>Mitsubishi</td>
+            <td>Mirage</td>
+            <td>93-96</td>
+            <td>1.8L</td>
+            <td>L4</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
