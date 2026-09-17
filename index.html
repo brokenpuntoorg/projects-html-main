@@ -50,16 +50,36 @@
       </div>
 
       <!-- Barra de Búsqueda Libre -->
-      <div class="mb-4">
+      <div class="mb-3">
         <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
-          Búsqueda rápida (ej: <span class="text-red-600">"Expedition 2002"</span>, <span class="text-red-600">"DG508"</span>, <span class="text-red-600">"BOUF226"</span>, <span class="text-red-600">"F-150"</span>):
+          Búsqueda rápida (escribe modelo, código o referencia cruzada):
         </label>
         <div class="relative">
           <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
             <i class="fa-solid fa-magnifying-glass"></i>
           </span>
-          <input type="text" id="input-busqueda" oninput="aplicarFiltros()" placeholder="Escribe el modelo, año, código o referencia cruzada..." class="w-full pl-10 pr-10 py-3 rounded-xl border border-slate-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 text-sm outline-none transition bg-slate-50/50 focus:bg-white">
+          <input type="text" id="input-busqueda" oninput="aplicarFiltros()" placeholder="Escribe un modelo (ej. Expedition), código (ej. BOUF226) o referencia (ej. DG508)..." class="w-full pl-10 pr-10 py-3 rounded-xl border border-slate-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 text-sm outline-none transition bg-slate-50/50 focus:bg-white">
+          <button id="btn-borrar" onclick="limpiarTexto()" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600">
+            <i class="fa-solid fa-circle-xmark"></i>
+          </button>
         </div>
+      </div>
+
+      <!-- Botones de Prueba Rápida -->
+      <div class="flex flex-wrap items-center gap-1.5 mb-4 text-xs">
+        <span class="text-slate-400 font-medium mr-1">Pruebas rápidas:</span>
+        <button onclick="buscarTermino('Expedition')" class="px-2.5 py-1 bg-red-50 hover:bg-red-100 text-red-700 font-semibold rounded-lg border border-red-200 transition">
+          Expedition
+        </button>
+        <button onclick="buscarTermino('F-150')" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg border border-slate-200 transition">
+          F-150
+        </button>
+        <button onclick="buscarTermino('DG508')" class="px-2.5 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-semibold rounded-lg border border-emerald-200 transition">
+          Ref. Cruzada: DG508
+        </button>
+        <button onclick="buscarTermino('BOUF226')" class="px-2.5 py-1 bg-blue-50 hover:bg-blue-100 text-blue-700 font-semibold rounded-lg border border-blue-200 transition">
+          Código: BOUF226
+        </button>
       </div>
 
       <!-- Filtros Cascada -->
@@ -67,14 +87,14 @@
         <div>
           <label class="block text-xs font-semibold text-slate-600 mb-1">1. Marca del Auto</label>
           <select id="select-marca" onchange="alCambiarMarca()" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 text-sm font-medium outline-none">
-            <option value="">Todas las marcas</option>
+            <option value="" selected>Todas las marcas</option>
           </select>
         </div>
 
         <div>
           <label class="block text-xs font-semibold text-slate-600 mb-1">2. Modelo</label>
           <select id="select-modelo" onchange="alCambiarModelo()" disabled class="w-full bg-slate-100 border border-slate-300 rounded-xl px-3 py-2.5 text-sm font-medium outline-none disabled:opacity-50">
-            <option value="">Primero elige Marca</option>
+            <option value="">Todos los modelos</option>
           </select>
         </div>
 
@@ -100,7 +120,7 @@
         Resultados: <span id="contador-resultados" class="font-black text-red-600 text-base">0</span> piezas encontradas
       </div>
       <div class="text-xs text-slate-500">
-        Mostrando coincidencias principales
+        Mostrando coincidencias
       </div>
     </div>
 
@@ -111,7 +131,6 @@
   <script>
     let catalogo = [];
 
-    // Carga los 2,236 productos del archivo JSON
     fetch('catalogo_completo.json')
       .then(res => res.json())
       .then(data => {
@@ -132,10 +151,12 @@
     function inicializarFiltros() {
       const marcas = [...new Set(catalogo.flatMap(i => i.aplicaciones.map(a => a.marca)).filter(Boolean))].sort();
       const selectMarca = document.getElementById('select-marca');
+      selectMarca.innerHTML = '<option value="" selected>Todas las marcas</option>';
       marcas.forEach(m => selectMarca.innerHTML += `<option value="${m}">${m}</option>`);
 
       const motores = [...new Set(catalogo.flatMap(i => i.aplicaciones.map(a => a.motor)).filter(Boolean))].sort();
       const selectMotor = document.getElementById('select-motor');
+      selectMotor.innerHTML = '<option value="" selected>Cualquier motor</option>';
       motores.forEach(mot => selectMotor.innerHTML += `<option value="${mot}">${mot}</option>`);
     }
 
@@ -191,7 +212,18 @@
     }
 
     function aplicarFiltros() {
-      const texto = normalizar(document.getElementById('input-busqueda').value);
+      let rawText = document.getElementById('input-busqueda').value;
+      // Limpia comillas accidentales
+      rawText = rawText.replace(/["']/g, '');
+
+      const btnBorrar = document.getElementById('btn-borrar');
+      if (rawText.trim().length > 0) {
+        btnBorrar.classList.remove('hidden');
+      } else {
+        btnBorrar.classList.add('hidden');
+      }
+
+      const texto = normalizar(rawText);
       const marca = document.getElementById('select-marca').value;
       const modelo = document.getElementById('select-modelo').value;
       const ano = document.getElementById('select-ano').value;
@@ -231,12 +263,22 @@
         return true;
       });
 
-      renderizar(filtrados.slice(0, 100), { marca, modelo, ano: anoEfectivo, total: filtrados.length });
+      renderizar(filtrados.slice(0, 60), { marca, modelo, ano: anoEfectivo, total: filtrados.length });
     }
 
     function renderizar(lista, f) {
       const cont = document.getElementById('grid-productos');
       document.getElementById('contador-resultados').textContent = f.total;
+
+      if (lista.length === 0) {
+        cont.innerHTML = `
+          <div class="col-span-full bg-white p-10 text-center rounded-2xl border border-slate-200">
+            <p class="text-slate-500 text-sm">No se encontraron refacciones con ese filtro.</p>
+            <button onclick="limpiarFiltros()" class="mt-3 px-4 py-2 bg-red-600 text-white rounded-xl text-xs font-bold">Ver catálogo completo</button>
+          </div>
+        `;
+        return;
+      }
 
       cont.innerHTML = lista.map(item => {
         const appsRows = item.aplicaciones.map(a => {
@@ -294,6 +336,19 @@
           </div>
         `;
       }).join('');
+    }
+
+    function buscarTermino(term) {
+      document.getElementById('input-busqueda').value = term;
+      document.getElementById('select-marca').value = '';
+      document.getElementById('select-motor').value = '';
+      alCambiarMarca();
+      aplicarFiltros();
+    }
+
+    function limpiarTexto() {
+      document.getElementById('input-busqueda').value = '';
+      aplicarFiltros();
     }
 
     function limpiarFiltros() {
