@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador de Refacciones Automotrices</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { background-color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; }
+    .badge-matched {
+      background-color: #fef08a !important;
+      border-left: 4px solid #ca8a04 !important;
+      color: #713f12 !important;
+      font-weight: 700 !important;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-800 flex flex-col">
+
+  <!-- Barra Superior -->
+  <header class="bg-slate-900 text-white shadow-lg sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 py-3.5 flex flex-wrap justify-between items-center gap-3">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-red-600 flex items-center justify-center text-white font-black text-xl shadow-md">
+          <i class="fa-solid fa-car-battery"></i>
+        </div>
+        <div>
+          <h1 class="text-xl font-bold tracking-tight">Catálogo de Autopartes & Refacciones</h1>
+          <p class="text-xs text-slate-400">Buscador Inteligente por Modelo, Año, Código y Referencias Cruzadas</p>
+        </div>
+      </div>
+      <div id="contador-productos" class="text-xs bg-red-950 text-red-300 font-bold px-3 py-1.5 rounded-full border border-red-800">
+        Cargando refacciones...
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido -->
+  <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full">
+    <!-- Panel de Filtros -->
+    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 mb-6">
+      <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
+        <h2 class="font-bold text-slate-800 text-base sm:text-lg flex items-center gap-2">
+          <i class="fa-solid fa-sliders text-red-600"></i> Filtros de Búsqueda
+        </h2>
+        <button onclick="limpiarFiltros()" class="text-xs text-slate-500 hover:text-red-600 font-medium transition flex items-center gap-1">
+          <i class="fa-solid fa-rotate-left"></i> Restablecer filtros
+        </button>
+      </div>
+
+      <!-- Barra de Búsqueda Libre -->
+      <div class="mb-4">
+        <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
+          Búsqueda rápida (ej: <span class="text-red-600">"Expedition 2002"</span>, <span class="text-red-600">"DG508"</span>, <span class="text-red-600">"BOUF226"</span>, <span class="text-red-600">"F-150"</span>):
+        </label>
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+          <input type="text" id="input-busqueda" oninput="aplicarFiltros()" placeholder="Escribe el modelo, año, código o referencia cruzada..." class="w-full pl-10 pr-10 py-3 rounded-xl border border-slate-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 text-sm outline-none transition bg-slate-50/50 focus:bg-white">
+        </div>
+      </div>
+
+      <!-- Filtros Cascada -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3.5">
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">1. Marca del Auto</label>
+          <select id="select-marca" onchange="alCambiarMarca()" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 text-sm font-medium outline-none">
+            <option value="">Todas las marcas</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">2. Modelo</label>
+          <select id="select-modelo" onchange="alCambiarModelo()" disabled class="w-full bg-slate-100 border border-slate-300 rounded-xl px-3 py-2.5 text-sm font-medium outline-none disabled:opacity-50">
+            <option value="">Primero elige Marca</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">3. Año</label>
+          <select id="select-ano" onchange="aplicarFiltros()" disabled class="w-full bg-slate-100 border border-slate-300 rounded-xl px-3 py-2.5 text-sm font-medium outline-none disabled:opacity-50">
+            <option value="">Todos los años</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">4. Motor</label>
+          <select id="select-motor" onchange="aplicarFiltros()" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 text-sm font-medium outline-none">
+            <option value="">Cualquier motor</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contador de Resultados -->
+    <div class="flex justify-between items-center mb-4">
+      <div class="text-sm text-slate-700 font-medium">
+        Resultados: <span id="contador-resultados" class="font-black text-red-600 text-base">0</span> piezas encontradas
+      </div>
+      <div class="text-xs text-slate-500">
+        Mostrando coincidencias principales
+      </div>
+    </div>
+
+    <!-- Grid de Tarjetas -->
+    <div id="grid-productos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </main>
+
+  <script>
+    let catalogo = [];
+
+    // Carga los 2,236 productos del archivo JSON
+    fetch('catalogo_completo.json')
+      .then(res => res.json())
+      .then(data => {
+        catalogo = data;
+        document.getElementById('contador-productos').textContent = `${catalogo.length} Piezas en Catálogo`;
+        inicializarFiltros();
+        aplicarFiltros();
+      })
+      .catch(err => {
+        document.getElementById('contador-productos').textContent = "Error cargando archivo JSON";
+        console.error("Error al cargar catalogo_completo.json", err);
+      });
+
+    function normalizar(txt) {
+      return (txt || '').toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+    }
+
+    function inicializarFiltros() {
+      const marcas = [...new Set(catalogo.flatMap(i => i.aplicaciones.map(a => a.marca)).filter(Boolean))].sort();
+      const selectMarca = document.getElementById('select-marca');
+      marcas.forEach(m => selectMarca.innerHTML += `<option value="${m}">${m}</option>`);
+
+      const motores = [...new Set(catalogo.flatMap(i => i.aplicaciones.map(a => a.motor)).filter(Boolean))].sort();
+      const selectMotor = document.getElementById('select-motor');
+      motores.forEach(mot => selectMotor.innerHTML += `<option value="${mot}">${mot}</option>`);
+    }
+
+    function alCambiarMarca() {
+      const marca = document.getElementById('select-marca').value;
+      const selectModelo = document.getElementById('select-modelo');
+      selectModelo.innerHTML = '<option value="">Todos los modelos</option>';
+
+      if (marca) {
+        selectModelo.disabled = false;
+        selectModelo.classList.remove('bg-slate-100');
+        const modelos = [...new Set(catalogo.flatMap(i => i.aplicaciones.filter(a => normalizar(a.marca) === normalizar(marca)).map(a => a.modelo)))].sort();
+        modelos.forEach(m => selectModelo.innerHTML += `<option value="${m}">${m}</option>`);
+      } else {
+        selectModelo.disabled = true;
+        selectModelo.classList.add('bg-slate-100');
+      }
+      alCambiarModelo();
+    }
+
+    function alCambiarModelo() {
+      const marca = document.getElementById('select-marca').value;
+      const modelo = document.getElementById('select-modelo').value;
+      const selectAno = document.getElementById('select-ano');
+      selectAno.innerHTML = '<option value="">Todos los años</option>';
+
+      if (marca || modelo) {
+        selectAno.disabled = false;
+        selectAno.classList.remove('bg-slate-100');
+        const anos = new Set();
+        catalogo.forEach(item => {
+          item.aplicaciones.forEach(app => {
+            const mMarca = !marca || normalizar(app.marca) === normalizar(marca);
+            const mMod = !modelo || normalizar(app.modelo) === normalizar(modelo);
+            if (mMarca && mMod && app.ano_inicio) {
+              for (let a = app.ano_inicio; a <= (app.ano_fin || app.ano_inicio); a++) anos.add(a);
+            }
+          });
+        });
+        [...anos].sort((a,b) => b - a).forEach(a => selectAno.innerHTML += `<option value="${a}">${a}</option>`);
+      } else {
+        selectAno.disabled = true;
+        selectAno.classList.add('bg-slate-100');
+      }
+      aplicarFiltros();
+    }
+
+    function coincideAno(app, anoBuscado) {
+      if (!anoBuscado) return true;
+      let ano = parseInt(anoBuscado);
+      if (ano < 100) ano = ano >= 50 ? 1900 + ano : 2000 + ano;
+      return ano >= app.ano_inicio && ano <= (app.ano_fin || app.ano_inicio);
+    }
+
+    function aplicarFiltros() {
+      const texto = normalizar(document.getElementById('input-busqueda').value);
+      const marca = document.getElementById('select-marca').value;
+      const modelo = document.getElementById('select-modelo').value;
+      const ano = document.getElementById('select-ano').value;
+      const motor = document.getElementById('select-motor').value;
+
+      const palabras = texto.split(/[\s,.-]+/).filter(Boolean);
+      let anoDesdeTexto = null;
+      const palabrasResto = [];
+
+      palabras.forEach(p => {
+        const num = parseInt(p);
+        if (!isNaN(num) && ((num >= 1970 && num <= 2035) || (num >= 70 && num <= 99) || (num >= 0 && num <= 35 && p.length === 2))) {
+          anoDesdeTexto = num < 100 ? (num >= 50 ? 1900 + num : 2000 + num) : num;
+        } else {
+          palabrasResto.push(p);
+        }
+      });
+
+      const anoEfectivo = ano || anoDesdeTexto;
+
+      const filtrados = catalogo.filter(item => {
+        if (motor && !item.aplicaciones.some(a => a.motor === motor)) return false;
+
+        const coincideVehiculo = item.aplicaciones.some(a => {
+          const mMarca = !marca || normalizar(a.marca) === normalizar(marca);
+          const mMod = !modelo || normalizar(a.modelo) === normalizar(modelo);
+          const mAno = coincideAno(a, anoEfectivo);
+          return mMarca && mMod && mAno;
+        });
+        if (!coincideVehiculo) return false;
+
+        if (palabrasResto.length > 0) {
+          const refs = (item.referencias_cruzadas || []).join(' ');
+          const full = normalizar(`${item.codigo} ${item.tipo} ${item.sistema} ${refs} ${item.aplicaciones.map(a => `${a.marca} ${a.modelo} ${a.motor}`).join(' ')}`);
+          if (!palabrasResto.every(pal => full.includes(pal))) return false;
+        }
+        return true;
+      });
+
+      renderizar(filtrados.slice(0, 100), { marca, modelo, ano: anoEfectivo, total: filtrados.length });
+    }
+
+    function renderizar(lista, f) {
+      const cont = document.getElementById('grid-productos');
+      document.getElementById('contador-resultados').textContent = f.total;
+
+      cont.innerHTML = lista.map(item => {
+        const appsRows = item.aplicaciones.map(a => {
+          const match = (f.marca && normalizar(a.marca) === normalizar(f.marca)) ||
+                        (f.modelo && normalizar(a.modelo) === normalizar(f.modelo)) ||
+                        (f.ano && coincideAno(a, f.ano));
+          return `
+            <tr class="${match ? 'badge-matched' : 'hover:bg-slate-50'} text-xs border-b">
+              <td class="py-1 px-2 font-medium">${a.marca}</td>
+              <td class="py-1 px-2 font-bold">${a.modelo}</td>
+              <td class="py-1 px-2 font-mono">${a.anos_texto}</td>
+              <td class="py-1 px-2 text-slate-600">${a.motor || '-'} ${a.cilindros ? '('+a.cilindros+')' : ''}</td>
+            </tr>
+          `;
+        }).join('');
+
+        const refsBadges = (item.referencias_cruzadas || []).map(r => 
+          `<span class="inline-block bg-slate-100 border border-slate-200 text-slate-700 text-[10px] font-semibold px-2 py-0.5 rounded-md mr-1 mb-1"><i class="fa-solid fa-code-compare text-red-500 mr-1"></i>${r}</span>`
+        ).join('');
+
+        return `
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col overflow-hidden">
+            <div class="p-4 bg-slate-900 text-white flex justify-between items-start">
+              <div>
+                <span class="text-[10px] font-bold uppercase text-red-400 block">${item.marca || 'AUTOPARTE'}</span>
+                <h3 class="text-xl font-black">${item.codigo}</h3>
+                <p class="text-xs text-slate-300">${item.tipo}</p>
+              </div>
+              ${item.imagen ? `<img src="${item.imagen}" class="w-12 h-12 object-contain bg-white rounded-lg p-1" onerror="this.style.display='none'">` : ''}
+            </div>
+
+            ${refsBadges ? `<div class="p-2.5 bg-slate-50 border-b flex flex-wrap items-center">${refsBadges}</div>` : ''}
+
+            <div class="p-4 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="overflow-x-auto max-h-40 border rounded-xl mb-2">
+                  <table class="w-full text-left">
+                    <thead class="bg-slate-100 text-[10px] uppercase text-slate-600 sticky top-0">
+                      <tr><th class="p-1.5">Marca</th><th class="p-1.5">Modelo</th><th class="p-1.5">Años</th><th class="p-1.5">Motor</th></tr>
+                    </thead>
+                    <tbody>${appsRows}</tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="pt-3 mt-2 border-t flex gap-2">
+                <button onclick="navigator.clipboard.writeText('${item.codigo}'); alert('Código copiado: ${item.codigo}')" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-xs font-semibold rounded-xl flex-1">
+                  Copiar Código
+                </button>
+                <button onclick="window.open('https://wa.me/?text='+encodeURIComponent('Hola, requiero la pieza con código *${item.codigo}* (${item.tipo})'), '_blank')" class="px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl flex items-center gap-1">
+                  <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function limpiarFiltros() {
+      document.getElementById('input-busqueda').value = '';
+      document.getElementById('select-marca').value = '';
+      document.getElementById('select-motor').value = '';
+      alCambiarMarca();
+    }
+  </script>
+</body>
+</html>
