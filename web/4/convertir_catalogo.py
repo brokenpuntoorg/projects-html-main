@@ -3,11 +3,9 @@ import re
 import json
 import csv
 
-# Carpeta donde están tus archivos (el script busca en todas las subcarpetas)
 CARPETA_PROYECTO = "." 
 
 def convertir_anos(texto):
-    """Convierte rangos como '98-08' a (1998, 2008) o '2011' a (2011, 2011)"""
     s = str(texto).strip()
     if not s:
         return None, None
@@ -40,35 +38,44 @@ def procesar_archivo_html(ruta):
     m_cod = re.search(r'class="product-model"[^>]*>([^<]+)<', html, re.I)
     codigo = m_cod.group(1).strip() if m_cod else os.path.splitext(os.path.basename(ruta))[0]
 
-    # 2. Marca del vehículo
+    # 2. Marca / Línea
     m_marca = re.search(r'class="product-brand"[^>]*>([^<]+)<', html, re.I)
-    marca = m_marca.group(1).strip() if m_marca else "FORD"
+    marca = m_marca.group(1).strip() if m_marca else "CHRYSLER / DODGE"
 
     # 3. Título / Sistema
     m_tit = re.search(r'<h1[^>]*>([^<]+)<', html, re.I)
-    sistema = m_tit.group(1).strip() if m_tit else "Sistema Automotriz"
+    sistema = m_tit.group(1).strip() if m_tit else "SISTEMA DE ENCENDIDO"
 
     # 4. Imagen del producto
     m_img = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', html, re.I)
     imagen = m_img.group(1).strip() if m_img else ""
 
-    # 5. Especificaciones técnicas
+    # 5. Especificaciones del Producto (extrae Tipo, Rango de Motor, Calidad, etc.)
+    especificaciones = []
+    # Busca todos los párrafos con etiquetas <strong>Nombre:</strong> Valor
+    m_specs = re.findall(r'<p>\s*<strong>([^<:]+):?</strong>\s*([^<]+)</p>', html, re.I)
+    for nombre, valor in m_specs:
+        especificaciones.append({
+            "clave": nombre.strip(),
+            "valor": valor.strip()
+        })
+
+    # Tipo para la tarjeta rápida
     tipo = "Refacción"
-    m_tipo = re.search(r'<strong>Tipo:?</strong>\s*([^<]+)<', html, re.I)
-    if m_tipo:
-        tipo = m_tipo.group(1).strip()
+    for s in especificaciones:
+        if s["clave"].lower() == "tipo":
+            tipo = s["valor"]
+            break
 
-    calidad = ""
-    m_cal = re.search(r'<strong>Calidad:?</strong>\s*([^<]+)<', html, re.I)
-    if m_cal:
-        calidad = m_cal.group(1).strip()
-
-    # 6. Referencias Cruzadas (ej. Motorcraft: DG508)
-    cross_refs = []
+    # 6. Referencias Técnicas / Cruzadas (Kem, Injetech, Tecnofuel, Motorcraft...)
+    referencias_tecnicas = []
     for m in re.finditer(r'<li>\s*<strong>([^<:]+):?</strong>\s*([^<]+)</li>', html, re.I):
-        cross_refs.append(f"{m.group(1).strip()}: {m.group(2).strip()}")
+        referencias_tecnicas.append({
+            "marca": m.group(1).strip(),
+            "codigo": m.group(2).strip()
+        })
 
-    # 7. Tabla de aplicaciones (Modelo, Años, Motor, Cilindros)
+    # 7. Tabla de Aplicaciones Principales
     aplicaciones = []
     for tr in re.findall(r'<tr[^>]*>(.*?)</tr>', html, re.I | re.DOTALL):
         tds = re.findall(r'<td[^>]*>(.*?)</td>', tr, re.I | re.DOTALL)
@@ -77,7 +84,6 @@ def procesar_archivo_html(ruta):
             anos_str = re.sub(r'<[^>]+>', '', tds[1]).strip()
             motor = re.sub(r'<[^>]+>', '', tds[2]).strip()
             cilindros = re.sub(r'<[^>]+>', '', tds[3]).strip()
-
             y_ini, y_fin = convertir_anos(anos_str)
 
             aplicaciones.append({
@@ -95,15 +101,14 @@ def procesar_archivo_html(ruta):
         "marca": marca,
         "sistema": sistema,
         "tipo": tipo,
-        "calidad": calidad,
+        "especificaciones": especificaciones,
+        "referencias_tecnicas": referencias_tecnicas,
         "imagen": imagen,
-        "referencias_cruzadas": cross_refs,
-        "aplicaciones": aplicaciones,
-        "archivo_origen": os.path.basename(ruta)
+        "aplicaciones": aplicaciones
     }
 
 def main():
-    print("Iniciando escaneo de archivos HTML...")
+    print("Extrayendo fichas técnicas completas...")
     productos = []
     filas_csv = []
 
@@ -114,39 +119,23 @@ def main():
                 item = procesar_archivo_html(ruta_completa)
                 if item and item.get("codigo"):
                     productos.append(item)
-
-                    # Guardar filas para Excel / CSV
-                    refs_str = " | ".join(item["referencias_cruzadas"])
+                    refs_str = " | ".join([f"{r['marca']}: {r['codigo']}" for r in item["referencias_tecnicas"]])
                     for app in item["aplicaciones"]:
                         filas_csv.append({
                             "Codigo": item["codigo"],
-                            "Marca": app["marca"],
+                            "Marca": item["marca"],
+                            "Sistema": item["sistema"],
                             "Modelo": app["modelo"],
                             "Años": app["anos_texto"],
-                            "Año_Inicio": app["ano_inicio"],
-                            "Año_Fin": app["ano_fin"],
                             "Motor": app["motor"],
                             "Cilindros": app["cilindros"],
-                            "Tipo": item["tipo"],
-                            "Sistema": item["sistema"],
-                            "Referencias_Cruzadas": refs_str,
-                            "Imagen": item["imagen"]
+                            "Referencias": refs_str
                         })
 
-    # Guardar JSON para el buscador web
     with open("catalogo_completo.json", "w", encoding="utf-8") as f:
         json.dump(productos, f, ensure_ascii=False, indent=2)
 
-    # Guardar CSV para abrir en Excel
-    if filas_csv:
-        with open("catalogo_completo.csv", "w", encoding="utf-8-sig", newline="") as f:
-            escritor = csv.DictWriter(f, fieldnames=list(filas_csv[0].keys()))
-            escritor.writeheader()
-            escritor.writerows(filas_csv)
-
-    print(f"\n¡Éxito rotundo!")
-    print(f"-> Se procesaron {len(productos)} piezas únicas.")
-    print(f"-> Archivos generados: 'catalogo_completo.json' y 'catalogo_completo.csv'")
+    print(f"¡Listo! Se actualizaron {len(productos)} fichas técnicas con todas sus especificaciones.")
 
 if __name__ == "__main__":
     main()
