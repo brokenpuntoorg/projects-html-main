@@ -14,7 +14,7 @@
       color: #713f12 !important;
       font-weight: 700 !important;
     }
-    /* Estilos oficiales de la Ficha Técnica (Diseño exacto de tu catálogo) */
+    /* Diseño Oficial de la Ficha Técnica */
     .ficha-box {
       font-family: 'Segoe UI', Arial, sans-serif;
       background: white;
@@ -99,7 +99,7 @@
 </head>
 <body class="min-h-screen text-slate-800 flex flex-col">
 
-  <!-- Header -->
+  <!-- Header Superior -->
   <header class="bg-slate-900 text-white shadow-lg sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 py-3.5 flex flex-wrap justify-between items-center gap-3">
       <div class="flex items-center space-x-3">
@@ -117,8 +117,9 @@
     </div>
   </header>
 
-  <!-- Contenido -->
+  <!-- Contenido Principal -->
   <main class="max-w-7xl mx-auto px-4 py-6 flex-1 w-full">
+    <!-- Panel de Filtros -->
     <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 mb-6">
       <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
         <h2 class="font-bold text-slate-800 text-base sm:text-lg flex items-center gap-2">
@@ -138,7 +139,7 @@
           <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
             <i class="fa-solid fa-magnifying-glass"></i>
           </span>
-          <input type="text" id="input-busqueda" oninput="aplicarFiltros()" placeholder="Escribe código (ej. BOUF502, FILS87), referencia (IC-190, DG508) o modelo (Charger, Expedition)..." class="w-full pl-10 pr-10 py-3 rounded-xl border border-slate-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 text-sm outline-none transition bg-slate-50/50 focus:bg-white">
+          <input type="text" id="input-busqueda" oninput="aplicarFiltros()" placeholder="Escribe código (ej. FILS53, BOUF502), referencia (IC-190, DG508) o modelo (Charger, Silverado)..." class="w-full pl-10 pr-10 py-3 rounded-xl border border-slate-300 focus:border-red-500 focus:ring-2 focus:ring-red-100 text-sm outline-none transition bg-slate-50/50 focus:bg-white">
           <button id="btn-borrar" onclick="limpiarTexto()" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600">
             <i class="fa-solid fa-circle-xmark"></i>
           </button>
@@ -188,7 +189,7 @@
     <div id="grid-productos" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </main>
 
-  <!-- Modal Ficha Técnica con el Diseño Exacto de tu Catálogo -->
+  <!-- Modal Ficha Técnica con Diseño Oficial Azul -->
   <div id="modal-ficha" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[94vh] overflow-y-auto shadow-2xl border border-slate-200 flex flex-col">
       <div class="sticky top-0 bg-white px-6 py-3 border-b border-slate-200 flex justify-between items-center z-10">
@@ -209,6 +210,17 @@
   <script>
     let catalogo = [];
 
+    // Función que corrige automáticamente la ruta de las imágenes
+    function arreglarRutaImagen(ruta) {
+      if (!ruta) return 'https://via.placeholder.com/160?text=Sin+Imagen';
+      // Si la ruta comienza con '/', la convertimos a ruta relativa './'
+      if (ruta.startsWith('/')) {
+        return '.' + ruta;
+      }
+      return ruta;
+    }
+
+    // Cargar Catálogo
     fetch('catalogo_completo.json')
       .then(res => res.json())
       .then(data => {
@@ -354,6 +366,8 @@
       }
 
       cont.innerHTML = lista.map(item => {
+        const rutaImagen = arreglarRutaImagen(item.imagen);
+
         const appsRows = item.aplicaciones.map(a => {
           const match = (f.marca && normalizar(a.marca) === normalizar(f.marca)) ||
                         (f.modelo && normalizar(a.modelo) === normalizar(f.modelo)) ||
@@ -381,7 +395,9 @@
                 <h3 class="text-2xl font-black tracking-wide">${item.codigo}</h3>
                 <p class="text-xs text-slate-300 line-clamp-2">${item.tipo}</p>
               </div>
-              ${item.imagen ? `<img src="${item.imagen}" class="w-16 h-16 object-contain bg-white rounded-xl p-1 shadow-inner" onerror="this.style.display='none'">` : ''}
+              <div class="w-16 h-16 bg-white rounded-xl p-1 shadow-inner flex items-center justify-center overflow-hidden flex-shrink-0">
+                <img src="${rutaImagen}" class="max-w-full max-h-full object-contain" onerror="this.src='https://via.placeholder.com/64?text=Pieza'">
+              </div>
             </div>
 
             ${refsBadges ? `<div class="p-2.5 bg-slate-50 border-b flex flex-wrap items-center">${refsBadges}</div>` : ''}
@@ -424,8 +440,10 @@
       }).join('');
     }
 
-    // Genera el HTML exacto de tu formato de catálogo
+    // Genera el HTML exacto de la Ficha Técnica con la foto corregida
     function generarHTMLFicha(item) {
+      const rutaImagen = arreglarRutaImagen(item.imagen);
+
       const specsHTML = (item.especificaciones && item.especificaciones.length) 
         ? item.especificaciones.map(s => `<p style="margin: 4px 0; font-size: 13px; color: #1f2937;"><strong>${s.clave}:</strong> ${s.valor}</p>`).join('')
         : `<p style="margin: 4px 0; font-size: 13px; color: #1f2937;"><strong>Tipo:</strong> ${item.tipo}</p>`;
@@ -461,7 +479,7 @@
           <div class="ficha-card-body" style="margin: 0 25px 25px 25px;">
             <div style="display: flex; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">
               <div class="ficha-img-container">
-                <img src="${item.imagen || ''}" alt="${item.codigo}" onerror="this.src='https://via.placeholder.com/160?text=Sin+Imagen'">
+                <img src="${rutaImagen}" alt="${item.codigo}" onerror="this.src='https://via.placeholder.com/160?text=Sin+Foto'">
               </div>
               <div style="flex: 1; min-width: 260px;">
                 <h3 class="ficha-section-title">Especificaciones del Producto</h3>
