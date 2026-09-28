@@ -1,0 +1,98 @@
+/* ==================================================================== */
+/* 1. VARIABLES GLOBALES Y RESET BÁSICO */
+/* ==================================================================== */
+
+:root {
+    --color-primary: #e51d38; /* Tu color de marca (Rojo) */
+    --color-secondary: #007bff; /* Un color de acento (Azul) */
+    --color-text-main: #333333; /* Texto principal */
+    --color-text-light: #666666; /* Texto secundario/meta */
+    --color-background-light: #f9f9f9; /* Fondo de la página/secciones */
+    --color-border: #eeeeee;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--color-text-main);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+/* ==================================================================== */
+/* 2. ESTILOS DE CONTENEDOR Y DISEÑO PRINCIPAL */
+/* ==================================================================== */
+
+.article-page-unique {
+    /* Centra el artículo en la página */
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--color-background-light);
+}
+
+.blog-article-unique {
+    /* Define el ancho máximo para la legibilidad del artículo */
+    max-width: 850px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden; /* Para contener la imagen hero */
+}
+
+/* ==================================================================== */
+/* 3. ESTILOS DE LA CABECERA DEL ARTÍCULO */
+/* ==================================================================== */
+
+.article-header-unique {
+    padding: 30px;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Categoría (El tag pequeño) */
+.article-category-unique {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Título principal */
+.article-title-unique {
+    font-size: 2.2rem;
+    margin: 10px 0;
+    line-height: 1.2;
+    color: #222;
+}
+
+/* Metadatos (Fecha y Autor) */
+.article-meta-unique {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+}
+
+.article-meta-unique time {
+    font-weight: bold;
+}
+
+/* Imagen Hero */
+.article-image-hero-unique {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+    margin-top: 15px;
+    border-radius: 6px;
+}
+
+/* ==================================================================== */
+/*

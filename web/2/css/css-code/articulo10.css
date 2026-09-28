@@ -1,0 +1,183 @@
+:root {
+    --color-primary: #1a1a1a;
+    --color-secondary: #555;
+    --color-background: #fff;
+    --color-link: #007bff; /* Azul para "Leer Artículo" */
+    --color-border: #eee;
+
+    /* Colores de Categorías basados en imágenes subidas */
+    --cat-guias-red: #e51d38; /* Rojo para GUÍAS y TUTORIALES (image_75b87f.png, image_5dc6a4.png) */
+    --cat-guias-green: #28a745; /* Verde para GUÍAS (image_a9c017.png) */
+    --cat-experiencias: #800080; /* Morado para EXPERIENCIAS (image_0f5be5.png) */
+    --cat-tecnologia: #ff69b4; /* Rosa para TECNOLOGÍA (image_aabb5f.png) */
+    --cat-tutoriales-blue: #007bff; /* Azul para TUTORIALES (image_aa3ccf.png) */
+    --cat-diseno: #e51d38; /* Usamos el rojo primario para DISEÑO */
+}
+
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: var(--color-primary);
+    line-height: 1.6;
+}
+
+.blog-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 15px 40px 15px; /* Padding inferior generoso */
+}
+
+/* --- ENCABEZADO PRINCIPAL --- */
+.blog-header {
+    text-align: center;
+    padding: 20px 0 30px 0;
+    margin-bottom: 20px;
+}
+
+.blog-main-title {
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    margin: 0 0 10px 0;
+}
+
+.blog-subtitle {
+    font-size: 1rem;
+    color: var(--color-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.grid-section-title {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin: 40px 0 20px 0;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+}
+
+/* --- TARJETAS DE ARTÍCULO (GENERAL) --- */
+.articles-grid {
+    display: grid;
+    gap: 30px;
+    /* En móvil, las tarjetas se apilan */
+    grid-template-columns: 1fr;
+}
+
+.article-card {
+    background-color: var(--color-background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border);
+}
+
+.card-category {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* Colores Dinámicos de Categoría */
+.category-guias-red, .category-diseno, .category-guias-red {
+    color: var(--cat-guias-red);
+}
+.category-guias-green {
+    color: var(--cat-guias-green);
+}
+.category-experiencias {
+    color: var(--cat-experiencias);
+}
+.category-tecnologia {
+    color: var(--cat-tecnologia);
+}
+.category-tutoriales {
+    color: var(--cat-tutoriales-blue);
+}
+
+.card-title {
+    font-size: 1.4rem;
+    line-height: 1.25;
+    margin: 0 0 10px 0;
+    color: var(--color-primary);
+}
+
+.card-snippet {
+    font-size: 0.95rem;
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+}
+
+.read-more-link {
+    display: inline-block;
+    color: var(--color-link);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.read-more-link:hover {
+    color: #0056b3;
+}
+
+/* --- ARTÍCULO DESTACADO (FEATURED) --- */
+.featured-article {
+    margin-bottom: 40px;
+}
+
+.featured {
+    border-left: 5px solid var(--cat-experiencias);
+    padding: 25px;
+}
+
+.featured .card-title {
+    font-size: 1.8rem;
+    margin-top: 5px;
+}
+
+.featured .card-snippet {
+    font-size: 1rem;
+}
+
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+   
+    .blog-page-container {
+        padding: 30px 30px 60px 30px;
+    }
+
+    .blog-main-title {
+        font-size: 3rem;
+    }
+    
+    .blog-header {
+        padding: 30px 0 50px 0;
+    }
+
+    /* Cuadrícula de 3 columnas para Desktop */
+    .articles-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    /* Artículo Destacado */
+    .featured {
+        padding: 35px 40px;
+    }
+    
+    .featured .card-title {
+        font-size: 2.2rem;
+    }
+    
+    /* Títulos de las tarjetas en Desktop */
+    .article-card .card-title {
+        font-size: 1.5rem;
+    }
+
+}    
+

@@ -1,0 +1,260 @@
+:root {
+    --color-red: #e51d38; /* Rojo/Magenta de acento */
+    --color-cyan: #0087cb; /* Cian/Azul de acento */
+    --color-text: #333;
+    --color-background: #f8f8f8;
+}
+
+.article-page-tinta {
+    font-family: Arial, sans-serif; 
+    background-color: var(--color-background);
+    color: var(--color-text);
+    padding: 20px 0;
+}
+
+.article-guide-tinta {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* --- ENCABEZADO Y TÍTULO --- */
+.article-header-tinta {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.article-category-tinta {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--color-red);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.article-title-tinta {
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.article-subtitle-tinta {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.article-image-hero-tinta {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+/* --- CONTENIDO DEL ARTÍCULO --- */
+.article-content-tinta p {
+    line-height: 1.6;
+    margin-bottom: 1.2em;
+    font-size: 1rem;
+}
+
+.intro-paragraph-tinta {
+    font-weight: bold;
+    color: var(--color-cyan);
+    border-left: 3px solid var(--color-red);
+    padding-left: 15px;
+    font-size: 1.05rem;
+}
+
+.content-heading-tinta {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.content-heading-tinta.primary-type {
+    color: var(--color-red);
+}
+
+.article-content-tinta ul.special-inks-list {
+    margin: 15px 0 25px 0;
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+.article-content-tinta ul.special-inks-list li {
+    margin-bottom: 15px;
+    padding-left: 15px;
+    line-height: 1.6;
+    position: relative;
+}
+
+.article-content-tinta ul.special-inks-list li::before {
+    content: "•";
+    color: var(--color-cyan);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+
+/* --- CAJAS DE INFORMACIÓN (INFO BOXES) --- */
+.info-box-tinta {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border: 1px solid;
+}
+
+.info-box-tinta strong {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.paper-water-based {
+    background-color: #e6f7ff; /* Cian claro */
+    border-color: #99d6ff;
+    color: #005691;
+}
+
+.fast-dry-solvent {
+    background-color: #fff3cd; /* Amarillo/Naranja claro (Advertencia) */
+    border-color: #ffe08a;
+    color: #856404;
+}
+
+.warning-text {
+    font-weight: bold;
+    color: var(--color-red);
+    display: block;
+    margin-top: 10px;
+}
+
+/* --- TABLA DE ALMOHADILLAS --- */
+.tinta-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.95rem;
+}
+
+.tinta-table th, .tinta-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.tinta-table thead th {
+    background-color: var(--color-cyan);
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tinta-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Caja de Tip */
+.tip-box-tinta {
+    padding: 15px;
+    background-color: #d4edda; /* Verde suave para tip */
+    border-left: 5px solid #28a745;
+    margin: 30px 0;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.tip-box-tinta strong {
+    color: #155724;
+}
+
+/* --- CTA (Llamada a la Acción) --- */
+.article-cta-tinta {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--color-red);
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.cta-title-tinta {
+    font-size: 1.8rem;
+    margin-top: 0;
+    color: #fff;
+}
+
+.article-cta-tinta p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.cta-button-tinta {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-cyan); 
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px; 
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button-tinta:hover {
+    background-color: #006699;
+    transform: translateY(-2px);
+}
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+    /* ======================================= */
+    /* ESTILOS PARA LA VERSIÓN DE ESCRITORIO */
+    /* ======================================= */
+   .article-guide-tinta {
+        padding: 40px 80px;
+    }
+
+    .article-title-tinta {
+        font-size: 3rem;
+    }
+    
+    .article-subtitle-tinta {
+        font-size: 1.1rem;
+    }
+
+    .article-image-hero-tinta {
+        max-height: 400px;
+    }
+    
+    .content-heading-tinta {
+        font-size: 1.7rem;
+    }
+    
+    .tinta-table {
+        font-size: 1rem;
+    }
+
+    .article-cta-tinta {
+        padding: 40px 60px;
+    }
+}    
+

@@ -1,0 +1,317 @@
+/* Estilos Generales y Mobile-First */
+*{
+    box-sizing: border-box;
+}
+:root {
+    --proceso-gray: #404040;
+    --proceso-red: #D52B1E;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.main-header {
+    background-color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ocultar elementos de escritorio en móvil por defecto */
+.header-top, .desktop-nav {
+    display: none;
+}
+
+.logo-container {
+    text-align: center;
+    margin-top: 10px;
+}
+.logo-container img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    opacity: 1  ;
+}
+
+.logo-img {
+    max-width: 150px;
+    height: auto;
+}
+
+.date {
+    display: block;
+    margin-top: 5px;
+    font-size: 10px;
+    color: var(--proceso-gray);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Estilos del menú móvil */
+.mobile-menu-container {
+    display: flex;
+    justify-content: flex-end; /* Alinea el botón a la derecha */
+    width: 100%;
+    position: relative;
+}
+
+.hamburger-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--proceso-gray);
+    cursor: pointer;
+    padding: 10px;
+    outline: none;
+}
+
+.mobile-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 75vh;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 10;
+}
+
+.mobile-menu.open {
+    display: block;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+}
+
+.mobile-nav li {
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+}
+
+.mobile-nav li:last-child {
+    border-bottom: none;
+}
+
+.mobile-nav li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+.mobile-nav li a:hover {
+    color: var(--proceso-red);
+}
+
+/* Contenedor del grid */
+.grid-container {
+    padding: 20px 15px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr; /* Una columna por defecto en mobile */
+    grid-template-areas:
+        "main"
+        "left-top"
+        "right-top"
+        "left-bottom"
+        "right-bottom";
+}
+
+.news-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.news-item img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    opacity: .9;
+}
+.news-caption {
+    padding: 15px;
+}
+
+.news-caption .news-source {
+    display: block;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #D52B1E;
+    margin-bottom: 5px;
+}
+
+.news-caption h2, .news-caption h3 {
+    margin: 0;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Estilos específicos para cada sección del grid */
+.main-news {
+    grid-area: main;
+}
+
+.left-top {
+    grid-area: left-top;
+}
+
+.left-bottom {
+    grid-area: left-bottom;
+}
+
+.right-top {
+    grid-area: right-top;
+}
+
+.right-bottom {
+    grid-area: right-bottom;
+}
+.content-grid a{
+    text-decoration: none;
+    font-size: 1.3em;
+    color: #000;
+}
+.content-grid a:hover {
+    color: var(--proceso-red);
+}
+
+
+
+/* Media Query para Desktop */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .mobile-menu-container {
+        display: none; /* Oculta la hamburguesa y el menú en desktop */
+    }
+
+    .header-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font-size: 12px;
+        color: #999;
+        padding: 5px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .cta a,
+    .actions a {
+        text-decoration: none;
+        color: #999;
+        margin-right: 15px;
+        transition: color 0.2s;
+    }
+
+    .cta a:hover,
+    .actions a:hover {
+        color: #333;
+        color: #D52B1E;
+    }
+
+    .subscribe-button {
+        background-color: var(--proceso-red);
+        color: #fff !important;
+        padding: 5px 10px;
+        border-radius: 3px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 12px;
+        transition: background-color 0.2s;
+        margin-left: 3em;
+    }
+
+    .search-icon {
+        margin-right: 0;
+        font-size: 1.5em;
+    }
+
+    .logo-container {
+        margin: 20px 0 10px 0;
+        position: relative;
+        text-align: center;
+    }
+
+    .logo-img {
+        max-width: 300px;
+    }
+
+    .date {
+        font-size: 14px;
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+
+    .desktop-nav {
+        display: block; /* Muestra el nav de escritorio */
+        width: 100%;
+        margin-top: 20px;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+    }
+
+    .desktop-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .desktop-nav li a {
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: var(--proceso-gray);
+        font-weight: bold;
+        white-space: nowrap;
+        font-size: 13px;
+    }
+
+    .desktop-nav li a:hover {
+        background-color: #f5f5f5;
+        color: var(--proceso-red);
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr 2fr 1fr; /* Tres columnas para desktop */
+        grid-template-rows: auto auto; /* Dos filas */
+        grid-template-areas:
+            "left-top main right-top"
+            "left-bottom main right-bottom";
+    }
+
+    .main-news .news-caption {
+        padding: 20px;
+    }
+
+    .main-news h2 {
+        font-size: 32px;
+    }
+}

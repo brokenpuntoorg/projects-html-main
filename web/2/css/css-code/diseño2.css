@@ -1,0 +1,259 @@
+:root {
+    --color-primary: #e51d38; /* Rojo de marca */
+    --color-secondary-dark: #1a1a1a;
+    --color-text-main: #333;
+    --color-background: #f8f8f8;
+    --color-card-bg: #ffffff;
+    --color-border-light: #eee;
+    --color-warning: #ffc107;
+}
+
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    line-height: 1.6;
+}
+
+.design-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0 40px 0;
+}
+
+/* --- HERO --- */
+.design-hero {
+    text-align: center;
+    padding: 40px 15px 50px 15px;
+    background-color: var(--color-secondary-dark);
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    margin: 0 0 10px 0;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- SECCIONES GENERALES --- */
+section {
+    padding: 20px 15px;
+    margin-bottom: 30px;
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-border-light);
+}
+
+/* --- 1. VECTORIAL SECTION (Móvil: Apilado) --- */
+.vector-content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.vector-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.vector-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.vector-list li {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%23e51d38" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') no-repeat left center;
+    background-size: 20px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* --- 2. COREL DRAW STEPS --- */
+.corel-step-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Apilado en móvil */
+    gap: 25px;
+}
+
+.corel-step {
+    background-color: var(--color-card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.step-number {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.corel-step h3 {
+    color: var(--color-secondary-dark);
+    margin-top: 0;
+}
+
+.code-tip {
+    background-color: #eee;
+    color: var(--color-secondary-dark);
+    padding: 10px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: monospace;
+    font-size: 0.9rem;
+    display: block;
+}
+
+.color-list {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.warning-tip {
+    background-color: var(--color-warning);
+    color: var(--color-secondary-dark);
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* --- 3. FORMATO DE ENTREGA --- */
+.delivery-info {
+    display: grid;
+    grid-template-columns: 1fr; /* Apilado en móvil */
+    gap: 20px;
+}
+
+.format-card {
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid var(--color-primary);
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.format-card h3 {
+    color: var(--color-secondary-dark);
+    margin-top: 0;
+}
+
+/* --- CTA --- */
+.cta-design-help {
+    text-align: center;
+    padding: 35px 20px;
+    background-color: #f0f0f0; 
+    border-radius: 8px;
+    margin: 40px 15px;
+}
+
+.cta-title {
+    font-size: 1.8rem;
+    margin-top: 0;
+    color: var(--color-secondary-dark);
+}
+
+.cta-design-help p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.cta-button-design {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-primary); 
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px; 
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button-design:hover {
+    background-color: #a01526; 
+}
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+     .design-page-container {
+        padding: 0 30px 60px 30px;
+    }
+
+    .design-hero {
+        padding: 60px 30px 70px 30px;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    section {
+        padding: 40px 30px;
+    }
+
+    .section-heading {
+        font-size: 2.2rem;
+    }
+    
+    /* 1. VECTORIAL SECTION: 2 Columnas */
+    .vector-content-grid {
+        grid-template-columns: 1.5fr 1fr; /* Texto más ancho que la imagen */
+        align-items: center;
+        gap: 50px;
+    }
+    
+    /* 2. COREL DRAW STEPS: 3 Columnas */
+    .corel-step-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+    .corel-step {
+        min-height: 250px; /* Asegurar altura consistente */
+    }
+
+    /* 3. FORMATO DE ENTREGA: 2 Columnas */
+    .delivery-info {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+        margin: 0 auto;
+        gap: 30px;
+    }
+    
+    /* CTA */
+    .cta-design-help {
+        padding: 50px 80px;
+        margin: 60px auto;
+        max-width: 900px;
+    }
+
+    .cta-title {
+        font-size: 2.5rem;
+    }
+  }    
+

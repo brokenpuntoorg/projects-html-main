@@ -1,0 +1,286 @@
+:root {
+    --color-primary: #e51d38; /* Rojo de marca */
+    --color-secondary-dark: #1a1a1a;
+    --color-text-main: #333;
+    --color-background: #f8f8f8;
+    --color-overlay: rgba(229, 29, 56, 0.85); /* Overlay semitransparente con color primario */
+}
+
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita el scroll horizontal causado por el carrusel */
+}
+
+.clients-page-container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 0 40px 0; /* Padding inferior */
+}
+
+/* --- 1. HERO SUPERIOR --- */
+.hero-header {
+    text-align: center;
+    padding: 40px 15px 50px 15px;
+    background-color: var(--color-secondary-dark);
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- 2. SECCIÓN DEL CARRUSEL --- */
+.clients-carousel-section {
+    padding: 20px 0;
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--color-secondary-dark);
+    margin: 0 15px 30px 15px;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden; /* Oculta los elementos que están fuera de vista */
+}
+
+.carousel-track {
+    /* Esta anchura inicial será sobreescrita por JS para el efecto infinito */
+    display: flex;
+    animation: scroll-mobile 60s linear infinite; /* Animación de desplazamiento */
+}
+
+/* Definición de la Animación de Scroll para Móvil */
+@keyframes scroll-mobile {
+    from {
+        transform: translateX(0);
+    }
+    /* Mueve la mitad de los elementos (15 elementos) */
+    to {
+        transform: translateX(calc(-100% / 2)); 
+    }
+}
+
+/* --- ESTILO DE LOS CONTENEDORES DE CLIENTES --- */
+.client-item {
+    min-width: 50%; /* 2 logos visibles a la vez en móvil */
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.client-logo {
+    width: 100%;
+    height: 100px; /* Altura fija para la consistencia visual */
+    object-fit: contain;
+    padding: 15px;
+    background-color: var(--color-card-background);
+    opacity: 0.6; /* Logos atenuados inicialmente */
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+/* Overlay */
+.client-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-overlay);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Inicialmente oculto */
+    transition: opacity 0.4s ease;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.client-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.client-type {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Efectos de Interacción (Overlay y Zoom) */
+.client-item:hover .client-logo {
+    opacity: 1; /* Transición de opacidad al pasar el ratón */
+    transform: scale(1.1); /* Zoom en la imagen */
+}
+
+.client-item:hover .client-overlay {
+    opacity: 1; /* Mostrar overlay al pasar el ratón */
+}
+
+/* --- 3. HERO INFERIOR --- */
+.hero-footer {
+    text-align: center;
+    padding: 40px 15px;
+    background-color: var(--color-primary);
+    color: #fff;
+    margin-top: 30px;
+}
+
+.footer-title {
+    font-size: 1.8rem;
+    margin: 0 0 10px 0;
+}
+
+.footer-subtitle {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.footer-cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-secondary-dark); 
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px; 
+    transition: background-color 0.3s;
+}
+
+.footer-cta-button:hover {
+    background-color: #000;
+}
+
+
+
+/* ======================================= */
+/* ESTILOS DE ESCRITORIO (Base CSS - > 768px) */
+/* ======================================= */
+.carousel-track {
+    display: flex;
+    /* Ancho total: el doble de los ítems originales */
+    width: 200%; 
+    /* El nombre de animación que usaremos universalmente */
+    animation: scroll-clients linear infinite; 
+    /* La duración será sobrescrita por JS */
+}
+
+/* 🚨 REGLAS DE KEYFRAMES PARA ESCRITORIO (Desplazamiento mayor) */
+@keyframes scroll-clients {
+    from {
+        /* Inicia en la posición 0 */
+        transform: translateX(0);
+    }
+    to {
+        /* Desplaza el ancho de todos los ítems originales (la mitad del track) */
+        /* Si tienes 10 items, esto equivale al 50% de la pista doble */
+        transform: translateX(-50%); 
+    }
+}
+
+/* ======================================= */
+/* AJUSTES PARA MÓVIL (Media Query - <= 767px) */
+/* ======================================= */
+@media (max-width: 767px) {
+    .client-item {
+        /* Si solo quieres que se vea 1 o 2 ítems a la vez en móvil */
+        min-width: 40vw; /* Ejemplo: Muestra 2.5 ítems */
+    }
+    
+    /* 🚨 REGLAS DE KEYFRAMES PARA MÓVIL (Desplazamiento más corto) */
+    /* NO TOCAMOS el nombre de la animación, solo redefinimos los keyframes */
+    @keyframes scroll-clients {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            /* MANTENEMOS el desplazamiento al 50% (el ancho de los ítems originales),
+               pero como el min-width del .client-item es diferente, el desplazamiento
+               visual se ajusta al móvil. */
+            transform: translateX(-50%); 
+        }
+    }
+}
+
+
+
+
+
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+       .hero-header {
+        padding: 60px 30px 70px 30px;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .section-heading {
+        font-size: 2.2rem;
+    }
+    
+    /* Disposición del carrusel en Desktop */
+    .client-item {
+        min-width: 16.666%; /* 6 logos visibles a la vez (100% / 6) */
+        height: 180px;
+        padding: 15px;
+    }
+
+    .client-logo {
+        height: 150px;
+        padding: 20px;
+    }
+
+    .carousel-track {
+        /* La animación de scroll se recalcula para que se desplace 1/2 de la pista duplicada (15/30) */
+        animation: scroll-desktop 45s linear infinite; 
+    }
+    
+    /* Definición de la Animación de Scroll para Desktop */
+    @keyframes scroll-desktop {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-100% / 2));
+        }
+    }
+    
+    /* Hero Inferior */
+    .hero-footer {
+        padding: 60px 30px;
+    }
+
+    .footer-title {
+        font-size: 2.5rem;
+    }
+}    
+

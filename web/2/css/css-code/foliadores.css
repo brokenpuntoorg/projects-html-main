@@ -1,0 +1,560 @@
+/* --- ESTILOS GENERALES Y MÓVIL (MOBILE FIRST) --- */
+
+.hero-section-unique {
+    /* Usaremos la imagen de fondo proporcionada (ajusta la URL según tu proyecto) */
+    background-image: linear-gradient(
+      0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)
+    )
+    ,url('/web/2/css/assets/foliadores/hero.jpg'); 
+    background-size: cover; /* Cubre toda la sección */
+    background-position: 70% 30%; /* Enfocamos la parte relevante de la imagen */
+    background-repeat: no-repeat;
+    
+    display: flex;
+    align-items: flex-end; /* Alinea el contenido al fondo */
+    justify-content: flex-start; /* Alinea el contenido a la izquierda */
+    
+    height: 60vh; /* Altura de la sección en móvil (60% del viewport) */
+    min-height: 400px; /* Altura mínima para asegurar espacio */
+    padding: 20px;
+    color: #fff; /* Texto blanco por defecto */
+}
+
+.hero-content-unique {
+    max-width: 90%; /* Limita el ancho del texto */
+    padding-bottom: 20px; /* Espacio desde la parte inferior */
+}
+
+.hero-title-unique {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.hero-subtitle-unique {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0 0 20px 0;
+}
+
+/* Botón (Call to Action - CTA) */
+.hero-cta-button-unique {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #fff; /* Fondo blanco */
+    color: #000; /* Texto negro */
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-cta-button-unique:hover {
+    background-color: #e0e0e0;
+}
+
+/* --- ESTILOS GENERALES Y MÓVIL (MOBILE FIRST) --- */
+
+.product-listing-section-unique {
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+.listing-header-unique {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+/* Botón de Filtro Móvil */
+.mobile-filter-btn-unique {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex; /* Visible en móvil */
+    align-items: center;
+}
+
+.filter-icon-unique {
+    margin-left: 5px;
+    font-size: 0.8em;
+}
+
+/* Ocultamos el select de ordenar y el título de ordenar para priorizar el botón de filtro */
+.sorting-container-unique {
+    display: none; 
+}
+
+/* Sidebar (Filtro) - Estilo Modal en Móvil */
+.filter-sidebar-unique {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+    /* INICIALMENTE OCULTO EN MÓVIL */
+    transform: translateX(-100%); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.filter-sidebar-unique.is-open {
+    transform: translateX(0);
+}
+
+.filter-header-unique {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.close-filter-btn-unique {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Estilos de los Grupos de Filtros */
+.filter-group-title-unique {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-list-unique {
+    list-style: none;
+    padding: 0;
+}
+
+.filter-list-unique li {
+    padding: 5px 0;
+}
+
+/* Botones de Acción Móvil */
+.filter-actions-unique {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.clear-filters-btn-unique, .apply-filters-btn-unique {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 48%;
+}
+
+.clear-filters-btn-unique {
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+}
+
+.apply-filters-btn-unique {
+    background-color: #000;
+    border: none;
+    color: #fff;
+}
+
+/* Estilos de la Cuadrícula de Productos */
+.product-grid-unique {
+    display: grid;
+    /* Muestra 2 productos por fila en móvil */
+    grid-template-columns: repeat(1, 1fr); 
+    gap: 15px;
+}
+
+/* Estilos de las Tarjetas de Producto */
+.product-card-link-unique {
+    text-decoration: none;
+    color: inherit;
+}
+
+.product-card-unique {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.image-wrapper-unique {
+    position: relative;
+    overflow: hidden;
+    height: 150px; /* Altura fija para consistencia en móvil */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image-unique {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Asegura que la imagen quepa */
+    transition: transform 0.5s ease;
+}
+
+/* Overlay (Para el Zoom) */
+.overlay-unique {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* Ligero oscurecimiento */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Zoom y Overlay al pasar el ratón (funciona también en táctil) */
+.product-card-unique:hover .product-image-unique {
+    transform: scale(1.1); /* Efecto Zoom */
+}
+
+.product-card-unique:hover .overlay-unique {
+    opacity: 1; /* Mostrar Overlay */
+}
+
+.product-info-unique {
+    padding: 10px;
+    text-align: left;
+}
+
+.product-name-unique {
+    font-size: 0.9rem;
+    margin: 0 0 5px;
+    height: 2.4em; /* Límite para 2 líneas */
+    overflow: hidden;
+}
+
+.product-price-unique {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #d82b2d;
+    margin: 0;
+}
+
+.product-tax-unique {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 2px;
+}
+.section-title{
+  color: #d82b2d;
+}
+.section-description{
+  padding: 2em;
+}
+.categories-section{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.categories-grid {
+    display: flex;
+    flex-direction: column; /* Una columna para móvil */
+    align-items: center;
+    gap: 30px; /* Espacio entre los elementos */
+}
+
+.category-item {
+    width: 240px; /* Ancho fijo para los elementos en móvil */
+    text-align: center;
+    position: relative;
+}
+
+.category-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Mantiene el aspecto cuadrado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Overlay para oscurecer */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Empieza transparente */
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Botón de enlace */
+.view-link-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent; /* Empieza transparente */
+    color: transparent;
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Efecto al pasar el cursor */
+.category-item:hover .category-icon {
+    transform: translate(-50%, -50%) scale(1.05); /* Zoom ligero */
+}
+
+.category-item:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.3); /* Oscurece 30% */
+}
+
+.category-item:hover .view-link-button {
+    background-color: #A32A2A; /* Color de acento */
+    color: white;
+    border-color: #A32A2A;
+}
+
+.category-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #A32A2A;
+    margin-top: 10px;
+}
+
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+      .hero-section-unique {
+        /* Aumentamos la altura para un efecto más dramático */
+        height: 80vh; 
+        min-height: 550px;
+
+        /* Ajustamos el fondo para que la modelo y el texto funcionen juntos */
+        background-position: center; 
+        
+        /* Centramos el contenido verticalmente para desktop */
+        align-items: center; 
+        padding: 50px;
+    }
+
+    .hero-content-unique {
+        max-width: 450px; /* Limita el ancho del texto para que no se extienda demasiado */
+        padding-bottom: 0; /* Quitamos el padding inferior que usamos para móvil */
+    }
+
+    .hero-title-unique {
+        font-size: 3.5rem; /* Título más grande */
+        margin-bottom: 15px;
+    }
+
+    .hero-subtitle-unique {
+        font-size: 1.2rem; /* Subtítulo más grande */
+        margin-bottom: 30px;
+    }
+
+    /* Opcional: Agregar una sombra o fondo sutil al texto para mejorar la legibilidad si es necesario */
+    /*
+    .hero-content-unique {
+        background-color: rgba(0, 0, 0, 0.2); 
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+
+    /* ------------------------------------- */
+    /* Estilos para ESCRITORIO */
+    /* ------------------------------------- */
+
+    .product-listing-section-unique {
+        padding: 30px 50px;
+    }
+
+    /* Ocultamos el botón de filtro móvil */
+    .mobile-filter-btn-unique {
+        display: none;
+    }
+    
+    /* Mostramos el select de ordenar */
+    .sorting-container-unique {
+        display: block;
+    }
+    
+    .sort-select-unique {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    /* Contenedor Principal con Grid para Sidebar y Productos */
+    .main-content-wrapper-unique {
+        display: grid;
+        /* Define la columna de filtro (250px) y la columna de productos (el resto) */
+        grid-template-columns: 250px 1fr;
+        gap: 30px;
+        align-items: start;
+    }
+
+    /* Columna de Filtros (Sidebar) - Estilo Fijo en Desktop */
+    .filter-sidebar-unique {
+        position: sticky; /* Fijo al hacer scroll */
+        top: 20px; /* Espacio desde arriba */
+        height: auto;
+        padding: 0; /* Quitamos el padding de modal */
+        transform: translateX(0); /* Siempre visible */
+        transition: none;
+        background-color: transparent;
+        border-right: 1px solid #ddd;
+        padding-right: 30px;
+    }
+
+    /* Ocultamos elementos de modal móvil */
+    .filter-header-unique {
+        border-bottom: none;
+    }
+    
+    .close-filter-btn-unique {
+        display: none;
+    }
+    
+    .filter-actions-unique {
+        display: none; /* Ocultamos los botones "Aplicar" y "Borrar" */
+    }
+
+    /* Estilos de la Cuadrícula de Productos */
+    .product-grid-unique {
+        /* Muestra 4 productos por fila en desktop */
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    
+    /* Altura de imagen más flexible en desktop */
+    .image-wrapper-unique {
+        height: 200px;
+    }
+
+    .product-name-unique {
+        font-size: 1rem;
+    }
+    /* ------------------------------------- */
+    /* Estilos para ESCRITORIO */
+    /* ------------------------------------- */
+    .store-section {
+        display: flex;
+        gap: 2rem;
+        padding: 3rem 1rem;
+        max-width: 1800px;
+        margin: 0 auto;
+        text-align: left;
+    }
+
+    .filter-panel-desktop {
+        display: block; /* Muestra el panel de filtro de escritorio */
+        flex-basis: 250px;
+        flex-shrink: 0;
+        padding-right: 1rem;
+        text-align: left;
+    }
+
+    .filter-panel-mobile {
+        display: none; /* Oculta el panel de filtro móvil */
+    }
+
+    .mobile-controls {
+        display: none; /* Oculta los botones móviles en escritorio */
+    }
+
+    .sort-by-container {
+        display: block;
+    }
+
+    .store-content {
+        flex-grow: 1;
+    }
+
+    .product-gallery-controls {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .product-grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .product-card-item{
+      width: 310px;
+    }
+
+    .categories-section {
+        max-width: 1800px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+    }
+
+    .categories-grid {
+        flex-direction: row;
+        flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente fila */
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .category-item {
+        width: 200px; /* Ancho fijo para desktop */
+        margin: 10px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+    .section-title{
+      font-size: 4em;
+    }
+    .section-description{
+      padding: 0 20em;
+      font-size: 1.5em;
+    }
+    .category-item{
+      width: 310px; /* Ancho fijo para desktop */
+    }
+}

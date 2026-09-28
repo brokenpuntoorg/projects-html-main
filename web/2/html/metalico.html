@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metalicos</title>
+    <link rel="stylesheet" href="/web/2/css/css-code/metalico.css">
+    <link rel="stylesheet" href="/web/NORMALIZE/normalize.css">
+    <link rel="shortcut icon" href="/web/2/footerlogo.png" type="image/x-icon">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+     <main>
+            <section class="ink-hero-section">
+                <div class="ink-hero-content">
+                    <h2 class="ink-hero-title">Sellos metálicos</h2>
+                    <p class="ink-hero-description">Para realzar papel, sellar en lacre</p>
+                </div>
+            </section>
+
+            <section class="sello-products-page">
+                <header class="sello-mobile-header">
+                    <div class="sello-logo">La casa del Sello</div>
+                    <button class="sello-filter-toggle-btn" aria-label="Abrir filtros">
+                        <i class="fas fa-filter"></i>
+                        <span>Filtro</span>
+                    </button>
+                </header>
+
+                <aside class="sello-sidebar" id="sello-sidebar">
+                    <h2 class="sello-sidebar-title">
+                        Filtrar por
+                        <button class="sello-close-sidebar-btn" aria-label="Cerrar filtros">&times;</button>
+                    </h2>
+
+                    <div class="sello-filter-group">
+                        <button class="sello-accordion-btn" aria-expanded="true" aria-controls="sello-category-menu">
+                            Categoría
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <ul class="sello-filter-menu.show" id="sello-category-menu">
+                            <li><a href="#">Todos</a></li>
+                            <li><a href="#">Metalicos </a></li>
+                            <li><a href="#">Los más buscados</a></li>
+                            <li><a href="#">Sellos administrativos</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sello-filter-group">
+                        <button class="sello-accordion-btn" aria-expanded="false" aria-controls="sello-price-menu">
+                            Precio (370 MXN - 850 MXN)
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="sello-filter-menu" id="sello-price-menu">
+                            <p>Controles de rango de precio</p>
+                        </div>
+                    </div>
+
+                    <div class="price-filter-component">
+                        <h3 class="price-filter-title">Precio</h3>
+                        <div class="price-filter-range-container">
+                            <div class="price-filter-track"></div>
+                            <input type="range" class="price-filter-min-range" min="0" max="1000" value="0">
+                            <input type="range" class="price-filter-max-range" min="0" max="1000" value="1000">
+                        </div>
+                        <div class="price-filter-value-display">
+                            <span class="price-filter-min-value">0 MXN</span>
+                            <span class="price-filter-max-value">1000 MXN</span>
+                        </div>
+                    </div>
+
+                    <div class="sello-filter-group">
+                        <button class="sello-accordion-btn" aria-expanded="false" aria-controls="sello-color-menu">
+                            Color
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="sello-filter-menu" id="sello-color-menu">
+                            <p>Opciones de color</p>
+                        </div>
+                    </div>
+                    
+                    <div class="sello-filter-group">
+                        <button class="sello-accordion-btn" aria-expanded="false" aria-controls="sello-ink-color-menu">
+                            Color de tinta
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="sello-filter-menu" id="sello-ink-color-menu">
+                            <p>Opciones de color de tinta</p>
+                        </div>
+                    </div>
+
+                    <div class="sello-filter-group">
+                        <button class="sello-accordion-btn" aria-expanded="false" aria-controls="sello-seal-color-menu">
+                            Color del sello
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="sello-filter-menu" id="sello-seal-color-menu">
+                            <p>Opciones de color del sello</p>
+                        </div>
+                    </div>
+
+                    <div class="sello-filter-group">
+                        <button class="sello-accordion-btn" aria-expanded="false" aria-controls="sello-size-menu">
+                            Alto y Ancho
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="sello-filter-menu" id="sello-size-menu">
+                            <p>Opciones de altura y ancho</p>
+                        </div>
+                    </div>
+                </aside>
+
+                <main class="sello-main-content">
+                    <div class="sello-sort-options">
+                        <button class="sello-sort-btn">Ordenar por <i class="fas fa-sort"></i></button>
+                        <ul class="sello-sort-menu">
+                            <li>Lo más nuevo</li>
+                            <li>Precio del menor</li>
+                            <li>Precio del mayor</li>
+                            <li>Nombre A-Z</li>
+                            <li>Nombre Z-A</li>
+                        </ul>
+                    </div>
+
+                    <div class="sello-product-grid">
+                        <div class="sello-product-card">
+                            <div class="sello-product-badge red">Entrega Inmediata</div>
+                            <div class="sello-product-image-wrapper">
+                                <a href="#" class="sello-product-link">
+                                    <img src="/web/2/css/assets/metalico/hero.webp" alt="Sello autoentintable" class="sello-product-image">
+                                    <div class="sello-overlay"></div>
+                                    <span class="sello-view-button">Ver producto</span>
+                                </a>
+                            </div>
+                            <div class="sello-product-info">
+                                <h3 class="sello-product-name">Sello de cera</h3>
+                                <p class="sello-product-price">Desde $410,00</p>
+                                <span class="sello-product-tax">Impuesto excluido</span>
+                            </div>
+                        </div>
+
+                        <div class="sello-product-card">
+                            <div class="sello-product-image-wrapper">
+                                <a href="#" class="sello-product-link">
+                                    <img src="/web/2/css/assets/metalico/hero1.webp" alt="Sello autoentintable" class="sello-product-image">
+                                    <div class="sello-overlay"></div>
+                                    <span class="sello-view-button">Ver producto</span>
+                                </a>
+                            </div>
+                            <div class="sello-product-info">
+                                <h3 class="sello-product-name">Sello autoentintable con línea textil negra - Personalizado</h3>
+                                <p class="sello-product-price">Desde $400,00</p>
+                                <span class="sello-product-tax">Impuesto excluido</span>
+                            </div>
+                        </div>
+
+                        <div class="sello-product-card">
+                            <div class="sello-product-image-wrapper">
+                                <a href="#" class="sello-product-link">
+                                    <img src="/web/2/css/assets/metalico/hero3.webp" alt="Sello personalizado" class="sello-product-image">
+                                    <div class="sello-overlay"></div>
+                                    <span class="sello-view-button">Ver producto</span>
+                                </a>
+                            </div>
+                            <div class="sello-product-info">
+                                <h3 class="sello-product-name">Sello redondo personalizado autoentintable</h3>
+                                <p class="sello-product-price">Desde $550,00</p>
+                                <span class="sello-product-tax">Impuesto excluido</span>
+                            </div>
+                        </div>
+                        
+                        <div class="sello-product-card">
+                            <div class="sello-product-image-wrapper">
+                                <a href="#" class="sello-product-link">
+                                    <img src="/web/2/css/assets/metalico/4.jpg" alt="Sello fechador automático" class="sello-product-image">
+                                    <div class="sello-overlay"></div>
+                                    <span class="sello-view-button">Ver producto</span>
+                                </a>
+                            </div>
+                            <div class="sello-product-info">
+                                <h3 class="sello-product-name">Sello personalizado con fechador automático</h3>
+                                <p class="sello-product-price">Desde $630,00</p>
+                                <span class="sello-product-tax">Impuesto excluido</span>
+                            </div>
+                        </div>
+
+                        <div class="sello-product-card">
+                            <div class="sello-product-image-wrapper">
+                                <a href="#" class="sello-product-link">
+                                    <img src="/web/2/css/assets/metalico/5.jpg" alt="Sello personalizado" class="sello-product-image">
+                                    <div class="sello-overlay"></div>
+                                    <span class="sello-view-button">Ver producto</span>
+                                </a>
+                            </div>
+                            <div class="sello-product-info">
+                                <h3 class="sello-product-name">Sello personalizado autoentintable</h3>
+                                <p class="sello-product-price">Desde $550,00</p>
+                                <span class="sello-product-tax">Impuesto excluido</span>
+                            </div>
+                        </div>
+
+                        <div class="sello-product-card">
+                            <div class="sello-product-image-wrapper">
+                                <a href="#" class="sello-product-link">
+                                    <img src="/web/2/css/assets/metalico/10.jpg" alt="Sello personalizado" class="sello-product-image">
+                                    <div class="sello-overlay"></div>
+                                    <span class="sello-view-button">Ver producto</span>
+                                </a>
+                            </div>
+                            <div class="sello-product-info">
+                                <h3 class="sello-product-name">Sello personalizado autoentintable</h3>
+                                <p class="sello-product-price">Desde $550,00</p>
+                                <span class="sello-product-tax">Impuesto excluido</span>
+                            </div>
+                        </div>
+
+                        <div class="sello-product-card">
+                            <div class="sello-product-image-wrapper">
+                                <a href="#" class="sello-product-link">
+                                    <img src="/web/2/css/assets/metalico/11.jpg" alt="Sello personalizado" class="sello-product-image">
+                                    <div class="sello-overlay"></div>
+                                    <span class="sello-view-button">Ver producto</span>
+                                </a>
+                            </div>
+                            <div class="sello-product-info">
+                                <h3 class="sello-product-name">Sello personalizado autoentintable</h3>
+                                <p class="sello-product-price">Desde $550,00</p>
+                                <span class="sello-product-tax">Impuesto excluido</span>
+                            </div>
+                        </div>
+
+                        <div class="sello-product-card">
+                            <div class="sello-product-image-wrapper">
+                                <a href="#" class="sello-product-link">
+                                    <img src="/web/2/css/assets/metalico/12.jpeg" alt="Sello personalizado" class="sello-product-image">
+                                    <div class="sello-overlay"></div>
+                                    <span class="sello-view-button">Ver producto</span>
+                                </a>
+                            </div>
+                            <div class="sello-product-info">
+                                <h3 class="sello-product-name">Sello personalizado autoentintable</h3>
+                                <p class="sello-product-price">Desde $550,00</p>
+                                <span class="sello-product-tax">Impuesto excluido</span>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </section>
+
+
+            <section class="infinite-carousel-section">
+                <h2 class="section-heading">Nuestros videos</h2>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="video-card">
+                            <img src="/web/2/css/assets/metalico/hero.webp" alt="Sello para ropa" class="video-thumbnail">
+                            <p class="video-title">Sello para ropa</p>
+                            <span class="video-views">▷ 804</span>
+                        </div>
+
+                        <div class="video-card">
+                            <img src="/web/2/css/assets/metalico/hero1.webp" alt="Un día en Sellos Vazquez" class="video-thumbnail">
+                            <p class="video-title">Un día en Sellos Vazquez</p>
+                            <span class="video-views">▷ 1078</span>
+                        </div>
+
+                        <div class="video-card">
+                            <img src="/web/2/css/assets/metalico/hero3.webp" alt="Sellando bolsitas para pedidos" class="video-thumbnail">
+                            <p class="video-title">Sellando bolsitas para pedidos</p>
+                            <span class="video-views">▷ 541</span>
+                        </div>
+
+                        <div class="video-card">
+                            <img src="/web/2/css/assets/metalico/4.jpg" alt="¿Cómo se graba la goma?" class="video-thumbnail">
+                            <p class="video-title">¿Cómo se graba la goma?</p>
+                            <span class="video-views">▷ 974</span>
+                        </div>
+
+                        <div class="video-card">
+                            <img src="/web/2/css/assets/metalico/5.jpg" alt="Sello para ropa" class="video-thumbnail">
+                            <p class="video-title">Sello para ropa</p>
+                            <span class="video-views">▷ 804</span>
+                        </div>
+
+                        <div class="video-card">
+                            <img src="/web/2/css/assets/metalico/6.avif" alt="Un día en Sellos Vazquez" class="video-thumbnail">
+                            <p class="video-title">Un día en Sellos Vazquez</p>
+                            <span class="video-views">▷ 1078</span>
+                        </div>
+
+                        <div class="video-card">
+                            <img src="/web/2/css/assets/metalico/7.avif" alt="Sellando bolsitas para pedidos" class="video-thumbnail">
+                            <p class="video-title">Sellando bolsitas para pedidos</p>
+                            <span class="video-views">▷ 541</span>
+                        </div>
+
+                        <div class="video-card">
+                            <img src="/web/2/css/assets/metalico/8.avif" alt="¿Cómo se graba la goma?" class="video-thumbnail">
+                            <p class="video-title">¿Cómo se graba la goma?</p>
+                            <span class="video-views">▷ 974</span>
+                        </div>
+
+                        <div class="video-card">
+                            <img src="/web/2/css/assets/metalico/9.jpg" alt="¿Cómo se graba la goma?" class="video-thumbnail">
+                            <p class="video-title">¿Cómo se graba la goma?</p>
+                            <span class="video-views">▷ 974</span>
+                        </div>
+
+                        <div class="video-card">
+                            <img src="/web/2/css/assets/metalico/10.jpg" alt="¿Cómo se graba la goma?" class="video-thumbnail">
+                            <p class="video-title">¿Cómo se graba la goma?</p>
+                            <span class="video-views">▷ 974</span>
+                        </div>
+
+                        <div class="video-card">
+                            <img src="/web/2/css/assets/metalico/11.jpg" alt="¿Cómo se graba la goma?" class="video-thumbnail">
+                            <p class="video-title">¿Cómo se graba la goma?</p>
+                            <span class="video-views">▷ 974</span>
+                        </div>
+
+                        <div class="video-card">
+                            <img src="/web/2/css/assets/metalico/12.jpeg" alt="¿Cómo se graba la goma?" class="video-thumbnail">
+                            <p class="video-title">¿Cómo se graba la goma?</p>
+                            <span class="video-views">▷ 974</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="categories-section">
+                <h2 class="section-title">Tipos de sellos</h2>
+                <p class="section-description">
+                    Encuentra el tipo de sello perfecto para ti en alguna categoría.
+                </p>
+                <div class="categories-grid">
+                    <div class="category-item">
+                        <a href="#" class="category-link">
+                            <div class="image-container">
+                                <img src="/web/2/css/assets/wood/h1.png" alt="Sello de Madera" class="category-icon">
+                                <div class="overlay"></div>
+                                <span class="view-link-button">Ver más</span>
+                            </div>
+                            <p class="category-name">Madera</p>
+                        </a>
+                    </div>
+
+                    <div class="category-item">
+                        <a href="#" class="category-link">
+                            <div class="image-container">
+                                <img src="/web/2/css/assets/wood/h2.png" alt="Sellos Autoentintables" class="category-icon">
+                                <div class="overlay"></div>
+                                <span class="view-link-button">Ver más</span>
+                            </div>
+                            <p class="category-name">Autoentintables</p>
+                        </a>
+                    </div>
+
+                    <div class="category-item">
+                        <a href="#" class="category-link">
+                            <div class="image-container">
+                                <img src="/web/2/css/assets/wood/h3.png" alt="Sellos de Bolsillo" class="category-icon">
+                                <div class="overlay"></div>
+                                <span class="view-link-button">Ver más</span>
+                            </div>
+                            <p class="category-name">De bolsillo</p>
+                        </a>
+                    </div>
+
+                    <div class="category-item">
+                        <a href="#" class="category-link">
+                            <div class="image-container">
+                                <img src="/web/2/css/assets/wood/h4.png" alt="Sello con Pluma" class="category-icon">
+                                <div class="overlay"></div>
+                                <span class="view-link-button">Ver más</span>
+                            </div>
+                            <p class="category-name">Sello con pluma</p>
+                        </a>
+                    </div>
+                    
+                    <div class="category-item">
+                        <a href="#" class="category-link">
+                            <div class="image-container">
+                                <img src="/web/2/css/assets/wood/h5.png" alt="Fechadores" class="category-icon">
+                                <div class="overlay"></div>
+                                <span class="view-link-button">Ver más</span>
+                            </div>
+                            <p class="category-name">Fechadores</p>
+                        </a>
+                    </div>
+
+                    <div class="category-item">
+                        <a href="#" class="category-link">
+                            <div class="image-container">
+                                <img src="/web/2/css/assets/wood/h6.png" alt="Numeradores y Foliadores" class="category-icon">
+                                <div class="overlay"></div>
+                                <span class="view-link-button">Ver más</span>
+                            </div>
+                            <p class="category-name">Numeradores y Foliadores</p>
+                        </a>
+                    </div>
+
+                    <div class="category-item">
+                        <a href="#" class="category-link">
+                            <div class="image-container">
+                                <img src="/web/2/css/assets/wood/h7.png" alt="Sellos en Seco o Realce" class="category-icon">
+                                <div class="overlay"></div>
+                                <span class="view-link-button">Ver más</span>
+                            </div>
+                            <p class="category-name">En seco o realce</p>
+                        </a>
+                    </div>
+
+                    <div class="category-item">
+                        <a href="#" class="category-link">
+                            <div class="image-container">
+                                <img src="/web/2/css/assets/wood/h8.png" alt="Tintas y Cojines" class="category-icon">
+                                <div class="overlay"></div>
+                                <span class="view-link-button">Ver más</span>
+                            </div>
+                            <p class="category-name">Tintas y cojines</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="catalog-section">
+                <div class="catalog-content-overlay">
+                    <h2 class="catalog-title">Pregunta por todo nuestro <br> catálogo de productos</h2>
+                    <p class="catalog-description">
+                        Seguimos ampliando constantemente los artículos ofertado en la página, si no encuentras aquí el producto que estas buscando, contáctanos para ofrecerte la solución ideal.
+                    </p>
+                </div>
+            </section>
+        </main>
+    <div id="footer-placeholder"></div>
+    <script src="/web/2/js/header.js"></script>
+    <script src="/web/2/js/footer.js"></script>
+    <script src="/web/2/js/index2.js"></script>
+</body>
+</html>

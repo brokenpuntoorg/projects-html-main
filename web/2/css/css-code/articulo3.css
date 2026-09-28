@@ -1,0 +1,207 @@
+
+/* --- ESTILOS GENERALES Y MÓVIL (MOBILE FIRST) --- */
+
+.article-page-lacre {
+    font-family: 'Georgia', serif; /* Tipo de fuente más clásico para el tema */
+    background-color: #fcfcfc;
+    color: #333;
+    padding: 20px 0;
+}
+
+.blog-article-lacre {
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+}
+
+/* --- ENCABEZADO Y TÍTULO --- */
+.article-header-lacre {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.article-category-lacre {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #a31f21; /* Color Rojo/Lacre */
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.article-title-lacre {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; /* Fuente elegante */
+    font-size: 2.2rem;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.article-meta-lacre {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.article-image-hero-lacre {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+/* --- CONTENIDO DEL ARTÍCULO --- */
+.article-content-lacre p {
+    line-height: 1.7;
+    margin-bottom: 1.2em;
+    font-size: 1rem;
+}
+
+.intro-paragraph-lacre {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #555;
+    border-left: 3px solid #e0e0e0;
+    padding-left: 15px;
+}
+
+.content-heading-lacre {
+    font-size: 1.6rem;
+    color: #004d99; /* Azul de acento paraheadings */
+    margin-top: 35px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Lista de diseño (Bullet points) */
+.design-list-lacre {
+    list-style: none; 
+    padding-left: 0;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.design-list-lacre li {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.design-list-lacre li::before {
+    content: "★"; /* Icono de estrella/distinción */
+    color: #a31f21;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Bloque de Ventajas (Grid en Desktop) */
+.advantages-grid-lacre {
+    display: flex;
+    flex-direction: column; /* Columna en móvil */
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.advantage-item-lacre {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+.advantage-item-lacre h4 {
+    color: #a31f21;
+    font-size: 1.15rem;
+    margin-top: 0;
+}
+
+/* Cita destacada */
+.article-quote-lacre {
+    display: block;
+    border: 1px solid #d8d8d8;
+    padding: 20px;
+    margin: 30px 0;
+    background-color: #fff9f9;
+    font-style: italic;
+    color: #555;
+    font-size: 1.05rem;
+    border-radius: 4px;
+}
+
+/* --- CTA (Llamada a la Acción) --- */
+.article-cta-lacre {
+    text-align: center;
+    padding: 35px 20px;
+    background-color: #004d99;
+    color: #fff;
+    border-radius: 6px;
+    margin-top: 40px;
+}
+
+.cta-title-lacre {
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+.article-cta-lacre p {
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+}
+
+.cta-button-lacre {
+    display: inline-block;
+    padding: 14px 30px;
+    background-color: #a31f21; /* El color principal del lacre */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button-lacre:hover {
+    background-color: #83191b;
+}
+
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+    .blog-article-lacre {
+        padding: 50px 70px;
+    }
+
+    .article-title-lacre {
+        font-size: 3.2rem;
+    }
+    
+    .article-content-lacre p {
+        font-size: 1.05rem;
+    }
+    
+    /* Grid de Ventajas para Desktop */
+    .advantages-grid-lacre {
+        flex-direction: row; /* Fila en desktop */
+    }
+
+    .advantage-item-lacre {
+        flex: 1; /* Distribuye los elementos de manera uniforme */
+    }
+
+    .article-quote-lacre {
+        padding: 25px 40px;
+        margin: 40px 0;
+    }
+    
+    .article-cta-lacre {
+        padding: 50px 70px;
+    }
+}    
+

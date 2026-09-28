@@ -1,0 +1,245 @@
+
+
+/* --- VARIABLES Y ESTILOS BASE --- */
+:root {
+    --color-red: #e51d38; 
+    --color-cyan: #0087cb; 
+    --color-text: #333;
+    --color-background: #f8f8f8;
+}
+
+.article-page-precision {
+    font-family: Arial, sans-serif; 
+    background-color: var(--color-background);
+    color: var(--color-text);
+    padding: 20px 0;
+}
+
+.article-guide-precision {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* --- ENCABEZADO Y TÍTULO --- */
+.article-header-precision {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.article-category-precision {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--color-red);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.article-title-precision {
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.article-subtitle-precision {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.article-image-hero-precision {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+/* --- CONTENIDO DEL ARTÍCULO --- */
+.article-content-precision p {
+    line-height: 1.6;
+    margin-bottom: 1.2em;
+    font-size: 1rem;
+}
+
+.intro-paragraph-precision {
+    font-weight: bold;
+    color: var(--color-cyan);
+    border-left: 3px solid var(--color-red);
+    padding-left: 15px;
+    font-size: 1.05rem;
+}
+
+.content-heading-precision {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.content-heading-precision.tech-focus {
+    color: var(--color-red);
+}
+
+.content-heading-precision.design-focus {
+    color: var(--color-cyan);
+}
+
+/* Lista de Diseño (Checklist) */
+.design-checklist {
+    margin: 15px 0 25px 0;
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+.design-checklist li {
+    margin-bottom: 15px;
+    padding-left: 30px; /* Espacio para el icono */
+    line-height: 1.6;
+    position: relative;
+    border-bottom: 1px dotted #eee;
+    padding-bottom: 10px;
+}
+
+/* Icono de check/punto personalizado */
+.design-checklist li::before {
+    content: "✓"; 
+    color: var(--color-cyan);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+}
+
+/* --- CAJAS DE INFORMACIÓN (INFO BOXES) --- */
+.info-box-precision {
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border: 1px solid;
+}
+
+.info-box-precision strong {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.dpi-info {
+    background-color: #fcebeb; /* Rojo claro */
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.dpi-info ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+.dpi-info ul li {
+    margin-bottom: 5px;
+}
+
+/* Caja de Tip (Recomendación) */
+.tip-box-precision {
+    padding: 15px;
+    background-color: #e6f7ff; /* Cian claro */
+    border-left: 5px solid var(--color-cyan);
+    margin: 30px 0;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.tip-box-precision strong {
+    color: #005691;
+}
+
+/* --- CTA (Llamada a la Acción) --- */
+.article-cta-precision {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--color-red); /* Fondo Rojo/Magenta */
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.cta-title-precision {
+    font-size: 1.8rem;
+    margin-top: 0;
+    color: #fff;
+}
+
+.article-cta-precision p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.cta-button-precision {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-cyan); 
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px; 
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button-precision:hover {
+    background-color: #006699;
+    transform: translateY(-2px);
+}
+
+
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+  
+    /* ======================================= */
+    /* ESTILOS PARA LA VERSIÓN DE ESCRITORIO */
+    /* ======================================= */
+    
+
+    .article-guide-precision {
+        padding: 40px 80px;
+    }
+
+    .article-title-precision {
+        font-size: 3rem;
+    }
+    
+    .article-subtitle-precision {
+        font-size: 1.1rem;
+    }
+
+    .article-image-hero-precision {
+        max-height: 400px;
+    }
+    
+    .content-heading-precision {
+        font-size: 1.7rem;
+    }
+
+    .article-cta-precision {
+        padding: 40px 60px;
+    }
+    /* ======================================= */
+    /* ESTILOS PARA LA VERSIÓN DE ESCRITORIO */
+    /* ======================================= */
+}    
+

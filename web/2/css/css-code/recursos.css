@@ -1,0 +1,142 @@
+.resources-page-unique {
+    padding: 20px 15px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.resources-header-unique {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.resources-title-unique {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.resources-subtitle-unique {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* --- CATEGORÍAS (Filtros) --- */
+.resource-categories-unique {
+    display: flex;
+    overflow-x: auto; /* Permite desplazamiento horizontal en móvil */
+    white-space: nowrap;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    -webkit-overflow-scrolling: touch;
+    gap: 10px;
+}
+
+.resource-categories-unique::-webkit-scrollbar {
+    display: none; /* Oculta la barra de scroll en navegadores Webkit */
+}
+
+.category-btn-unique {
+    flex-shrink: 0;
+    background-color: #f0f0f0;
+    color: #555;
+    border: 1px solid #ddd;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.category-btn-unique:hover,
+.category-btn-unique.selected {
+    background-color: #d82b2d; /* Rojo de acento */
+    color: #fff;
+    border-color: #d82b2d;
+}
+
+/* --- CUADRÍCULA DE RECURSOS --- */
+.resources-grid-unique {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna en móvil */
+    gap: 20px;
+}
+
+.resource-card-unique {
+    background-color: #fafafa;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.resource-card-unique:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title-unique {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.card-excerpt-unique {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.card-tag-unique {
+    display: inline-block;
+    background-color: #e0f7fa;
+    color: #00838f;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.card-link-unique {
+    display: block;
+    color: #d82b2d;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+@media (min-width: 992px) {
+    .resources-page-unique {
+        padding: 40px 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .resources-title-unique {
+        font-size: 2.5rem;
+    }
+    
+    .resources-subtitle-unique {
+        font-size: 1.1rem;
+    }
+
+    /* --- CATEGORÍAS (Centrado y Fijo) --- */
+    .resource-categories-unique {
+        overflow-x: hidden;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .category-btn-unique {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    /* --- CUADRÍCULA DE RECURSOS --- */
+    .resources-grid-unique {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas en desktop */
+        gap: 30px;
+    }
+}    
+

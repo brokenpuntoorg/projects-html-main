@@ -1,0 +1,205 @@
+.tutorial-page-foliador {
+    font-family: Arial, sans-serif; 
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 20px 0;
+}
+
+.tutorial-article-foliador {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* --- ENCABEZADO Y TÍTULO --- */
+.tutorial-header-foliador {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.tutorial-category-foliador {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #e51d38; /* Rojo de acento */
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.tutorial-title-foliador {
+    font-family: 'Helvetica Neue', Arial, sans-serif; 
+    font-size: 2rem;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.tutorial-subtitle-foliador {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.tutorial-image-hero-foliador {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+/* --- CONTENIDO DEL TUTORIAL (PASOS) --- */
+.tutorial-content-foliador p {
+    line-height: 1.6;
+    margin-bottom: 1.2em;
+    font-size: 1rem;
+}
+
+.intro-paragraph-foliador {
+    font-weight: bold;
+    color: #0087cb; /* Azul/Cian de acento */
+    border-left: 3px solid #e51d38;
+    padding-left: 15px;
+    font-size: 1.05rem;
+}
+
+.content-heading-foliador {
+    font-size: 1.4rem;
+    color: #1a1a1a;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.content-heading-foliador.step-number {
+    color: #e51d38;
+}
+
+.tutorial-content-foliador ol {
+    margin: 15px 0 25px 0;
+    padding-left: 25px;
+}
+
+.tutorial-content-foliador ol li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* --- TABLA DE REPETICIÓN --- */
+.foliador-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.95rem;
+}
+
+.foliador-table th, .foliador-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.foliador-table thead th {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.foliador-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.foliador-table tbody tr:hover {
+    background-color: #e6f7ff;
+}
+
+/* Caja de Tip */
+.tip-box-foliador {
+    padding: 15px;
+    background-color: #fff3cd; /* Amarillo suave para la nota de precaución */
+    border-left: 5px solid #ffc107;
+    margin: 30px 0;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.tip-box-foliador strong {
+    color: #856404;
+}
+
+/* --- CTA (Llamada a la Acción) --- */
+.tutorial-cta-foliador {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #0087cb; /* Fondo Azul/Cian */
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.cta-title-foliador {
+    font-size: 1.8rem;
+    margin-top: 0;
+    color: #fff;
+}
+
+.tutorial-cta-foliador p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.cta-button-foliador {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #e51d38; /* Rojo/Magenta de acento */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px; 
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button-foliador:hover {
+    background-color: #b2162c;
+    transform: translateY(-2px);
+}
+@media (min-width: 992px) {
+    .tutorial-article-foliador {
+        padding: 40px 80px;
+    }
+
+    .tutorial-title-foliador {
+        font-size: 3rem;
+    }
+    
+    .tutorial-subtitle-foliador {
+        font-size: 1.1rem;
+    }
+
+    .tutorial-image-hero-foliador {
+        max-height: 400px;
+    }
+    
+    .content-heading-foliador {
+        font-size: 1.6rem;
+    }
+    
+    .foliador-table {
+        font-size: 1rem;
+    }
+
+    .tutorial-cta-foliador {
+        padding: 40px 60px;
+    }
+}    
+

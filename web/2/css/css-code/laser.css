@@ -1,0 +1,349 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.ink-hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 400px; /* Altura mínima para la sección en móvil */
+    background-image: url('/web/2/css/assets/laser/hero.jpg'); /* Reemplaza con la URL de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Overlay para hacer el texto legible */
+.ink-hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* Overlay blanco con 70% de opacidad */
+    z-index: 0;
+}
+
+.ink-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px 20px;
+    max-width: 90%;
+}
+
+.ink-hero-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #E63946; /* Color rojo del título */
+    margin: 0 0 15px;
+    line-height: 1.2;
+}
+
+.ink-hero-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+    color: #333;
+}
+
+/* Estilos generales para la sección de productos */
+.products-section {
+    padding: 20px 15px;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para el contenedor de la cuadrícula de productos (mobile-first) */
+.product-grid {
+    display: flex;
+    flex-direction: column; /* Una sola columna en móviles */
+    gap: 30px;
+}
+
+/* Contenedor individual de cada producto */
+.product-container {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor para las imágenes y el efecto hover */
+.product-images-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Mantiene la proporción 1:1 de la imagen */
+    overflow: hidden;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* La imagen de hover está oculta por defecto */
+.hover-image {
+    opacity: 0;
+}
+
+/* Información del producto */
+.product-info {
+    padding: 15px 10px;
+}
+
+.product-name {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+    min-height: 40px;
+}
+
+.product-price {
+    margin-bottom: 15px;
+}
+
+.price-value {
+    font-size: 1.2rem;
+    color: #A32A2A;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.price-old {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Botón de "agregar al carrito" */
+.add-to-cart-btn {
+    background-color: #A32A2A;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #7a1c1c;
+}
+
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 400px; /* Altura mínima para móviles */
+    background-image: url('/web/2/css/assets/laser/hero.jpg'); /* Imagen específica para móvil */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Oscurecer la imagen para que el texto resalte */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay oscuro al 40% */
+}
+
+.hero-content {
+    position: relative; /* Asegura que el contenido esté sobre el overlay */
+    z-index: 10;
+    color: white;
+    max-width: 90%;
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background-color: #A32A2A;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: #7a1c1c;
+}
+
+/* Estilos generales y Mobile-First */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.catalog-section {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    background-image: url('/web/2/css/assets/herro.jpg'); /* Reemplaza con la URL de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Overlay para hacer el texto legible */
+.catalog-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* Overlay blanco con 70% de opacidad */
+    z-index: 1;
+}
+
+.catalog-content-overlay {
+    position: relative;
+    z-index: 2;
+    padding: 30px 20px;
+    max-width: 90%;
+}
+
+.catalog-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #E63946; /* Color rojo del título */
+    margin: 0 0 15px;
+    line-height: 1.2;
+}
+
+.catalog-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+    color: #333;
+}
+
+@media (min-width: 992px) {
+    .ink-hero-section{
+        min-height: 600px; /* Ajusta la altura para escritorio */
+        background-image: url('/web/2/css/assets/laser/hero.jpg'); /* URL de la imagen completa para desktop */
+        background-position: center left; /* Ajusta la posición para que el texto pueda ir a la derecha */
+        background-size: contain;
+        justify-content: flex-end; /* Alinea el contenido a la derecha */
+        align-items: center;
+        text-align: left; /* Alinea el texto a la izquierda dentro del overlay */
+        padding: 0; /* Elimina padding general para ajustar el overlay */
+    }
+    .ink-hero-title{
+        font-size: 2.5rem; /* Título más grande */
+        max-width: 350px; /* Limita el ancho del título */
+        margin-bottom: 20px;
+    }
+    .ink-hero-description{
+        font-size: 1.1rem;
+        max-width: 350px; /* Limita el ancho de la descripción */
+    }
+
+    /* ================================== */
+    /* === Estilos para la versión de escritorio === */
+    /* ================================== */
+    .products-section {
+        padding: 40px 80px;
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columnas en escritorio */
+        gap: 25px;
+    }
+    
+    /* En este caso, para 3 productos, puedes ajustar la cuadrícula si quieres que se centren */
+    .product-grid-three-cols {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+
+    /* Efecto de cambio de imagen al pasar el cursor en escritorio */
+    .product-container:hover .main-image {
+        opacity: 0;
+    }
+
+    .product-container:hover .hover-image {
+        opacity: 1;
+    }
+
+    /* ==================================== */
+    /* === Media Query (Escritorio) === */
+    /* ==================================== */
+    .hero-section {
+        min-height: 550px; /* Mayor altura en desktop */
+        background-image: url('/web/2/css/assets/laser/hero.jpg'); /* Imagen de alta resolución para desktop */
+        background-position: center center;
+    }
+
+    .hero-content {
+        max-width: 700px;
+        padding: 40px;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    .categories-grid {
+        flex-direction: row;
+        flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente fila */
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .category-item {
+        width: 200px; /* Ancho fijo para desktop */
+        margin: 10px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}

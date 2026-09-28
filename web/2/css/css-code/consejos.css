@@ -1,0 +1,193 @@
+.cleaning-guide-page-unique {
+    padding: 20px 15px;
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.cleaning-header-unique {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cleaning-title-unique {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cleaning-subtitle-unique {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* --- ADVERTENCIA --- */
+.cleaning-warning-unique {
+    background-color: #fcebeb; /* Rojo muy suave */
+    border: 1px solid #d82b2d;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+}
+
+.warning-icon-unique {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.warning-title-unique {
+    font-size: 1.1rem;
+    color: #d82b2d;
+    margin: 0 0 5px 0;
+}
+
+.cleaning-warning-unique p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* --- SELECTOR DE TIPO (PESTAÑAS) --- */
+.type-selector-unique {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #ddd;
+}
+
+.type-btn-unique {
+    padding: 10px 12px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    border-radius: 5px 5px 0 0;
+    margin: 0 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.type-btn-unique.selected {
+    color: #d82b2d;
+    border-bottom: 2px solid #d82b2d;
+    background-color: #fff;
+}
+
+/* --- CONTENIDO DEL TUTORIAL --- */
+.cleaning-steps-unique {
+    padding: 10px 0;
+}
+
+.hidden-type {
+    display: none;
+}
+
+.type-heading-unique {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.step-card-unique {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    position: relative;
+    padding-left: 65px; /* Espacio para el número */
+}
+
+.step-number-unique {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d82b2d;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #d82b2d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-title-unique {
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    color: #000;
+}
+
+.step-card-unique p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.tip-unique {
+    font-style: italic;
+    color: #007bff;
+    margin-top: 10px;
+    border-top: 1px dotted #ccc;
+    padding-top: 5px;
+    font-size: 0.9rem;
+}
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+     .cleaning-guide-page-unique {
+        padding: 50px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .cleaning-title-unique {
+        font-size: 2.5rem;
+    }
+
+    /* --- ADVERTENCIA --- */
+    .cleaning-warning-unique {
+        padding: 20px 30px;
+    }
+    
+    .warning-icon-unique {
+        font-size: 2.5rem;
+    }
+
+    /* --- SELECTOR DE TIPO --- */
+    .type-selector-unique {
+        margin-bottom: 40px;
+    }
+    
+    .type-btn-unique {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+
+    /* --- LAYOUT DEL TUTORIAL --- */
+    .cleaning-steps-unique {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .step-card-unique {
+        /* Permite que los pasos fluyan si hay muchos */
+        margin-bottom: 0; 
+    }
+    /* Coloca esta regla CSS en la parte inferior de tus estilos (o en un lugar visible) */
+
+/* 🚨 REGLA CRÍTICA: Fuerza la ocultación para anular cualquier @media query de desktop */
+.hidden-type {
+    display: none !important; 
+    visibility: hidden !important; /* (Opcional, pero bueno para asegurar) */
+}
+}    
+

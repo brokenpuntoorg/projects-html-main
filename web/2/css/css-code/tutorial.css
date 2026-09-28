@@ -1,0 +1,278 @@
+.recharge-guide-page-unique {
+    padding: 20px 15px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.recharge-header-unique {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.recharge-title-unique {
+    font-size: 1.8rem;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.recharge-subtitle-unique {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* --- AVISO IMPORTANTE --- */
+.important-warning-unique {
+    background-color: #ffe0b2; /* Amarillo suave */
+    border: 1px solid #ffb74d;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.warning-icon-unique {
+    font-size: 1.5rem;
+    float: left;
+    margin-right: 10px;
+}
+
+.warning-title-unique {
+    font-size: 1.1rem;
+    color: #e65100; /* Naranja oscuro */
+    margin: 0 0 5px 0;
+}
+
+.important-warning-unique p {
+    font-size: 0.9rem;
+    overflow: hidden; /* Limpia el float del ícono */
+}
+
+/* --- SELECTOR DE MARCA (PESTAÑAS) --- */
+.brand-selector-unique {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.brand-btn-unique {
+    padding: 10px 15px;
+    background-color: #eee;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s;
+    border-radius: 5px 5px 0 0;
+    margin: 0 2px;
+}
+
+.brand-btn-unique.selected {
+    background-color: #d82b2d; /* Color de acento de la marca Sellos Vázquez */
+    color: #fff;
+    box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* --- CONTENIDO DEL TUTORIAL --- */
+.tutorial-steps-unique {
+    padding: 10px 0;
+}
+
+.hidden-tutorial {
+    display: none;
+}
+
+.brand-heading-unique {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #d82b2d;
+}
+
+.step-card-unique {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    position: relative;
+    padding-left: 70px; /* Espacio para el número */
+}
+
+.step-number-unique {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #555;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-title-unique {
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    color: #000;
+}
+
+.step-card-unique p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.step-visual-unique {
+    margin-top: 15px;
+    background-image: url(/web/2/css/assets/tutorial/1.png);
+    background-image: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 250px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #888;
+}
+.step-visual-unique1 {
+    margin-top: 15px;
+    background-image: url(/web/2/css/assets/tutorial/2.png);
+    background-image: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 250px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #888;
+}
+.step-visual-unique2 {
+    margin-top: 15px;
+    background-image: url(/web/2/css/assets/tutorial/3.png);
+    background-image: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 250px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #888;
+}
+.step-visual-unique3 {
+    margin-top: 15px;
+    background-image: url(/web/2/css/assets/tutorial/4.png);
+    background-image: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 250px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #888;
+}
+.step-visual-unique4 {
+    margin-top: 15px;
+    background-image: url(/web/2/css/assets/tutorial/5.png);
+    background-image: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 250px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #888;
+}
+.step-visual-unique5 {
+    margin-top: 15px;
+    background-image: url(/web/2/css/assets/tutorial/6.png);
+    background-image: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 250px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #888;
+}
+.step-visual-unique6 {
+    margin-top: 15px;
+    background-image: url(/web/2/css/assets/tutorial/7.png);
+    background-image: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 250px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color: #888;
+}
+.step-visual-unique7 {
+    background-image: url(/web/2/css/assets/tutorial/8.png);
+    background-image: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 250px;
+}
+@media (min-width: 992px) {
+    .recharge-guide-page-unique {
+        padding: 50px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .recharge-title-unique {
+        font-size: 2.5rem;
+    }
+
+    .important-warning-unique {
+        padding: 25px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .warning-icon-unique {
+        font-size: 2.5rem;
+        float: none;
+        margin-right: 15px;
+    }
+
+    .important-warning-unique div {
+        overflow: hidden;
+    }
+
+    /* --- LAYOUT DEL TUTORIAL (2 Columnas) --- */
+    .tutorial-steps-unique {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .brand-heading-unique {
+        grid-column: 1 / -1; /* Ocupa ambas columnas */
+    }
+    
+    .step-card-unique {
+        margin-bottom: 0; /* Quitamos el margen inferior si ya tenemos gap */
+        height: auto;
+    }
+}    
+

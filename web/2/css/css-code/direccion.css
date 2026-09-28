@@ -1,0 +1,209 @@
+:root {
+    --color-main: #007bff; /* Azul corporativo principal */
+    --color-accent: #0056b3; /* Azul más oscuro para hover */
+    --color-heading: #1a1a1a;
+    --color-text: #555;
+    --color-background: #f8f8f8;
+    --color-card-background: #ffffff;
+}
+
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.team-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px 40px 15px; 
+}
+
+/* --- ENCABEZADO --- */
+.team-page-header {
+    text-align: center;
+    padding: 20px 0 40px 0;
+}
+
+.team-title {
+    font-size: 2.5rem;
+    color: var(--color-heading);
+    margin: 0 0 10px 0;
+}
+
+.team-subtitle {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- SECCIONES DE NIVEL EJECUTIVO --- */
+.executive-level {
+    margin-bottom: 50px;
+}
+
+.level-heading {
+    font-size: 1.8rem;
+    color: var(--color-main);
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--color-main);
+    padding-bottom: 10px;
+}
+
+/* En móvil, todas las cuadrículas son de 1 columna (apiladas) */
+.team-grid {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 1fr;
+}
+
+/* Estilo de la Tarjeta de Miembro */
+.team-member {
+    background-color: var(--color-card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--color-main);
+}
+
+.member-name {
+    font-size: 1.5rem;
+    color: var(--color-heading);
+    margin: 5px 0;
+}
+
+.member-role {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-main);
+    margin: 0 0 10px 0;
+}
+
+.member-bio {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    margin: 0;
+}
+
+/* Estilo especial para el CEO (Top Hierarchy) */
+.level-ceo .team-member {
+    background-color: #e6f0ff; /* Fondo ligeramente diferente para destacar */
+    border-left: 5px solid var(--color-main);
+}
+.level-ceo .member-photo {
+    border-color: var(--color-accent);
+}
+
+/* --- CTA (Llamada a la Acción) --- */
+.team-cta {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--color-heading); 
+    color: #fff;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.cta-title {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.team-cta p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.cta-button-team {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-main); 
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px; 
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button-team:hover {
+    background-color: var(--color-accent); 
+}
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+    .team-page-container {
+        padding: 40px 30px 60px 30px;
+    }
+    
+    .team-title {
+        font-size: 3.5rem;
+    }
+    
+    .level-heading {
+        font-size: 2.2rem;
+    }
+    
+    /* Disposición del CEO (para centrarlo sin usar flexbox) */
+    .level-ceo .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Disposición C-Suite (2 personas) */
+    .level-c-suite .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px; /* Ancho máximo para mantener la proporción */
+        margin: 0 auto 30px auto;
+        gap: 40px;
+    }
+
+    /* Disposición Directores de Área (3 personas) */
+    .level-directors .team-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+    /* Ajustes visuales de la tarjeta en Desktop */
+    .team-member {
+        padding: 30px 20px;
+    }
+    
+    .member-photo {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .member-name {
+        font-size: 1.6rem;
+    }
+    
+    .member-bio {
+        min-height: 60px; /* Asegurar que todas las biografías tengan la misma altura visual */
+    }
+
+    /* CTA más ancho */
+    .team-cta {
+        padding: 50px 80px;
+    }
+    
+    .cta-title {
+        font-size: 2.2rem;
+    }
+
+}    
+

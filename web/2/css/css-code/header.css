@@ -1,0 +1,527 @@
+/* --- Estilos Generales --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.site-header {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para la versión móvil */
+/* Oculta los elementos de escritorio en móvil */
+    
+ /* Oculta los elementos de escritorio en móvil */
+   /* Oculta los elementos de escritorio en móvil */
+:root {
+  --primary-color: #000;
+  --secondary-color: #f0f0f0;
+  --text-color: #333;
+  --link-color: #666;
+  --hover-color: #999;
+  --submenu-bg: #000; /* Color de fondo de submenús */
+  --transition-speed: 0.3s;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+
+.header-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.navbar-desktop {
+  display: none;
+}
+.bt{
+  width: 25%;
+}
+
+.mobile-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #000;
+  width: 100%;
+}
+
+.header-logo .logo-img {
+  height: 10em;
+}
+
+.menu-button, .search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.menu-button .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  margin: 5px 0;
+  transition: var(--transition-speed);
+}
+
+.off-canvas-menu {
+  position: fixed;
+  top: 0;
+  right: -105vw; /* Cambiado a 100vw para que ocupe el 100% del ancho */
+  width: 100%; /* Cambiado a 100vw */
+  height: 90%;
+  background-color: #fff;
+  z-index: 1000;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: 1s;
+  display: flex;
+  flex-direction: column;
+}
+
+.off-canvas-menu.open {
+  right: 0;
+}
+
+.menu-header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.close-menu {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-logo-img {
+  height: 10em;
+
+}
+
+.main-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.main-menu-list li {
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.main-menu-list a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.main-menu-list a:hover {
+  background-color: var(--secondary-color);
+}
+
+.main-menu-list .has-submenu > a {
+  position: relative;
+}
+
+.main-menu-list .has-submenu > a::after {
+  content: '▼';
+  font-size: 0.8em;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 10s;
+}
+
+.main-menu-list .has-submenu.active > a::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.main-menu-list .submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: var(--submenu-bg); /* Estilo de submenú */
+  display: none;
+}
+
+.main-menu-list .submenu a {
+  padding-left: 40px;
+  font-weight: normal;
+  color: #fff; /* Opcional: para que se vean bien sobre el fondo rojo */
+}
+
+.main-menu-list .submenu a:hover {
+  background-color: #a31835; /* Un tono un poco más oscuro al pasar el mouse */
+}
+
+.page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+.off-canvas-menu.open + .page-overlay {
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .site-header {
+    background-color: var(--primary-color);
+    padding: 0;
+  }
+
+  .mobile-header,
+  .off-canvas-menu,
+  .page-overlay {
+    display: none;
+  }
+
+  .navbar-desktop {
+    display: block;
+    width: 100%;
+  }
+
+  .top-links {
+    background-color: #7b2126;
+    color: #fff;
+    text-align: right;
+    padding: 8px 30px;
+  }
+
+  .top-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    transition: color var(--transition-speed);
+  }
+
+  .top-links a:hover {
+    color: var(--secondary-color);
+  }
+
+  .main-nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+  }
+
+  .logo-link .logo {
+    height: 60px;
+  }
+
+  .main-menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-item {
+    position: relative;
+    margin: 0 15px;
+  }
+
+  .nav-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 20px 0;
+    display: block;
+    transition: 10s;
+  }
+
+  .nav-item a:hover {
+    color: var(--secondary-color);
+  }
+
+  .nav-item.has-submenu:hover .submenu {
+    display: block;
+  }
+
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--submenu-bg);
+    min-width: 250px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  .submenu li a {
+    color: #fff; /* Color de texto del submenu en desktop */
+    padding: 10px 20px;
+    white-space: nowrap;
+    transition: background-color var(--transition-speed);
+  }
+
+  .submenu li a:hover {
+    background-color: #a31835; /* Un tono un poco más oscuro al pasar el mouse */
+  }
+  .desktop-icons-img {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+  }
+
+  .icon-link {
+    margin-left: 10px;
+  }
+
+  .icon-image {
+    height: 25px;
+    width: 25px;
+  }
+
+  .cart-container {
+    position: relative;
+  }
+
+  .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 0.7rem;
+    border-radius: 50%;
+    padding: 2px 5px;
+  }
+}
+
+
+
+
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+    /* ======================================= */
+  /* ESTILOS PARA LA VERSIÓN DE ESCRITORIO */
+  /* ======================================= */
+  .site-header {
+      background-color: var(--primary-color);
+      padding: 0;
+    }
+
+    .mobile-header,
+    .off-canvas-menu,
+    .page-overlay {
+      display: none;
+    }
+
+    .navbar-desktop {
+      display: block;
+      width: 100%;
+      background-color: #000;
+    }
+
+    .top-links {
+      background-color: #fff; 
+      text-align: right;
+      padding: 8px 30px;
+      height: 2.5vh;
+    }
+
+    .top-links a {
+      font-weight: bold;
+      color: #000;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 1rem;
+      transition: color var(--transition-speed);
+    }
+
+    .top-links a:hover {
+      color: #93272d;;
+    }
+    .login-btn{
+      border: 2px solid #93272d;
+      padding: 5px;
+      border-radius: 5px;
+      color: black;
+    }
+    .login-btn:hover{
+      padding: 5px 5px;
+      cursor: pointer;
+    }
+
+    .main-nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+    }
+
+    .logo-link .logo {
+      height: 80px;
+    }
+
+    .main-menu {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative;
+      margin: 0 15px;
+    }
+    .nav-item a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 20px 0;
+      display: block;
+    }
+
+    .nav-item a:hover {
+      color: #000;
+    }
+
+    .nav-item.has-submenu:hover .submenu {
+      display: block;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #fff; /* Fondo diferente para los submenús */
+      min-width: 250px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      list-style: none;
+      padding: 10px 0;
+      margin: 0;
+      z-index: 1;
+    }
+
+    .submenu li a {
+      color: #93272d;
+      padding: 10px 20px;
+      white-space: nowrap;
+
+    }
+
+    .submenu li a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .search-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-left: 20px;
+    }
+
+    .desktop-icons-img {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+
+    .icon-link {
+      margin-left: 10px;
+    }
+
+    .icon-image {
+      height: 25px;
+      width: 25px;
+    }
+
+    .cart-container {
+      position: relative;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: red;
+      color: white;
+      font-size: 0.7rem;
+      border-radius: 50%;
+      padding: 2px 5px;
+    }
+
+    .search-bar-container {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 5px;
+      margin-left: 20px;
+      border: 1px solid #ddd;
+    }
+
+    .search-bar-container .search-input {
+      border: none;
+      padding: 5px;
+      outline: none;
+      width: 200px;
+    }
+
+    .search-bar-container .search-btn {
+      background: none;
+      border: none;
+      color: var(--text-color);
+      cursor: pointer;
+      font-size: 1.2rem;
+      padding: 5px;
+    }
+
+}    
+

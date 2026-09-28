@@ -1,0 +1,190 @@
+:root {
+    --color-primary-red: #e51d38; /* Rojo de INSPIRACIÓN/ÉXITO */
+    --color-secondary-dark: #1a1a1a;
+    --color-text-main: #333;
+    --color-background-light: #fefefe;
+    --color-border: #ddd;
+}
+
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--color-background-light);
+    color: var(--color-text-main);
+    line-height: 1.6;
+}
+
+.ideas-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px 40px 15px; 
+}
+
+/* --- ENCABEZADO --- */
+.ideas-page-header {
+    text-align: left;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--color-primary-red);
+}
+
+.page-category {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--color-primary-red); 
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 1.5px;
+}
+
+.page-title {
+    font-size: 2.2rem;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    color: var(--color-secondary-dark);
+}
+
+.page-intro-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0;
+}
+
+/* --- LISTADO DE IDEAS (MOBILE: Apilado) --- */
+.ideas-list-section {
+    padding: 20px 0;
+}
+
+.ideas-grid {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 1fr;
+}
+
+.idea-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid var(--color-primary-red);
+    position: relative;
+}
+
+.idea-number {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.05); /* Número tenue de fondo */
+    line-height: 1;
+}
+
+.idea-title {
+    font-size: 1.3rem;
+    color: var(--color-secondary-dark);
+    margin: 0 0 10px 0;
+    padding-right: 50px; /* Espacio para el número */
+}
+
+.idea-description {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0;
+}
+/* --- CTA FINAL --- */
+.cta-related-products {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #eee;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.cta-title {
+    font-size: 1.6rem;
+    color: var(--color-secondary-dark);
+    margin-top: 0;
+}
+
+.cta-related-products p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.cta-button-inspiration {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-primary-red); 
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+.cta-button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid var(--color-secondary-dark);
+    color: var(--color-secondary-dark);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 5px;
+}
+
+.cta-button-inspiration:hover {
+    background-color: #a01526;
+}
+
+.cta-button-link:hover {
+    background-color: var(--color-secondary-dark);
+    color: #fff;
+}
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+    .ideas-page-container {
+        padding: 40px 30px 60px 30px;
+    }
+    
+    .page-title {
+        font-size: 3rem;
+    }
+    
+    /* Disposición de 2 columnas para las ideas en Desktop */
+    .ideas-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 40px;
+    }
+    
+    .idea-card {
+        padding: 30px;
+    }
+    
+    .idea-title {
+        font-size: 1.5rem;
+    }
+
+    /* CTA más ancho */
+    .cta-related-products {
+        padding: 40px 60px;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .cta-button-inspiration,
+    .cta-button-link {
+        padding: 12px 30px;
+        margin: 10px;
+    }
+}    
+

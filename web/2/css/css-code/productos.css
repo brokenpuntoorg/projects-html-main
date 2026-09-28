@@ -1,0 +1,209 @@
+.catalog-page-unique {
+    padding-bottom: 50px;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+}
+
+.catalog-hero-unique {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))
+    ,url(/web/2/css/assets/hero.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    height: 60vh;
+}
+
+.hero-title-unique {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle-unique {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* --- FILTROS DE CATEGORÍA --- */
+.catalog-filters-unique {
+    padding: 20px 0;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.filters-heading-unique {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.filter-buttons-unique {
+    display: flex;
+    overflow-x: auto; /* Permite desplazamiento en móvil */
+    white-space: nowrap;
+    padding: 0 15px 10px 15px;
+    gap: 8px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.filter-buttons-unique::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-btn-unique {
+    flex-shrink: 0;
+    background-color: #eee;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-btn-unique:hover,
+.filter-btn-unique.selected {
+    background-color: #d82b2d; /* Color de acento */
+    color: #fff;
+    border-color: #d82b2d;
+}
+
+/* --- CUADRÍCULA DE PRODUCTOS (MÓVIL) --- */
+.product-grid-unique {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna */
+    gap: 20px;
+    padding: 0 15px;
+}
+
+.product-card-unique {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.product-card-unique:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-image-container-unique {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+}
+
+.product-image-unique {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.product-info-unique {
+    padding: 15px;
+}
+
+.product-name-unique {
+    font-size: 1.2rem;
+    color: #000;
+    margin: 0 0 5px 0;
+}
+
+.product-desc-unique {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+    min-height: 40px;
+}
+
+.product-price-unique {
+    display: block;
+    font-size: 1.1rem;
+    color: #d82b2d;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-cta-unique {
+    display: block;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.product-cta-unique:hover {
+    background-color: #555;
+}
+
+@media (min-width: 992px) {
+    .catalog-page-unique {
+        padding-top: 0;
+    }
+    
+    /* --- HERO --- */
+    .catalog-hero-unique {
+        padding: 100px 50px;
+
+    }
+    
+    .hero-title-unique {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle-unique {
+        font-size: 1.2rem;
+    }
+    
+    /* --- FILTROS --- */
+    .catalog-filters-unique {
+        padding: 30px 50px;
+    }
+
+    .filters-heading-unique {
+        font-size: 1.3rem;
+    }
+    
+    .filter-buttons-unique {
+        overflow-x: hidden;
+        justify-content: center;
+        gap: 15px;
+        padding: 0;
+    }
+    
+    .filter-btn-unique {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    /* --- CUADRÍCULA DE PRODUCTOS (DESKTOP) --- */
+    .product-grid-unique {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+        gap: 30px;
+        padding: 0 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .product-image-container-unique {
+        height: 250px;
+    }
+
+    .product-info-unique {
+        padding: 20px;
+    }
+}    
+

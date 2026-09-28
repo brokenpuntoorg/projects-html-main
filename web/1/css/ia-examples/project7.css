@@ -1,0 +1,456 @@
+/* Estilos para el Header (Móvil) */
+.site-header {
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    border-bottom: 1px solid #ccc;
+}
+
+.main-nav {
+    position: relative;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo-desktop {
+    display: none;
+}
+
+.logo-mobile {
+    display: block;
+    max-width: 150px;
+}
+
+.hamburger-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    padding: 0;
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+}
+
+.nav-wrapper {
+    display: none; /* Oculto por defecto en móvil */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.nav-wrapper.active {
+    display: block; /* Visible cuando se activa */
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    border-bottom: 1px solid #eee;
+}
+
+.nav-item a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.has-dropdown > a {
+    position: relative;
+    padding-right: 40px;
+}
+
+.has-dropdown > a::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.has-dropdown.active > a::after {
+    content: '-';
+}
+
+.dropdown-menu {
+    display: none; /* Oculto por defecto en móvil */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color:rgb(156, 24, 24);
+}
+
+.nav-item.active .dropdown-menu {
+    display: block; /* Visible cuando el padre está activo */
+}
+
+.dropdown-menu li a {
+    padding-left: 40px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+}
+.dropdown-menu li a:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.nav-actions {
+    display: none; /* Oculto en móvil */
+}
+
+.mobile-login {
+    display: block;
+}
+
+
+
+
+
+
+
+/* Estilos generales del Footer (Mobile First) */
+.site-footer {
+    background-color: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Columnas apiladas para móvil */
+    gap: 30px;
+    text-align: center; /* Texto centrado para móvil */
+}
+
+.footer-column {
+    flex: 1 1 100%;
+}
+
+.footer-logo {
+    max-width: 200px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.footer-contact-info p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centrar iconos en móvil */
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #dc3545;
+}
+
+.footer-products h3, .footer-services h3, .footer-company h3, .footer-resources h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #dc3545;
+}
+
+.footer-products ul, .footer-services ul, .footer-company ul, .footer-resources ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-products li, .footer-services li, .footer-company li, .footer-resources li {
+    margin-bottom: 10px;
+}
+
+.footer-products a, .footer-services a, .footer-company a, .footer-resources a, .footer-bottom a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-products a:hover, .footer-services a:hover, .footer-company a:hover, .footer-resources a:hover, .footer-bottom a:hover {
+    color: #dc3545;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid #555;
+    font-size: 12px;
+}
+
+.footer-copyright {
+    margin-bottom: 15px;
+}
+
+.footer-copyright a {
+    margin: 0 5px;
+}
+
+.footer-also-of-interest {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.footer-also-of-interest h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.footer-also-of-interest a {
+    margin: 0 10px;
+}
+/* -------------------- Clases para ocultar/mostrar elementos -------------------- */
+.desktop-only {
+    display: none;
+}
+.mobile-only {
+    display: block;
+}
+
+
+
+
+
+
+
+
+/* -------------------- Media Query para Escritorio -------------------- */
+@media (min-width: 992px) {
+    .hamburger-menu, .mobile-login, .logo-mobile {
+        display: none;
+    }
+    
+    .logo-desktop {
+        display: block;
+        max-width: 300px;
+    }
+
+    .nav-container {
+        justify-content: space-between;
+        padding: 15px 40px;
+    }
+    .logo-container{
+        flex: 1;
+    }
+    .nav-wrapper {
+        display: flex;
+        flex: 1;
+        position: static;
+        box-shadow: none;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: flex-start;
+        gap: 30px;
+        border-bottom: none;
+    }
+
+    .nav-item {
+        position: relative;
+        border-bottom: none;
+    }
+
+    .nav-item a {
+        padding: 20px 0;
+        transition: color 0.3s;
+    }
+
+    .nav-item a:hover {
+        color: #dc3545;
+    }
+
+    .has-dropdown > a::after {
+        content: none;
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 250px;
+        background-color: #fff;
+        border: 1px solid #eee;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 10px 0;
+        z-index: 100;
+    }
+
+    .nav-item:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu li a {
+        padding: 10px 20px;
+        font-weight: normal;
+        color: #555;
+    }
+
+    .dropdown-menu li a:hover {
+        background-color: #f5f5f5;
+        color: #dc3545;
+    }
+    
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .search-btn {
+            background: none;
+            border: none;
+            color: #333;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+    .z-commerce-login-btn {
+        background-color: #fff;
+        border: 1px solid #dc3545;
+        color: #dc3545;
+        padding: 8px 15px;
+        font-weight: bold;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .z-commerce-login-btn:hover {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .site-footer {
+        padding: 60px 40px;
+    }
+    
+    .footer-container {
+        flex-direction: row; /* Filas en escritorio */
+        justify-content: space-between;
+        text-align: left; /* Texto alineado a la izquierda en escritorio */
+        flex-wrap: nowrap;
+        gap: 40px;
+    }
+
+    .footer-column {
+        flex: 1; /* Distribución uniforme de columnas */
+        min-width: 150px;
+    }
+    
+    .footer-logo-col {
+        flex: none; /* Asegura que la columna de logo no se estire */
+        min-width: 250px;
+        max-width: 250px;
+    }
+
+    .footer-logo {
+        margin: 0;
+    }
+
+    .social-icons {
+        justify-content: flex-start; /* Alinear iconos a la izquierda en escritorio */
+    }
+
+    .footer-products h3, .footer-services h3, .footer-company h3, .footer-resources h3 {
+        text-align: left;
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .footer-copyright {
+        margin-bottom: 0;
+    }
+
+    .footer-also-of-interest {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+        text-align: right;
+    }
+
+    .footer-also-of-interest p {
+        display: inline;
+        margin-left: 10px;
+    }
+    
+    /* -------------------- Control de visibilidad en escritorio -------------------- */
+    .desktop-only {
+        display: block;
+    }
+    .mobile-only {
+        display: none;
+    }
+   
+
+
+
+
+
+    
+
+
+
+
+}

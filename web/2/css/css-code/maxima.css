@@ -1,0 +1,179 @@
+.precision-page-unique {
+    padding-bottom: 50px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+.section-heading-unique {
+    font-size: 1.6rem;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* --- HERO SECTION --- */
+.precision-hero-unique {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6))
+    ,url(/web/2/css/assets/laser/hero.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.hero-title-unique {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-subtitle-unique {
+    font-size: 1rem;
+    color: #e0e0e0;
+    max-width: 700px;
+    margin: 0 auto 25px auto;
+}
+
+.hero-cta-unique {
+    display: inline-block;
+    background-color: #d82b2d; /* Color de acento */
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.hero-cta-unique:hover {
+    background-color: #a82022;
+}
+
+/* --- SECCIÓN VENTAJAS CLAVE --- */
+.advantages-section-unique {
+    padding: 40px 15px;
+    background-color: #f7f7f7;
+}
+
+.advantages-grid-unique {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna en móvil */
+    gap: 20px;
+}
+
+.advantage-card-unique {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border-bottom: 4px solid #007bff;
+}
+
+.icon-unique {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.advantage-card-unique h3 {
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    margin: 0 0 10px 0;
+}
+
+.advantage-card-unique p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* --- SECCIÓN TECNOLOGÍA --- */
+.technology-section-unique {
+    padding: 40px 15px;
+}
+
+.info-block-unique {
+    margin-bottom: 30px;
+    padding-left: 15px;
+    border-left: 3px solid #d82b2d; /* Línea de acento */
+}
+
+.info-block-unique h3 {
+    font-size: 1.1rem;
+    color: #004d99;
+    margin: 0 0 8px 0;
+}
+
+.info-block-unique p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (min-width: 992px) {
+    .precision-page-unique {
+        max-width: 1800px;
+        margin: 0 auto;
+    }
+    
+    /* --- HERO SECTION --- */
+    .precision-hero-unique {
+        padding: 100px 50px;
+    }
+    
+    .hero-title-unique {
+        font-size: 3.5rem;
+    }
+
+    .hero-subtitle-unique {
+        font-size: 1.2rem;
+    }
+
+    /* --- SECCIÓN VENTAJAS CLAVE (3 Columnas) --- */
+    .advantages-section-unique {
+        padding: 60px 50px;
+    }
+
+    .section-heading-unique {
+        font-size: 2.2rem;
+    }
+
+    .advantages-grid-unique {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .advantage-card-unique {
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .advantage-card-unique:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* --- SECCIÓN TECNOLOGÍA (Diseño más estructurado) --- */
+    .technology-section-unique {
+        padding: 60px 50px;
+    }
+
+    .technology-content-unique {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-top: 40px;
+    }
+
+    .technology-section-unique .section-heading-unique {
+        grid-column: 1 / -1; /* Título abarca todo el ancho */
+    }
+
+    .info-block-unique {
+        margin-bottom: 0;
+        padding-left: 20px;
+    }
+}    
+

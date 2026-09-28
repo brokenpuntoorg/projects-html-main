@@ -1,0 +1,102 @@
+/* Estilos generales y reseteo básico */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Estilos del Header Principal */
+.main-header {
+    position: fixed; /* Fija el header en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Fondo oscuro para el header */
+    color: white;
+    padding: 2em 0; /* Espaciado vertical */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra para darle profundidad */
+    z-index: 1; /* Asegura que esté por encima de otros elementos */
+}
+
+.header-container {
+    display: flex; /* Convierte el contenedor principal en un flex container */
+    flex-direction: row;
+    justify-content: space-around; /* Distribuye los contenedores hijos equitativamente */
+    align-items: center; /* Alinea los ítems verticalmente al centro */
+    max-width: 1800px; /* Ancho máximo del contenedor para centrarlo en pantallas grandes */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 0 20em; /* Espaciado lateral dentro del contenedor */
+}
+
+/* Estilos para cada sección de navegación (los 4 contenedores) */
+.nav-section {
+    flex: 1; /* Permite que cada sección ocupe el espacio disponible equitativamente */
+    text-align: center; /* Centra el texto y los enlaces dentro de cada sección */
+    padding: 5px 10px;
+    /* border-right: 1px solid #555; /* Opcional: línea divisoria entre secciones */
+}
+
+/* Eliminar borde derecho del último contenedor si se usa */
+/* .nav-section:last-child {
+    border-right: none;
+} */
+
+/* Estilos para la navegación (ul, li, a) */
+nav ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Hace que los enlaces dentro de cada nav-section sean horizontales */
+    justify-content: center; /* Centra los enlaces dentro de cada sección */
+    gap: 4em; /* Espacio entre los enlaces */
+}
+
+nav ul li a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: white; /* Color del texto de los enlaces */
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: color 0.3s ease; /* Transición suave para el hover */
+}
+
+nav ul li a:hover {
+    color: #ffcc00; /* Color al pasar el ratón */
+}
+
+/* Ajuste para el contenido principal para que no se oculte detrás del header */
+main {
+    padding-top: 100px; /* Ajusta este valor para que sea mayor que la altura de tu header */
+    /* Calcula la altura de tu header (padding-top + padding-bottom + altura de contenido) */
+}
+
+/* Estilos responsivos (opcional pero recomendado) */
+@media (max-width: 500px) {
+    .header-container {
+        flex-direction: column; /* Apila los contenedores verticalmente en pantallas pequeñas */
+        padding: 10px 100px;
+        background-color: black;
+    }
+
+    .nav-section {
+        border-right: none; /* Elimina los bordes verticales */
+        width: 100%; /* Ocupa todo el ancho */
+    
+    }
+
+    .main-header {
+        padding: 10px 0; /* Ajusta padding en pantallas pequeñas */
+    }
+
+    main {
+        padding-top: 250px; /* Ajusta este valor si el header se hace más alto al apilarse */
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column; /* Apila los enlaces dentro de cada sección */
+        gap: 5px;
+    }
+}

@@ -1,0 +1,306 @@
+/* --- VARIABLES CSS --- */
+:root {
+    /* Color Gris Pizarra Oscuro (Coincide con el fondo del logo REFAQSA) */
+    --footer-bg: #1D2126; 
+    
+    --footer-text-color: #cccccc;
+    --footer-title-color: white;
+    --footer-link-hover: #0099ff; 
+    --max-width: 1800px;
+    --border-color: #31373e; 
+    --font-family: Arial, sans-serif;
+    --dropdown-bg: white;
+    --link-color-promo: #ff1e38; 
+    --border-color-light: #ddd;
+}
+
+/* --- RESET Y BASE MÍNIMA --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.nav-list, .dropdown-menu, .sidebar-nav-list, .sidebar-dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* --- REGLAS CSS PARA OCULTAR MENÚS (Sobrio/Sin JS) --- */
+.dropdown-menu {
+    display: none; 
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    background-color: var(--dropdown-bg);
+    border: 1px solid var(--border-color-light);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 300px;
+    z-index: 1000;
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+.sidebar-dropdown-menu {
+    max-height: 0 !important; 
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: transparent; 
+    transition: none; 
+}
+
+.sidebar-dropdown-toggle .arrow-right {
+    display: none;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* --- ESTILOS COMPLETO DEL FOOTER (ESCRITORIO: 7 Columnas SIMÉTRICAS) --- */
+/* ------------------------------------------------------------------ */
+.main-footer {
+    background-color: var(--footer-bg); 
+    color: var(--footer-text-color);
+    font-family: var(--font-family);
+    padding: 30px 20px 0 20px; 
+    width: 100%; 
+}
+
+.footer-content {
+    max-width: var(--max-width); 
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start; 
+    flex-wrap: nowrap; 
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left; 
+    column-gap: 20px; 
+}
+
+/* Estilo Base para las 5 Columnas de Enlace */
+.footer-column {
+    margin: 0 0 20px 0; 
+    flex: 1 1 10%; 
+    min-width: 80px; 
+    overflow: hidden; 
+}
+
+/* Columna 1: LOGOTIPO (Más estrecha) */
+.footer-column.logo-only {
+    flex: 0 0 100px; 
+    margin: 0 0 20px 0;
+    min-width: 100px; 
+}
+
+/* Columna 2: DIRECCIÓN Y REDES SOCIALES (Ancho fijo y predecible) */
+.footer-column.contact-info {
+    flex: 0 0 180px; 
+    padding-right: 0; 
+    margin: 0 0 20px 0;
+    min-width: 180px; 
+}
+
+/* -- ESTILOS VISUALES -- */
+
+.footer-logo {
+    max-width: 100%; 
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.footer-address {
+    font-style: normal;
+    line-height: 1.5; 
+    margin-bottom: 15px; 
+    font-size: 0.85rem;
+}
+
+.footer-title {
+    font-size: 0.9rem;
+    color: var(--footer-title-color);
+    font-weight: bold;
+    margin-bottom: 10px; 
+    text-transform: uppercase;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 5px; 
+}
+
+.footer-links a {
+    color: var(--footer-text-color);
+    font-size: 0.8rem; 
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.footer-links a:hover {
+    color: var(--footer-link-hover);
+}
+
+/* Iconos de redes sociales */
+.social-icons {
+    margin-top: 15px; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: flex-start; 
+}
+
+.social-icons a {
+    display: inline-block; 
+    margin-right: 10px; 
+    margin-bottom: 10px; 
+}
+
+.social-break {
+    width: 100%; 
+    height: 0;
+}
+
+.social-icons img {
+    width: 22px; 
+    height: 22px;
+    filter: brightness(0) invert(1); 
+}
+
+/* Fila Inferior: Legal y Copyright */
+.footer-bottom {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 15px 10px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap; 
+    font-size: 0.75rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.copyright {
+    margin: 5px 20px; 
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.copyright:hover {
+    color: var(--footer-link-hover);
+}
+
+.legal-links {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.legal-links a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+    margin-left: 0; 
+    display: inline-block; 
+    padding: 0 8px; 
+    transition: color 0.3s;
+    cursor: pointer; 
+}
+
+.legal-links a:hover {
+    color: var(--footer-link-hover);
+}
+
+
+/* ------------------------------------------------------------------ */
+/* --- MEDIA QUERIES --- */
+/* ------------------------------------------------------------------ */
+
+/* 1. Tablet View (769px a 1200px): Muestra 3 columnas por fila */
+@media screen and (max-width: 1200px) {
+
+    .footer-content {
+        flex-wrap: wrap; /* Permite que las columnas se envuelvan */
+        justify-content: space-between; /* Distribuye las columnas en el espacio */
+        text-align: left; 
+        padding: 0 20px 10px;
+        column-gap: 20px; /* Espacio uniforme entre columnas */
+    }
+    
+    /* Todas las columnas, incluyendo Logo y Contacto, tienen una base de 33.33% */
+    .footer-column,
+    .footer-column.logo-only,
+    .footer-column.contact-info {
+        /* Fuerza 3 columnas por fila, restando el espacio del gap (20px) */
+        flex: 0 0 calc(33.33% - 14px); 
+        margin: 0 0 30px 0; /* Espacio entre las filas */
+        min-width: 200px;
+        padding-right: 0; 
+        text-align: left; 
+    }
+    
+    /* El Logo y el Contacto deben alinearse a la izquierda */
+    .footer-logo {
+        margin-left: 0;
+        margin-right: auto;
+        width: 10em;
+    }
+
+    .social-icons {
+        justify-content: flex-start; /* Redes a la izquierda */
+    }
+}
+
+/* 2. Mobile View (<= 768px): Vuelve a 1 columna por fila */
+@media screen and (max-width: 768px) {
+
+    .footer-content {
+        column-gap: 0; 
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-column,
+    .footer-column.logo-only,
+    .footer-column.contact-info {
+        flex: 1 1 100%; 
+        margin: 0 0 25px 0; 
+        min-width: 100%;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center; /* Centrar íconos en móvil */
+    }
+
+    .footer-logo {
+        margin-left: auto; /* Centrar logo en móvil */
+        margin-right: auto;
+    }
+    
+    .footer-column.contact-info {
+        margin-bottom: 30px; 
+    }
+}

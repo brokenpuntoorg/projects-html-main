@@ -1,0 +1,127 @@
+/* Estilos generales y reseteo básico */
+body {
+    font-family: 'Inter', sans-serif; /* Fuente Inter para un aspecto limpio */
+    margin: 0; /* Elimina el margen predeterminado del body */
+    background-color: red;
+}
+
+/* Ajuste para que el contenido principal no quede oculto detrás del header fijo */
+/* La altura del header es aproximadamente 168px (24+32+72+40). pt-64 (256px) es un margen seguro. */
+.content-padding-top {
+    padding-top: 256px; /* Ajusta este valor si la altura de tu header cambia */
+}
+
+/* Estilos para el scroll horizontal en la barra de navegación principal */
+.main-nav-scroll {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.main-nav-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* --- Estilos para las secciones del Header --- */
+
+/* Barra superior de promociones */
+.top-promo-bar {
+    @apply bg-black text-white text-xs py-1 text-center font-medium;
+}
+
+/* Barra de navegación de utilidades */
+.utility-nav-bar {
+    @apply bg-white border-b border-gray-200 py-2;
+}
+
+.utility-nav-content {
+    @apply max-w-7xl mx-auto flex justify-center space-x-4 md:space-x-6 text-sm text-gray-700;
+}
+
+.utility-nav-link {
+    @apply hover:text-gray-900 px-2 py-1 rounded-md transition-colors duration-200;
+}
+
+/* Contenido principal del header (Logo, Búsqueda, Íconos de usuario) */
+.main-header-content {
+    @apply bg-white py-4 shadow-sm;
+}
+
+.main-header-inner {
+    @apply max-w-7xl mx-auto px-4 flex items-center justify-between flex-wrap md:flex-nowrap gap-4;
+}
+
+.logo-area {
+    @apply flex-shrink-0;
+}
+
+.search-bar-area {
+    @apply flex-grow order-3 md:order-none w-full md:w-auto;
+}
+
+.search-input-wrapper {
+    @apply relative flex items-center border border-gray-300 rounded-full py-2 px-4 focus-within:ring-2 focus-within:ring-blue-500 shadow-sm;
+}
+
+.user-icons-area {
+    @apply flex items-center space-x-4 md:space-x-6 text-gray-700 order-2 md:order-none;
+}
+
+.user-icon-link {
+    @apply flex items-center hover:text-gray-900 px-2 py-1 rounded-md transition-colors duration-200;
+}
+
+/* Barra de navegación principal (categorías de productos) */
+.main-nav-bar {
+    @apply bg-white border-t border-gray-200 py-3 shadow-md;
+}
+
+.main-nav-content {
+    @apply max-w-7xl mx-auto px-4 flex justify-between items-center text-sm font-semibold text-gray-800 overflow-x-auto main-nav-scroll;
+}
+
+.main-nav-link {
+    @apply px-4 py-2 hover:bg-gray-100 rounded-md flex-shrink-0 transition-colors duration-200;
+}
+
+.main-nav-link.highlight {
+    @apply bg-yellow-500 text-white shadow-sm hover:bg-yellow-600;
+}
+
+/* Estilos para el contenido de ejemplo (no parte del header) */
+/* Estos estilos son solo para que el main tenga un aspecto decente */
+main {
+    @apply max-w-7xl mx-auto p-4;
+}
+
+h1 {
+    @apply text-3xl font-bold mb-4 text-gray-800;
+}
+
+p {
+    @apply mb-4 text-gray-600;
+}
+
+div.grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+div.bg-white {
+    @apply bg-white p-6 rounded-lg shadow-md;
+}
+
+h2 {
+    @apply text-xl font-semibold mb-2;
+}
+
+img {
+    @apply w-full h-48 object-cover rounded-md mb-4;
+}
+
+button {
+    @apply mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors duration-200;
+}
+
+div.h-96 {
+    @apply h-96 bg-gray-100 flex items-center justify-center text-gray-500 mt-8 rounded-lg shadow-inner;
+}
+
